@@ -4,9 +4,9 @@ import {
   LayoutBodyComponent,
   LayoutComponent,
   LayoutHeaderComponent
-} from '@elementar-ui/components/layout';
-import { SidePanelComponent } from '@elementar-ui/components/side-panel';
-import { SidePanelTabComponent } from '@elementar-ui/components/side-panel/src/side-panel-tab/side-panel-tab.component';
+} from '@elementar-rt/components/layout';
+import { SidePanelComponent } from '@elementar-rt/components/side-panel';
+import { SidePanelTabComponent } from '@elementar-rt/components/side-panel/src/side-panel-tab/side-panel-tab.component';
 
 @Component({
   selector: 'app-basic-side-panel-example',

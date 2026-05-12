@@ -1,6 +1,6 @@
 import { Component, inject, input, LOCALE_ID, OnInit, output, signal } from '@angular/core';
 import { EMOJI_PICKER_TRIGGER_FOR } from '../types';
-import { SkeletonBlockComponent, SkeletonComponent, SkeletonLineComponent } from '@elementar-ui/components/skeleton';
+import { SkeletonBlockComponent, SkeletonComponent, SkeletonLineComponent } from '@elementar-rt/components/skeleton';
 
 const loadedEmoji = new Map<string, { groups: any[] }>();
 const loadGroups = (language: string) => {

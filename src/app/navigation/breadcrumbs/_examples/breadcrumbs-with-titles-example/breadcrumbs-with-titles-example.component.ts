@@ -3,7 +3,7 @@ import {
   BreadcrumbItemComponent,
   BreadcrumbItemIconDirective, BreadcrumbsComponent, BreadcrumbSeparatorComponent,
   BreadcrumbTitleComponent
-} from '@elementar-ui/components/breadcrumbs';
+} from '@elementar-rt/components/breadcrumbs';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({

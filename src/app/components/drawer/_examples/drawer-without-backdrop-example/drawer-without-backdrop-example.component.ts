@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { DrawerComponent } from '@elementar-ui/components/drawer';
+import { DrawerComponent } from '@elementar-rt/components/drawer';
 import { MatButton } from '@angular/material/button';
 import {
   PanelBodyComponent,
   PanelComponent,
   PanelFooterComponent,
   PanelHeaderComponent
-} from '@elementar-ui/components/panel';
+} from '@elementar-rt/components/panel';
 
 @Component({
   selector: 'app-drawer-without-backdrop-example',

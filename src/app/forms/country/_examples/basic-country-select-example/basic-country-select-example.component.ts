@@ -1,5 +1,5 @@
 import { Component, model } from '@angular/core';
-import { CountrySelectComponent } from '@elementar-ui/components/country-select';
+import { CountrySelectComponent } from '@elementar-rt/components/country-select';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 

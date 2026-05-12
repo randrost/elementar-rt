@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { PageComponent } from '@meta/page/page.component';
 import { PageContentDirective } from '@meta/page/page-content.directive';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
-import { CodeHighlighter } from '@elementar-ui/components/code-highlighter';
+import { CodeHighlighter } from '@elementar-rt/components/code-highlighter';
 
 @Component({
   selector: 'app-code-highlighter-overview',

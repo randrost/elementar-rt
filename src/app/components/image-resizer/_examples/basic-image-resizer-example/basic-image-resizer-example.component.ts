@@ -3,7 +3,7 @@ import {
   ImageResizedEvent,
   ImageResizerComponent,
   ImageResizerImageDirective
-} from '@elementar-ui/components/image-resizer';
+} from '@elementar-rt/components/image-resizer';
 import { JsonPipe } from '@angular/common';
 
 @Component({

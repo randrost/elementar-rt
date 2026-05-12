@@ -16,8 +16,8 @@ import {
   SidebarNavGroupMenuComponent,
   SidebarNavItemIconDirective,
   SidebarNavGroupToggleIconDirective
-} from '@elementar-ui/components/sidebar';
-import { OrderByPipe } from '@elementar-ui/components/core';
+} from '@elementar-rt/components/sidebar';
+import { OrderByPipe } from '@elementar-rt/components/core';
 
 @Component({
   selector: 'app-sidebar',

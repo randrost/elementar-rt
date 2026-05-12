@@ -9,10 +9,10 @@ import { readWorkspace, writeWorkspace } from '@schematics/angular/utility';
 // const BOOTSTRAP_CSS_FILEPATH = 'node_modules/elementar-ui/components/styles/themes/default.scss';
 const SUPPORTED_BOOTSTRAP_STYLE_IMPORTS = {
   '.sass': `
-@use '@elementar-ui/components/styles/themes/default';
+@use '@elementar-rt/components/styles/themes/default';
 `,
   '.scss': `
-@use '@elementar-ui/components/styles/themes/default';
+@use '@elementar-rt/components/styles/themes/default';
 `,
 };
 

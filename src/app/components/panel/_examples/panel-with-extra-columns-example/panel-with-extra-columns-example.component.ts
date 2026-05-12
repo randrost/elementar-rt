@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { OverlayScrollbarComponent } from '@elementar-ui/components/overlay-scrollbar';
+import { OverlayScrollbarComponent } from '@elementar-rt/components/overlay-scrollbar';
 import {
   PanelAsideComponent,
   PanelBodyComponent,
   PanelComponent,
   PanelFooterComponent,
   PanelHeaderComponent, PanelSidebarComponent
-} from '@elementar-ui/components/panel';
+} from '@elementar-rt/components/panel';
 
 @Component({
   selector: 'app-panel-with-extra-columns-example',

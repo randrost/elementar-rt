@@ -11,9 +11,9 @@ import {
   NotificationMessageComponent,
   NotificationTimeComponent,
   NotificationContentComponent
-} from '@elementar-ui/components/notifications';
+} from '@elementar-rt/components/notifications';
 import { MatIcon } from '@angular/material/icon';
-import { DicebearComponent } from '@elementar-ui/components/avatar';
+import { DicebearComponent } from '@elementar-rt/components/avatar';
 import { RouterLink } from '@angular/router';
 
 @Component({

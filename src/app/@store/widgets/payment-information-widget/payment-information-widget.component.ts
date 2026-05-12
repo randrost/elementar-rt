@@ -1,7 +1,7 @@
 import { Component, inject, input, OnInit } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { DASHBOARD } from '@elementar-ui/components/dashboard';
+import { DASHBOARD } from '@elementar-rt/components/dashboard';
 
 @Component({
   selector: 'emr-payment-information-widget',

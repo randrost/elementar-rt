@@ -10,8 +10,8 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-import { ThemeManagerService } from '@elementar-ui/components/core';
-import { Dashboard, DASHBOARD } from '@elementar-ui/components/dashboard';
+import { ThemeManagerService } from '@elementar-rt/components/core';
+import { Dashboard, DASHBOARD } from '@elementar-rt/components/dashboard';
 
 @Component({
   selector: 'emr-purchases-by-channels-widget',

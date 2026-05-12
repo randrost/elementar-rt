@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ComponentConfig } from '../../models/form-config.model';
-import { TimezoneSelectComponent } from '@elementar-ui/components/timezone-select';
+import { TimezoneSelectComponent } from '@elementar-rt/components/timezone-select';
 import { MatError, MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
 
 @Component({

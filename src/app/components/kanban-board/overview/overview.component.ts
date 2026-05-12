@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DicebearComponent } from '@elementar-ui/components/avatar';
-import { KanbanBoardComponent, KanbanColumn, KanbanItemDefDirective } from '@elementar-ui/components/kanban-board';
+import { DicebearComponent } from '@elementar-rt/components/avatar';
+import { KanbanBoardComponent, KanbanColumn, KanbanItemDefDirective } from '@elementar-rt/components/kanban-board';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
@@ -25,11 +25,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -38,11 +38,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -51,11 +51,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -64,11 +64,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -77,11 +77,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -90,11 +90,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -103,11 +103,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -116,11 +116,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         }
@@ -136,11 +136,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         }
@@ -156,11 +156,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -169,11 +169,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -182,11 +182,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -195,11 +195,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         },
@@ -208,11 +208,11 @@ export class OverviewComponent {
           position: 1,
           reporter: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           assignee: {
             id: 1,
-            name: 'Pavel Salauyou'
+            name: 'John Doe'
           },
           priority: 'none'
         }

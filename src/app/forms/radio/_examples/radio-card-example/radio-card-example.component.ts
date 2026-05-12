@@ -4,7 +4,7 @@ import {
   RadioCardComponent,
   RadioCardContentComponent,
   RadioCardGroupComponent, RadioCardTitleComponent
-} from '@elementar-ui/components/radio-card';
+} from '@elementar-rt/components/radio-card';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
 

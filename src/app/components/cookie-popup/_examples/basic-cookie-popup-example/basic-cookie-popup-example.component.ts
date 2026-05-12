@@ -5,7 +5,7 @@ import {
   CookiePopupAcceptType,
   CookiePopupComponent,
   CookiePopupTitleDirective
-} from '@elementar-ui/components/cookie-popup';
+} from '@elementar-rt/components/cookie-popup';
 import { MatButton } from '@angular/material/button';
 
 @Component({

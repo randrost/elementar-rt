@@ -13,8 +13,8 @@
       "@app/*": [
         "./src/app/@app/*"
       ],
-      "@elementar-ui/components/*": ["./projects/components/*"],
-      "@elementar-ui/components": ["./projects/components"],
+      "@elementar-rt/components/*": ["./projects/components/*"],
+      "@elementar-rt/components": ["./projects/components"],
     },
     "strict": true,
     "strictPropertyInitialization": false,

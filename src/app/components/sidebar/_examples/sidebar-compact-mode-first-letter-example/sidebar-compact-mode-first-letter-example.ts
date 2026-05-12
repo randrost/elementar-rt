@@ -6,7 +6,7 @@ import {
   SidebarComponent, SidebarFooterComponent, SidebarFullViewModeDirective, SidebarHeaderComponent, SidebarNavComponent,
   SidebarNavDividerComponent, SidebarNavGroupComponent, SidebarNavGroupMenuComponent, SidebarNavGroupToggleComponent,
   SidebarNavGroupToggleIconDirective, SidebarNavHeadingComponent, SidebarNavItemComponent, SidebarNavItemIconDirective
-} from '@elementar-ui/components/sidebar';
+} from '@elementar-rt/components/sidebar';
 import { v7 as uuid } from 'uuid';
 import { MatIcon } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';

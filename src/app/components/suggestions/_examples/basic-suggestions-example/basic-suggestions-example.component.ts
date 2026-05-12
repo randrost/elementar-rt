@@ -5,8 +5,8 @@ import {
   SuggestionBlockComponent,
   SuggestionComponent,
   SuggestionIconDirective, SuggestionsComponent, SuggestionThumbDirective
-} from '@elementar-ui/components/suggestions';
-import { AvatarComponent } from '@elementar-ui/components/avatar';
+} from '@elementar-rt/components/suggestions';
+import { AvatarComponent } from '@elementar-rt/components/avatar';
 
 @Component({
   selector: 'app-basic-suggestions-example',

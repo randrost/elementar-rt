@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { IncidentsStore } from '@elementar-ui/components/incidents';
+import { IncidentsStore } from '@elementar-rt/components/incidents';
 
 @Component({
   selector: 'app-incidents-show-hide-dynamicly-example',

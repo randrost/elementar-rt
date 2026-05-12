@@ -2,7 +2,7 @@ import { Component, model, signal } from '@angular/core';
 import { PageComponent } from '@meta/page/page.component';
 import { PageContentDirective } from '@meta/page/page-content.directive';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
-import { Crop, CropSelection } from '@elementar-ui/components/crop';
+import { Crop, CropSelection } from '@elementar-rt/components/crop';
 import { FormsModule } from '@angular/forms';
 import { MatFormField } from '@angular/material/form-field';
 import { MatOption, MatSelect } from '@angular/material/select';

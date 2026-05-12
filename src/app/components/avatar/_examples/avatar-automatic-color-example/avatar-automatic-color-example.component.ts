@@ -4,7 +4,7 @@ import {
   AvatarComponent,
   AvatarGroupComponent,
   AvatarMoreComponent,
-} from '@elementar-ui/components/avatar';
+} from '@elementar-rt/components/avatar';
 
 @Component({
   selector: 'app-avatar-automatic-color-example',

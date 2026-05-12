@@ -3,8 +3,8 @@ import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
 import { MatRipple } from '@angular/material/core';
-import { DicebearComponent } from '@elementar-ui/components/avatar';
-import { HorizontalDividerComponent } from '@elementar-ui/components/divider';
+import { DicebearComponent } from '@elementar-rt/components/avatar';
+import { HorizontalDividerComponent } from '@elementar-rt/components/divider';
 
 @Component({
   selector: 'app-workspaces-select',

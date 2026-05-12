@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { EmojiPickerComponent, EmojiPickerTriggerForDirective } from '@elementar-ui/components/emoji-picker';
+import { EmojiPickerComponent, EmojiPickerTriggerForDirective } from '@elementar-rt/components/emoji-picker';
 
 @Component({
   selector: 'app-basic-emoji-picker-example',

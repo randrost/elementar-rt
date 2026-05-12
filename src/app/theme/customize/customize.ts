@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { CodeHighlighter } from '@elementar-ui/components/code-highlighter';
+import { CodeHighlighter } from '@elementar-rt/components/code-highlighter';
 
 @Component({
   selector: 'app-customize',
@@ -10,12 +10,12 @@ import { CodeHighlighter } from '@elementar-ui/components/code-highlighter';
   styleUrl: './customize.scss'
 })
 export class Customize {
-  defaultTheme = signal(`@use '@elementar-ui/components/styles/themes/default';`);
-  roseRedTheme = signal(`@use '@elementar-ui/components/styles/themes/magenta-violet';`);
+  defaultTheme = signal(`@use '@elementar-rt/components/styles/themes/default';`);
+  roseRedTheme = signal(`@use '@elementar-rt/components/styles/themes/magenta-violet';`);
   generateAngularTheme = signal(`ng generate @angular/material:theme-color my-theme`);
   addTheme = signal(`@use './my-theme' as themeColors;
 @use '@angular/material' as mat;
-@use "@elementar-ui/components/styles/common" with (
+@use "@elementar-rt/components/styles/common" with (
   $m3-light-theme: mat.define-theme((
     color: (
       theme-type: light,

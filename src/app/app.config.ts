@@ -14,13 +14,13 @@ import { provideStore } from '@ngrx/store';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { environment } from '../environments/environment';
-import { ENVIRONMENT, EnvironmentService, GlobalStore, PageTitleStrategyService } from '@elementar-ui/components/core';
-import { LayoutSidebarStore } from '@elementar-ui/components/layout';
-import { COLOR_SCHEME_LOCAL_KEY, ColorScheme, ColorSchemeStore } from '@elementar-ui/components/color-scheme';
+import { ENVIRONMENT, EnvironmentService, GlobalStore, PageTitleStrategyService } from '@elementar-rt/components/core';
+import { LayoutSidebarStore } from '@elementar-rt/components/layout';
+import { COLOR_SCHEME_LOCAL_KEY, ColorScheme, ColorSchemeStore } from '@elementar-rt/components/color-scheme';
 import { isPlatformBrowser } from '@angular/common';
 import {
   FORM_RENDERER_FIELD_REGISTRY,
-} from '@elementar-ui/components/form-renderer';
+} from '@elementar-rt/components/form-renderer';
 
 export const appConfig: ApplicationConfig = {
   providers: [

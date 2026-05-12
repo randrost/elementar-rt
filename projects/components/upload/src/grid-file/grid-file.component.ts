@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, numberAttribute } from '@angular/core';
 import { UploadFileState } from '../types';
-import { GaugeComponent, GaugeValueComponent } from '@elementar-ui/components/gauge';
+import { GaugeComponent, GaugeValueComponent } from '@elementar-rt/components/gauge';
 
 @Component({
   selector: 'emr-grid-file',

@@ -3,7 +3,7 @@ import {
   NavigationComponent,
   NavigationDividerComponent,
   NavigationItemComponent
-} from '@elementar-ui/components/navigation';
+} from '@elementar-rt/components/navigation';
 
 @Component({
   selector: 'app-navigation-with-divider-example',

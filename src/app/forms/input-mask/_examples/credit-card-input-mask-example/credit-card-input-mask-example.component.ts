@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatFormField, MatLabel, MatPrefix } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
-import { CreditCardNumberMaskDirective } from '@elementar-ui/components/input-mask';
+import { CreditCardNumberMaskDirective } from '@elementar-rt/components/input-mask';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({

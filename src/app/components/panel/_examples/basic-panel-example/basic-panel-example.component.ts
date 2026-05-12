@@ -4,8 +4,8 @@ import {
   PanelComponent,
   PanelFooterComponent,
   PanelHeaderComponent,
-} from '@elementar-ui/components/panel';
-import { OverlayScrollbarComponent } from '@elementar-ui/components/overlay-scrollbar';
+} from '@elementar-rt/components/panel';
+import { OverlayScrollbarComponent } from '@elementar-rt/components/overlay-scrollbar';
 
 @Component({
   selector: 'app-basic-panel-example',

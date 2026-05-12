@@ -4,7 +4,7 @@ import {
   DataViewActionBarDirective,
   DataViewColumnDef,
   DataViewComponent
-} from '@elementar-ui/components/data-view';
+} from '@elementar-rt/components/data-view';
 import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import { MatButton, MatIconButton } from '@angular/material/button';

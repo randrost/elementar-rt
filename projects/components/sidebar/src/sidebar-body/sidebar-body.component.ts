@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OverlayScrollbarComponent } from '@elementar-ui/components/overlay-scrollbar';
+import { OverlayScrollbarComponent } from '@elementar-rt/components/overlay-scrollbar';
 
 @Component({
   selector: 'emr-sidebar-body',

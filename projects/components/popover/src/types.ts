@@ -1,4 +1,4 @@
-import { OverlayPosition } from '@elementar-ui/components/overlay';
+import { OverlayPosition } from '@elementar-rt/components/overlay';
 import { InjectionToken } from '@angular/core';
 
 export type PopoverTrigger = 'click' | 'hover';

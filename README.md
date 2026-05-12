@@ -1,12 +1,8 @@
 # Elementar UI
 
-[Overview](https://elementarui.com) | [Live Demo](https://demo.elementarui.com) | [Documentation](https://docs.elementarui.com)
+[Overview](https://elementarui.r-tulika.me) | [Live Demo](https://demo.elementarui.r-tulika.me) | [Documentation](https://docs.elementarui.r-tulika.me)
 
 # Modern Angular UI Components & Admin Panel, based on [Angular Material 3](https://material.angular.io) components and [Tailwind](https://tailwindcss.com/) css framework
-
-<a target="_blank" href="https://elementarui.com">
-  <img src="https://elementarlabs.fsn1.your-objectstorage.com/elementar-ui/preview-demo.png">
-</a>
 
 ## Key features
 
@@ -35,36 +31,19 @@ npx @angular/cli@20 new elementar-project-name --style=scss
 Go to directory `elementar-project-name` (or your project folder name) and run the command:
 
 ```bash
-ng add @elementar-ui/components
+ng add @elementar-rt/components
 ```
 
-The components will be installed and configured, then copy what you need from the demo layouts projects.
+> **Note:** The npm package is currently being republished. If `ng add` fails, build the library locally:
+> ```bash
+> git clone https://github.com/randrost/elementar-ui.git
+> cd elementar-ui
+> npm install
+> npm run build:components:prod
+> ```
+> Then link the built library into your project from `dist/components/`.
 
-### SaaS Layout
-[https://github.com/elementarlabs/elementar-admin-saas](https://github.com/elementarlabs/elementar-admin-saas)
+## Demo Layouts
 
-<a target="_blank" href="https://saas.elementarui.com/">
-  <img src="https://elementarlabs.fsn1.your-objectstorage.com/elementar-ui/preview-saas-layout.png">
-</a>
+Demo layouts are coming soon. They will be available as separate repositories under this project.
 
-
-### Mono Layout
-[https://github.com/elementarlabs/elementar-admin-mono](https://github.com/elementarlabs/elementar-admin-mono)
-
-<a target="_blank" href="https://mono.elementarui.com/">
-  <img src="https://elementarlabs.fsn1.your-objectstorage.com/elementar-ui/preview-mono-layout-new.png">
-</a>
-
-### Minimal Layout
-[https://github.com/elementarlabs/elementar-admin-minimal](https://github.com/elementarlabs/elementar-admin-minimal)
-
-<a target="_blank" href="https://minimal.elementarui.com/">
-  <img src="https://elementarlabs.fsn1.your-objectstorage.com/elementar-ui/preview-minimal-layout-new.png">
-</a>
-
-### Dual tier Layout
-[https://github.com/elementarlabs/elementar-admin-dual-tier](https://github.com/elementarlabs/elementar-admin-dual-tier)
-
-<a target="_blank" href="https://dual-tier.elementarui.com/">
-  <img src="https://elementarlabs.fsn1.your-objectstorage.com/elementar-ui/preview-dual-tier-layout.png">
-</a>

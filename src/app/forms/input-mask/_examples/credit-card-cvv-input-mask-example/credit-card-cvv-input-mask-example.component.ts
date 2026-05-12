@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
-import { CreditCardCvvMaskDirective } from '@elementar-ui/components/input-mask';
+import { CreditCardCvvMaskDirective } from '@elementar-rt/components/input-mask';
 
 @Component({
   selector: 'app-credit-card-cvv-input-mask-example',

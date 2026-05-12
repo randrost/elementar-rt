@@ -4,7 +4,7 @@ import {
   DataViewCellRenderer,
   DataViewColumnDef,
   DataViewComponent
-} from '@elementar-ui/components/data-view';
+} from '@elementar-rt/components/data-view';
 import { HttpClient } from '@angular/common/http';
 import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';

@@ -4,8 +4,8 @@ import {
   LayoutComponent,
   LayoutHeaderComponent,
   LayoutTopbarComponent
-} from '@elementar-ui/components/layout';
-import { AnnouncementComponent } from '@elementar-ui/components/announcement';
+} from '@elementar-rt/components/layout';
+import { AnnouncementComponent } from '@elementar-rt/components/announcement';
 
 @Component({
   selector: 'app-layout-header-with-topbar-example',

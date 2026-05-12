@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DateFormatSelectComponent } from '@elementar-ui/components/date-format-select';
+import { DateFormatSelectComponent } from '@elementar-rt/components/date-format-select';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 

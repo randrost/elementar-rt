@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { AvatarComponent } from '@elementar-ui/components/avatar';
+import { AvatarComponent } from '@elementar-rt/components/avatar';
 import {
   TimelineAttributesComponent, TimelineComponent,
   TimelineDescriptionComponent, TimelineHeaderComponent, TimelineItemComponent,
   TimelineTimestampComponent,
   TimelineTitleComponent
-} from '@elementar-ui/components/timeline';
+} from '@elementar-rt/components/timeline';
 
 @Component({
   selector: 'app-timeline-timestamp-example',

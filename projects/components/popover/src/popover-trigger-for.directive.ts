@@ -19,7 +19,7 @@ import { Directionality } from '@angular/cdk/bidi';
 import { TemplatePortal } from '@angular/cdk/portal';
 import { _getEventTarget } from '@angular/cdk/platform';
 import { PopoverTrigger, PopoverPosition, POPOVER_TRIGGER } from './types';
-import { PositionManager } from '@elementar-ui/components/overlay';
+import { PositionManager } from '@elementar-rt/components/overlay';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Directive({

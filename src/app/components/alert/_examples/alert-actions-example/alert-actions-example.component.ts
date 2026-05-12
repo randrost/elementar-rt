@@ -5,7 +5,7 @@ import {
   AlertCloseDirective,
   AlertComponent,
   AlertTitleDirective
-} from '@elementar-ui/components/alert';
+} from '@elementar-rt/components/alert';
 import { MatButton, MatIconButton } from '@angular/material/button';
 
 @Component({

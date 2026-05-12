@@ -16,7 +16,7 @@ import {
   FilesGridComponent,
   GridFileComponent,
   GridFileControlDirective
-} from '@elementar-ui/components/upload';
+} from '@elementar-rt/components/upload';
 import { MatIcon } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 

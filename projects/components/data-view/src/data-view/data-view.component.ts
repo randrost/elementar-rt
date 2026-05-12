@@ -34,7 +34,7 @@ import {
   SkeletonCircleComponent,
   SkeletonComponent,
   SkeletonLineComponent
-} from '@elementar-ui/components/skeleton';
+} from '@elementar-rt/components/skeleton';
 import { DataViewEmptyDataDirective } from '../data-view-empty-data.directive';
 import { DataViewEmptyFilterResultsDirective } from '../data-view-empty-filter-results.directive';
 import { DataViewActionBarDirective } from '../data-view-action-bar.directive';

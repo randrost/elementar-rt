@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AnnouncementComponent } from '@elementar-ui/components/announcement';
+import { AnnouncementComponent } from '@elementar-rt/components/announcement';
 
 @Component({
   selector: 'app-announcement-with-icons-example',

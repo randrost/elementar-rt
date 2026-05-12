@@ -4,7 +4,7 @@ import {
   AvatarGroupComponent,
   AvatarMoreComponent,
   DicebearComponent
-} from '@elementar-ui/components/avatar';
+} from '@elementar-rt/components/avatar';
 
 @Component({
   selector: 'app-grouped-and-total-avatars-example',

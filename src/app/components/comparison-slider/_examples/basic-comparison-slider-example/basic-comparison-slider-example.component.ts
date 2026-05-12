@@ -3,7 +3,7 @@ import {
   ComparisonSliderAfterImageDirective,
   ComparisonSliderBeforeImageDirective,
   ComparisonSliderComponent
-} from '@elementar-ui/components/comparison-slider';
+} from '@elementar-rt/components/comparison-slider';
 
 @Component({
   selector: 'app-basic-comparison-slider-example',

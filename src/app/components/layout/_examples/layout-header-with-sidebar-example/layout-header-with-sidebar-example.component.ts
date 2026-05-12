@@ -4,7 +4,7 @@ import {
   LayoutComponent,
   LayoutHeaderComponent,
   LayoutSidebarComponent
-} from '@elementar-ui/components/layout';
+} from '@elementar-rt/components/layout';
 
 @Component({
   selector: 'app-layout-header-with-sidebar-example',

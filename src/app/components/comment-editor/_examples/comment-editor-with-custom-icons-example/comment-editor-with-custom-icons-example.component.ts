@@ -20,11 +20,11 @@ import {
   CommentEditorCommandUnsetLinkDirective,
   CommentEditorCommandToggleToolbarDirective,
   CommentEditorFooterBarComponent
-} from '@elementar-ui/components/comment-editor';
+} from '@elementar-rt/components/comment-editor';
 import { MatIconButton } from '@angular/material/button';
 import { MatTooltip } from '@angular/material/tooltip';
-import { SafeHtmlPipe } from '@elementar-ui/components/core';
-import { IconComponent } from '@elementar-ui/components/icon';
+import { SafeHtmlPipe } from '@elementar-rt/components/core';
+import { IconComponent } from '@elementar-rt/components/icon';
 
 @Component({
   selector: 'app-comment-editor-with-custom-icons-example',

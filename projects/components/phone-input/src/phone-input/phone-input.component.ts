@@ -33,7 +33,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatDivider } from '@angular/material/divider';
 import { MatInput } from '@angular/material/input';
 import { SearchPipe } from '../search.pipe';
-import { IconComponent } from '@elementar-ui/components/icon';
+import { IconComponent } from '@elementar-rt/components/icon';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({

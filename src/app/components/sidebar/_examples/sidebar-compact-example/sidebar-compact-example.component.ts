@@ -11,7 +11,7 @@ import {
   SidebarNavHeadingComponent,
   SidebarNavItemComponent,
   SidebarNavItemIconDirective
-} from '@elementar-ui/components/sidebar';
+} from '@elementar-rt/components/sidebar';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { v7 as uuid } from 'uuid';

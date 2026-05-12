@@ -10,7 +10,7 @@ import {
   UploadFileSelectedEvent,
   UploadMaxFileSizeComponent,
   UploadTriggerDirective
-} from '@elementar-ui/components/upload';
+} from '@elementar-rt/components/upload';
 import { JsonPipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 

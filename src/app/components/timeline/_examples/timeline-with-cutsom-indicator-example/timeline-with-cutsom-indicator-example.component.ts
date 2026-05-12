@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { AvatarComponent } from '@elementar-ui/components/avatar';
+import { AvatarComponent } from '@elementar-rt/components/avatar';
 import {
   TimelineComponent, TimelineDescriptionComponent,
   TimelineHeaderComponent,
   TimelineItemComponent,
   TimelineItemIndicatorDirective,
   TimelineTimestampComponent, TimelineTitleComponent
-} from '@elementar-ui/components/timeline';
+} from '@elementar-rt/components/timeline';
 
 @Component({
   selector: 'app-timeline-with-cutsom-indicator-example',

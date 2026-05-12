@@ -1,7 +1,7 @@
 import { Component, inject, input, OnInit } from '@angular/core';
 import { MatRipple } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
-import { DASHBOARD, Dashboard } from '@elementar-ui/components/dashboard';
+import { DASHBOARD, Dashboard } from '@elementar-rt/components/dashboard';
 
 export interface ArticleSnippetWidget {
   title: string;

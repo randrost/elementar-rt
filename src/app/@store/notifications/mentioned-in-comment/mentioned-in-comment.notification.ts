@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { DicebearComponent } from '@elementar-ui/components/avatar';
-import { Notification } from '@elementar-ui/components/notifications';
+import { DicebearComponent } from '@elementar-rt/components/avatar';
+import { Notification } from '@elementar-rt/components/notifications';
 
 @Component({
   selector: 'emr-mentioned-in-comment',

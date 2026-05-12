@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatFormField, MatInput, MatLabel } from '@angular/material/input';
-import { CreditCardExpiryDateMaskDirective } from '@elementar-ui/components/input-mask';
+import { CreditCardExpiryDateMaskDirective } from '@elementar-rt/components/input-mask';
 
 @Component({
   selector: 'app-credit-card-expiry-input-mask-example',

@@ -6,9 +6,9 @@ import {
   LayoutComponent,
   LayoutSidebarComponent,
   LayoutTopbarComponent,
-} from '@elementar-ui/components/layout';
-import { AnnouncementGlobalComponent } from '@elementar-ui/components/announcement';
-import { IncidentsContainerComponent } from '@elementar-ui/components/incidents';
+} from '@elementar-rt/components/layout';
+import { AnnouncementGlobalComponent } from '@elementar-rt/components/announcement';
+import { IncidentsContainerComponent } from '@elementar-rt/components/incidents';
 
 @Component({
   imports: [

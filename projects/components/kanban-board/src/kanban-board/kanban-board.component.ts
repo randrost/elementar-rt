@@ -23,7 +23,7 @@ import { MatRipple } from '@angular/material/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
-import { PanelBodyComponent, PanelComponent, PanelHeaderComponent } from '@elementar-ui/components/panel';
+import { PanelBodyComponent, PanelComponent, PanelHeaderComponent } from '@elementar-rt/components/panel';
 import { KanbanColumn, KanbanItem, KanbanItemSortedEvent, KanbanItemTransferredEvent } from '../types';
 import { KanbanItemDefDirective } from '../kanban-item-def.directive';
 import { fromEvent } from 'rxjs';

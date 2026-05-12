@@ -13,8 +13,8 @@ import {
   SidebarNavGroupToggleIconDirective,
   SidebarNavHeadingComponent, SidebarNavItemComponent,
   SidebarNavItemIconDirective
-} from '@elementar-ui/components/sidebar';
-import { IconComponent } from '@elementar-ui/components/icon';
+} from '@elementar-rt/components/sidebar';
+import { IconComponent } from '@elementar-rt/components/icon';
 
 @Component({
   selector: 'app-sidebar-with-custom-icons-example',

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { InlineTextEditComponent } from '@elementar-ui/components/inline-text-edit';
-import { AlertComponent } from '@elementar-ui/components/alert';
+import { InlineTextEditComponent } from '@elementar-rt/components/inline-text-edit';
+import { AlertComponent } from '@elementar-rt/components/alert';
 import { MatDivider } from '@angular/material/divider';
 
 @Component({

@@ -6,7 +6,7 @@ import {
   CarouselComponent,
   CarouselNextDirective,
   CarouselPreviousDirective
-} from '@elementar-ui/components/carousel';
+} from '@elementar-rt/components/carousel';
 
 @Component({
   selector: 'app-carousel-fade-effect-example',

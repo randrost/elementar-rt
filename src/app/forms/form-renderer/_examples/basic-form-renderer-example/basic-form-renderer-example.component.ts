@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
-import { FormConfig, FormRendererComponent, ValidatorRegistryService } from '@elementar-ui/components/form-renderer';
+import { FormConfig, FormRendererComponent, ValidatorRegistryService } from '@elementar-rt/components/form-renderer';
 import { JsonPipe } from '@angular/common';
 import { MatButton } from '@angular/material/button';
 

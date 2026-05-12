@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { BlockLoaderComponent, BlockLoaderContainerDirective } from '@elementar-ui/components/block-loader';
+import { BlockLoaderComponent, BlockLoaderContainerDirective } from '@elementar-rt/components/block-loader';
 import { MatButton } from '@angular/material/button';
 
 @Component({

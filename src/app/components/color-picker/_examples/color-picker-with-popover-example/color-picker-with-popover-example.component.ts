@@ -3,7 +3,7 @@ import {
   ColorPickerComponent,
   ColorPickerThumbnailComponent,
   ColorPickerTriggerForDirective
-} from '@elementar-ui/components/color-picker';
+} from '@elementar-rt/components/color-picker';
 import { FormsModule } from '@angular/forms';
 
 @Component({

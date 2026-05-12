@@ -1,5 +1,5 @@
 import { Component, model } from '@angular/core';
-import { TimezoneSelectComponent } from '@elementar-ui/components/timezone-select';
+import { TimezoneSelectComponent } from '@elementar-rt/components/timezone-select';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 

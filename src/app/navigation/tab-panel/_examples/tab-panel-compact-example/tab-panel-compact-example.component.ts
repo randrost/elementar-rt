@@ -6,10 +6,10 @@ import {
   TabPanelCustomItemComponent, TabPanelFooterComponent, TabPanelHeaderComponent,
   TabPanelItemComponent,
   TabPanelItemIconDirective, TabPanelNavComponent
-} from '@elementar-ui/components/tab-panel';
-import { IconComponent } from '@elementar-ui/components/icon';
-import { HorizontalDividerComponent } from '@elementar-ui/components/divider';
-import { AvatarComponent } from '@elementar-ui/components/avatar';
+} from '@elementar-rt/components/tab-panel';
+import { IconComponent } from '@elementar-rt/components/icon';
+import { HorizontalDividerComponent } from '@elementar-rt/components/divider';
+import { AvatarComponent } from '@elementar-rt/components/avatar';
 
 @Component({
   selector: 'app-tab-panel-compact-example',

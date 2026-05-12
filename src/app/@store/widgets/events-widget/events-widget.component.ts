@@ -3,8 +3,8 @@ import {
   AvatarComponent,
   AvatarGroupComponent,
   AvatarMoreComponent,
-} from '@elementar-ui/components/avatar';
-import { DASHBOARD, Dashboard } from '@elementar-ui/components/dashboard';
+} from '@elementar-rt/components/avatar';
+import { DASHBOARD, Dashboard } from '@elementar-rt/components/dashboard';
 
 @Component({
   selector: 'emr-events-widget',

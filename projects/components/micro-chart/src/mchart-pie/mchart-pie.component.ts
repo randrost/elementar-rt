@@ -16,7 +16,7 @@ import {
   schemeTableau10,
   select
 } from 'd3';
-import { OverlayPosition } from '@elementar-ui/components/overlay';
+import { OverlayPosition } from '@elementar-rt/components/overlay';
 import { BaseChartTooltip } from '../base-chart.tooltip';
 
 @Component({

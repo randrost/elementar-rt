@@ -18,7 +18,7 @@ import { fromEvent, Subscription, merge, Subject } from 'rxjs';
 import { switchMap, takeUntil, map, filter, tap } from 'rxjs/operators';
 import { Point } from '../lazy-point';
 import { LazyBrush, LazyBrushOptions } from '../lazy-brush';
-import { BrandColorsComponent } from '@elementar-ui/components/brand-colors';
+import { BrandColorsComponent } from '@elementar-rt/components/brand-colors';
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 

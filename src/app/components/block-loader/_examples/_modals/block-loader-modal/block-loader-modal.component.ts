@@ -10,7 +10,7 @@ import {
 } from '@angular/material/dialog';
 import { MatInput, MatLabel } from '@angular/material/input';
 import { MatFormField } from '@angular/material/form-field';
-import { BlockLoaderComponent } from '@elementar-ui/components/block-loader';
+import { BlockLoaderComponent } from '@elementar-rt/components/block-loader';
 
 @Component({
   selector: 'app-block-loader-modal',

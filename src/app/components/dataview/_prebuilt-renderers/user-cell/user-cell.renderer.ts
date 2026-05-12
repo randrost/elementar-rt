@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { DataViewCellRendererComponent, DataViewColumnDef } from '@elementar-ui/components/data-view';
-import { DicebearComponent } from '@elementar-ui/components/avatar';
+import { DataViewCellRendererComponent, DataViewColumnDef } from '@elementar-rt/components/data-view';
+import { DicebearComponent } from '@elementar-rt/components/avatar';
 
 @Component({
   selector: 'app-user-cell',

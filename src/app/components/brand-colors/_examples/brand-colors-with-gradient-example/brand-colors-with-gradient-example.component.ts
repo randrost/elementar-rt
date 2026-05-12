@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { BrandColorsComponent } from '@elementar-ui/components/brand-colors';
+import { BrandColorsComponent } from '@elementar-rt/components/brand-colors';
 
 @Component({
   selector: 'app-brand-colors-with-gradient-example',

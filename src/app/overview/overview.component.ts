@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatCard, MatCardContent, MatCardFooter } from '@angular/material/card';
-import { OrderByPipe } from '@elementar-ui/components/core';
+import { OrderByPipe } from '@elementar-rt/components/core';
 
 @Component({
   imports: [

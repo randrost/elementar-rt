@@ -1,6 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { AnnouncementStore } from '@elementar-ui/components/announcement';
+import { AnnouncementStore } from '@elementar-rt/components/announcement';
 
 @Component({
   selector: 'app-show-hide-announcement-dynamically',

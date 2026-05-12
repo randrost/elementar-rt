@@ -12,7 +12,7 @@ import {
   SidebarNavItemComponent,
   SidebarNavItemIconDirective,
   SidebarNavGroupToggleIconDirective
-} from '@elementar-ui/components/sidebar';
+} from '@elementar-rt/components/sidebar';
 import { v7 as uuid } from 'uuid';
 import { MatIcon } from '@angular/material/icon';
 

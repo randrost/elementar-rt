@@ -1,5 +1,5 @@
 import { Component, inject, input, OnInit } from '@angular/core';
-import { DASHBOARD } from '@elementar-ui/components/dashboard';
+import { DASHBOARD } from '@elementar-rt/components/dashboard';
 
 @Component({
   selector: 'emr-bank-account-card',

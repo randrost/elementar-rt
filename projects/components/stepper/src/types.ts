@@ -1,4 +1,4 @@
-import { StepComponent } from '@elementar-ui/components/stepper/step.component';
+import { StepComponent } from '@elementar-rt/components/stepper/step.component';
 
 export interface StepperSelectionEvent {
   previouslySelectedIndex: number;

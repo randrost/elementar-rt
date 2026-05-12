@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { DashboardComponent, WidgetConfig, WidgetItem } from '@elementar-ui/components/dashboard';
+import { DashboardComponent, WidgetConfig, WidgetItem } from '@elementar-rt/components/dashboard';
 import { PageComponent } from '@meta/page/page.component';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
 

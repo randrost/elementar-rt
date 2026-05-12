@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LayoutBodyComponent, LayoutComponent, LayoutSidebarComponent } from '@elementar-ui/components/layout';
+import { LayoutBodyComponent, LayoutComponent, LayoutSidebarComponent } from '@elementar-rt/components/layout';
 
 @Component({
   selector: 'app-layout-sidebar-example',

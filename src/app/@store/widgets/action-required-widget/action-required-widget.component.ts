@@ -1,6 +1,6 @@
 import { Component, inject, input, OnInit } from '@angular/core';
-import { ActionRequiredComponent } from '@elementar-ui/components/action-required';
-import { DASHBOARD, Dashboard } from '@elementar-ui/components/dashboard';
+import { ActionRequiredComponent } from '@elementar-rt/components/action-required';
+import { DASHBOARD, Dashboard } from '@elementar-rt/components/dashboard';
 
 export interface ActionRequiredWidget {
   iconName?: string;

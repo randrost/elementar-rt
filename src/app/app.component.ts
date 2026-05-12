@@ -1,31 +1,31 @@
 import { afterNextRender, Component, inject, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
-import { PageLoadingBarComponent } from '@elementar-ui/components/page-loading-bar';
+import { PageLoadingBarComponent } from '@elementar-rt/components/page-loading-bar';
 import {
   AnalyticsService, EnvironmentService,
   SeoService, SoundEffectDirective,
   ThemeManagerService
-} from '@elementar-ui/components/core';
-import { AnnouncementGlobalComponent } from '@elementar-ui/components/announcement';
-import { IncidentsContainerComponent } from '@elementar-ui/components/incidents';
+} from '@elementar-rt/components/core';
+import { AnnouncementGlobalComponent } from '@elementar-rt/components/announcement';
+import { IncidentsContainerComponent } from '@elementar-rt/components/incidents';
 import {
   LayoutBodyComponent,
   LayoutComponent,
   LayoutSidebarComponent, LayoutTopbarComponent
-} from '@elementar-ui/components/layout';
+} from '@elementar-rt/components/layout';
 import { SidebarComponent } from '@app/sidebar/sidebar.component';
 import { MatAnchor, MatButton, MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatTooltip } from '@angular/material/tooltip';
-import { LogoComponent, TextLogoComponent } from '@elementar-ui/components/logo';
-import { SplashScreenComponent } from '@elementar-ui/components/splash-screen';
+import { LogoComponent, TextLogoComponent } from '@elementar-rt/components/logo';
+import { SplashScreenComponent } from '@elementar-rt/components/splash-screen';
 import {
   ColorScheme,
   ColorSchemeDarkDirective,
   ColorSchemeLightDirective,
   ColorSchemeSwitcherComponent,
-} from '@elementar-ui/components/color-scheme';
+} from '@elementar-rt/components/color-scheme';
 
 @Component({
   selector: 'app-root',
