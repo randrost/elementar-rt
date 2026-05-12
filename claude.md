@@ -10,7 +10,7 @@ This file tells Claude how to work with this project.
 
 ## Project Overview
 
-**Elementar UI** is an Angular UI component library and admin panel demo, built on top of Angular Material 3 and Tailwind CSS 4.
+**Elementar RT** is an Angular UI component library and admin panel demo, built on top of Angular Material 3 and Tailwind CSS 4.
 
 | Area | Details |
 |------|---------|

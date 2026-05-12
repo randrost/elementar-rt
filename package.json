@@ -1,14 +1,14 @@
 {
-  "name": "elementar-ui",
-  "description": "Elementar Admin - Free and open-source Angular UI components and Admin panel based on Material 3 and Tailwind",
+  "name": "elementar-rt",
+  "description": "Elementar RT - Free and open-source Angular UI components and Admin panel based on Material 3 and Tailwind",
   "version": "1.0.0",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/randrost/elementar-ui/issues"
+    "url": "https://github.com/randrost/elementar-rt/issues"
   },
   "homepage": "https://elementarui.r-tulika.me",
   "keywords": [
-    "elementar admin",
+    "Elementar RT",
     "angular admin",
     "admin panel",
     "angular dashboard",

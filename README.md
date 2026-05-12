@@ -1,4 +1,4 @@
-# Elementar UI
+# Elementar RT
 
 [Overview](https://elementarui.r-tulika.me) | [Live Demo](https://demo.elementarui.r-tulika.me) | [Documentation](https://docs.elementarui.r-tulika.me)
 
@@ -7,7 +7,7 @@
 ## Key features
 
 - Based on the most popular Angular material components
-- All components are designed from scratch specifically for the elementar admin
+- All components are designed from scratch specifically for the Elementar RT
 - It has a large number of components aimed at creating real projects
 - Free and Open Source for personal and commercial purposes
 
@@ -36,8 +36,8 @@ ng add @elementar-rt/components
 
 > **Note:** The npm package is currently being republished. If `ng add` fails, build the library locally:
 > ```bash
-> git clone https://github.com/randrost/elementar-ui.git
-> cd elementar-ui
+> git clone https://github.com/randrost/elementar-rt.git
+> cd elementar-rt
 > npm install
 > npm run build:components:prod
 > ```

@@ -1,18 +1,18 @@
 {
   "name": "@elementar-rt/components",
-  "description": "Elementar UI Components - Free and open source Angular UI components based on Material 3 and Tailwind",
+  "description": "Elementar RT Components - Free and open source Angular UI components based on Material 3 and Tailwind",
   "version": "0.6.55",
   "repository": {
     "type": "git",
-    "url": "https://github.com/randrost/elementar-ui.git"
+    "url": "https://github.com/randrost/elementar-rt.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/randrost/elementar-ui/issues"
+    "url": "https://github.com/randrost/elementar-rt/issues"
   },
   "homepage": "https://elementarui.r-tulika.me",
   "keywords": [
-    "elementar admin",
+    "Elementar RT",
     "angular admin",
     "admin panel",
     "angular dashboard",

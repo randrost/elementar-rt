@@ -6,7 +6,7 @@ import { getProjectStyleFile } from '../../utils/project';
 import { readWorkspace, writeWorkspace } from '@schematics/angular/utility';
 // import { workspaces, JsonArray } from '@angular-devkit/core';
 
-// const BOOTSTRAP_CSS_FILEPATH = 'node_modules/elementar-ui/components/styles/themes/default.scss';
+// const BOOTSTRAP_CSS_FILEPATH = 'node_modules/elementar-rt/components/styles/themes/default.scss';
 const SUPPORTED_BOOTSTRAP_STYLE_IMPORTS = {
   '.sass': `
 @use '@elementar-rt/components/styles/themes/default';
