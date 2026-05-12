@@ -46,7 +46,6 @@ metadata:
   name: elementar-rt
   namespace: elementar-rt
   annotations:
-    kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/proxy-cache-key: "$scheme$request_method$host$request_uri"
     nginx.ingress.kubernetes.io/proxy-cache-use-stale: "error timeout updating http_500 http_502 http_503 http_504"
@@ -55,6 +54,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-cache: "true"
     nginx.ingress.kubernetes.io/proxy-cache-valid: "200 302 10m"
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - elementar-rt.r-tulika.me
