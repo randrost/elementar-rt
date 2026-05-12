@@ -1,0 +1,72 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: elementar-rt
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elementar-rt
+  namespace: elementar-rt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elementar-rt
+  template:
+    metadata:
+      labels:
+        app: elementar-rt
+    spec:
+      containers:
+        - name: elementar-rt
+          image: registry.r-tulika.me/elementar-rt:latest
+          ports:
+            - containerPort: 4000
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elementar-rt
+  namespace: elementar-rt
+spec:
+  selector:
+    app: elementar-rt
+  ports:
+    - port: 80
+      targetPort: 4000
+      protocol: TCP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: elementar-rt
+  namespace: elementar-rt
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/proxy-cache-key: "$scheme$request_method$host$request_uri"
+    nginx.ingress.kubernetes.io/proxy-cache-use-stale: "error timeout updating http_500 http_502 http_503 http_504"
+    nginx.ingress.kubernetes.io/proxy-cache-revalidate: "on"
+    nginx.ingress.kubernetes.io/proxy-cache-bypass: "$http_cache_control"
+    nginx.ingress.kubernetes.io/proxy-cache: "true"
+    nginx.ingress.kubernetes.io/proxy-cache-valid: "200 302 10m"
+spec:
+  tls:
+    - hosts:
+        - elementar-rt.r-tulika.me
+      secretName: elementar-rt-tls
+  rules:
+    - host: elementar-rt.r-tulika.me
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: elementar-rt
+                port:
+                  number: 80
