@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow:
 
-Sitemap: https://demo.elementarui.r-tulika.me/sitemap.xml
+Sitemap: https://demo.elementar-rt.r-tulika.me/sitemap.xml

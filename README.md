@@ -1,6 +1,6 @@
 # Elementar RT
 
-[Overview](https://elementarui.r-tulika.me) | [Live Demo](https://demo.elementarui.r-tulika.me) | [Documentation](https://docs.elementarui.r-tulika.me)
+[Overview](https://elementar-rt.r-tulika.me) | [Live Demo](https://demo.elementar-rt.r-tulika.me) | [Documentation](https://docs.elementar-rt.r-tulika.me)
 
 # Modern Angular UI Components & Admin Panel, based on [Angular Material 3](https://material.angular.io) components and [Tailwind](https://tailwindcss.com/) css framework
 
