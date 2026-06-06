@@ -1,0 +1,10 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-chip-list-gap: --spacing(2);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--emr-chip-list-gap);
+  align-items: center;
+}

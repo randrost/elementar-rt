@@ -1,0 +1,98 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-badge-size: --spacing(5);
+  --emr-badge-dot-size: --spacing(2.5);
+  --emr-badge-font-size: theme(--text-xs);
+  --emr-badge-font-weight: 600;
+  --emr-badge-bg: var(--color-primary);
+  --emr-badge-color: var(--color-on-primary);
+  --emr-badge-border: 2px solid var(--color-surface);
+  --emr-badge-border-radius: calc(infinity * 1px);
+  --emr-badge-offset: --spacing(-1.5);
+  --emr-badge-min-width: var(--emr-badge-size);
+  --emr-badge-padding: 0 --spacing(1.5);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  .badge-indicator {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--emr-badge-min-width);
+    height: var(--emr-badge-size);
+    padding: var(--emr-badge-padding);
+    background: var(--emr-badge-bg);
+    color: var(--emr-badge-color);
+    font-size: var(--emr-badge-font-size);
+    font-weight: var(--emr-badge-font-weight);
+    border-radius: var(--emr-badge-border-radius);
+    border: var(--emr-badge-border);
+    line-height: 1;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  &[data-position="top-right"] .badge-indicator {
+    top: var(--emr-badge-offset);
+    right: var(--emr-badge-offset);
+    transform: translate(50%, -50%);
+  }
+
+  &[data-position="top-left"] .badge-indicator {
+    top: var(--emr-badge-offset);
+    left: var(--emr-badge-offset);
+    transform: translate(-50%, -50%);
+  }
+
+  &[data-position="bottom-right"] .badge-indicator {
+    bottom: var(--emr-badge-offset);
+    right: var(--emr-badge-offset);
+    transform: translate(50%, 50%);
+  }
+
+  &[data-position="bottom-left"] .badge-indicator {
+    bottom: var(--emr-badge-offset);
+    left: var(--emr-badge-offset);
+    transform: translate(-50%, 50%);
+  }
+
+  &.is-dot .badge-indicator {
+    min-width: var(--emr-badge-dot-size);
+    height: var(--emr-badge-dot-size);
+    padding: 0;
+  }
+
+  &.is-standalone {
+    position: static;
+
+    .badge-indicator {
+      position: static;
+      transform: none;
+    }
+  }
+
+  &[data-variant="primary"] {
+    --emr-badge-bg: var(--color-primary);
+    --emr-badge-color: var(--color-on-primary);
+  }
+
+  &[data-variant="success"] {
+    --emr-badge-bg: var(--color-green);
+    --emr-badge-color: var(--color-on-green);
+  }
+
+  &[data-variant="warning"] {
+    --emr-badge-bg: var(--color-orange);
+    --emr-badge-color: var(--color-on-orange);
+  }
+
+  &[data-variant="danger"] {
+    --emr-badge-bg: var(--color-red);
+    --emr-badge-color: var(--color-on-red);
+  }
+}

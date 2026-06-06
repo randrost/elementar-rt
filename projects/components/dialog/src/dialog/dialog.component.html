@@ -1,0 +1,9 @@
+<div class="dialog-panel" role="dialog" aria-modal="true" (keydown)="_onKeydown($event)">
+  @if (contentComponent()) {
+    <ng-container [ngComponentOutlet]="contentComponent()!"/>
+  }
+  @if (contentTemplate()) {
+    <ng-container [ngTemplateOutlet]="contentTemplate()!" [ngTemplateOutletContext]="{ data: data() }"/>
+  }
+  <ng-content/>
+</div>

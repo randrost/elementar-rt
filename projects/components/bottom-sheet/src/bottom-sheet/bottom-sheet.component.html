@@ -1,0 +1,10 @@
+<div class="sheet-panel" role="dialog" aria-modal="true">
+  <div class="sheet-handle"></div>
+  @if (contentComponent()) {
+    <ng-container [ngComponentOutlet]="contentComponent()!"/>
+  }
+  @if (contentTemplate()) {
+    <ng-container [ngTemplateOutlet]="contentTemplate()!"/>
+  }
+  <ng-content/>
+</div>

@@ -1,0 +1,128 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-table-border-color: var(--color-outline-variant);
+  --emr-table-header-bg: var(--color-surface-container-low);
+  --emr-table-header-color: var(--color-on-surface-variant);
+  --emr-table-header-font-weight: 600;
+  --emr-table-header-font-size: theme(--text-xs);
+  --emr-table-row-hover-bg: var(--color-surface-container);
+  --emr-table-row-selected-bg: var(--color-secondary-container);
+  --emr-table-row-striped-bg: var(--color-surface-container-lowest);
+  --emr-table-cell-padding: --spacing(3) --spacing(4);
+  --emr-table-border-radius: theme(--radius-xl);
+
+  display: block;
+  width: 100%;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: var(--emr-table-border-radius);
+  border: 1px solid var(--emr-table-border-color);
+}
+
+.emr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: theme(--text-sm);
+
+  thead {
+    background: var(--emr-table-header-bg);
+
+    &.is-sticky th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: var(--emr-table-header-bg);
+    }
+
+    th {
+      padding: var(--emr-table-cell-padding);
+      text-align: start;
+      font-weight: var(--emr-table-header-font-weight);
+      font-size: var(--emr-table-header-font-size);
+      color: var(--emr-table-header-color);
+      white-space: nowrap;
+      border-bottom: 1px solid var(--emr-table-border-color);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+
+      &.is-sortable {
+        cursor: pointer;
+        user-select: none;
+
+        &:hover .sort-icon { opacity: 1; }
+      }
+
+      &.is-sticky {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background: var(--emr-table-header-bg);
+      }
+    }
+
+    .th-content {
+      display: flex;
+      align-items: center;
+      gap: --spacing(1);
+    }
+
+    .sort-icon {
+      font-family: 'Material Icons';
+      font-size: 1rem;
+      opacity: 0.4;
+      transition: opacity 150ms;
+    }
+
+    .is-sorted .sort-icon { opacity: 1; }
+  }
+
+  tbody {
+    tr {
+      transition: background 100ms;
+      border-bottom: 1px solid var(--emr-table-border-color);
+
+      &:last-child { border-bottom: none; }
+    }
+
+    td {
+      padding: var(--emr-table-cell-padding);
+
+      &.is-sticky {
+        position: sticky;
+        left: 0;
+        background: var(--color-surface);
+        z-index: 1;
+      }
+    }
+  }
+
+  :host(.is-hoverable) tbody tr:hover {
+    background: var(--emr-table-row-hover-bg);
+  }
+
+  :host(.is-striped) tbody tr:nth-child(even) {
+    background: var(--emr-table-row-striped-bg);
+  }
+
+  :host(.is-bordered) & {
+    th, td { border: 1px solid var(--emr-table-border-color); }
+  }
+
+  .is-selected {
+    background: var(--emr-table-row-selected-bg) !important;
+  }
+
+  .col-check {
+    width: --spacing(12);
+    padding-inline: --spacing(3);
+  }
+
+  .empty-row td {
+    text-align: center;
+    padding: --spacing(12);
+    color: var(--color-on-surface-variant);
+  }
+}

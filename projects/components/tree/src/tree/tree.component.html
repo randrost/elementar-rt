@@ -1,0 +1,7 @@
+@for (node of nodes(); track node.id) {
+  <emr-tree-node
+    [node]="node"
+    [tree]="this"
+    [depth]="0"
+  />
+}

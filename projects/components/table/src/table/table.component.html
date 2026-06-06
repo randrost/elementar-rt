@@ -1,0 +1,65 @@
+<div class="table-scroll">
+  <table class="emr-table">
+    <thead [class.is-sticky]="stickyHeader()">
+      <tr>
+        @if (selectable()) {
+          <th class="col-check">
+            <input
+              type="checkbox"
+              [checked]="_allSelected()"
+              (change)="_toggleAll($any($event.target).checked)"
+              aria-label="Select all"
+            />
+          </th>
+        }
+        @for (col of columns(); track col.key) {
+          <th
+            [class.is-sortable]="col.sortable"
+            [class.is-sorted]="_sortColumn() === col.key"
+            [style.width]="col.width || ''"
+            [class.is-sticky]="col.sticky"
+            (click)="_onSort(col)"
+          >
+            <span class="th-content">
+              {{ col.label }}
+              @if (col.sortable) {
+                <span class="sort-icon">{{ _sortIcon(col) }}</span>
+              }
+            </span>
+          </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of rows(); track $index) {
+        <tr [class.is-selected]="_isSelected(row)">
+          @if (selectable()) {
+            <td class="col-check">
+              <input
+                type="checkbox"
+                [checked]="_isSelected(row)"
+                (change)="_toggleRow(row, $any($event.target).checked)"
+                [attr.aria-label]="'Select row ' + $index"
+              />
+            </td>
+          }
+          @if (rowTemplate()) {
+            <ng-container [ngTemplateOutlet]="rowTemplate()!" [ngTemplateOutletContext]="{ $implicit: row, index: $index }"/>
+          } @else {
+            @for (col of columns(); track col.key) {
+              <td [class.is-sticky]="col.sticky">{{ _cellValue(row, col) }}</td>
+            }
+          }
+        </tr>
+      }
+      @if (rows().length === 0) {
+        <tr class="empty-row">
+          <td [attr.colspan]="columns().length + (selectable() ? 1 : 0)">
+            <ng-content select="[emrTableEmpty]"/>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<ng-content select="emr-paginator"/>

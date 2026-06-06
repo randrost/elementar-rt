@@ -1,0 +1,37 @@
+<div
+  class="tn-row"
+  [style.padding-inline-start.px]="depth() * 20 + 8"
+  [class.is-selected]="tree()._isSelected(node())"
+  (click)="tree()._toggleSelect(node())"
+>
+  @if (node().children?.length) {
+    <button
+      class="tn-expand"
+      type="button"
+      (click)="$event.stopPropagation(); tree()._toggleExpand(node())"
+      [attr.aria-expanded]="tree()._isExpanded(node())"
+    >
+      <svg class="tn-chevron" [class.is-open]="tree()._isExpanded(node())" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+      </svg>
+    </button>
+  } @else {
+    <span class="tn-leaf-indent"></span>
+  }
+
+  @if (tree().checkable()) {
+    <input type="checkbox" [checked]="tree()._isChecked(node())" (click)="$event.stopPropagation(); tree()._toggleCheck(node())"/>
+  }
+
+  @if (node().icon) {
+    <span class="tn-icon">{{ node().icon }}</span>
+  }
+
+  <span class="tn-label">{{ node().label }}</span>
+</div>
+
+@if (tree()._isExpanded(node()) && node().children?.length) {
+  @for (child of node().children; track child.id) {
+    <emr-tree-node [node]="child" [tree]="tree()" [depth]="depth() + 1"/>
+  }
+}

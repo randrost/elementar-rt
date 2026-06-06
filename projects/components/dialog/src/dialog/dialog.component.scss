@@ -1,0 +1,55 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-dialog-overlay-bg: color-mix(in srgb, var(--color-scrim) 50%, transparent);
+  --emr-dialog-bg: var(--color-surface-container-high);
+  --emr-dialog-border-radius: theme(--radius-3xl);
+  --emr-dialog-padding: --spacing(6);
+  --emr-dialog-max-height: 90dvh;
+  --emr-dialog-width-sm: --spacing(80);
+  --emr-dialog-width-md: --spacing(120);
+  --emr-dialog-width-lg: --spacing(160);
+  --emr-dialog-width-xl: --spacing(200);
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--emr-dialog-overlay-bg);
+  animation: dialogFadeIn 150ms ease;
+}
+
+.dialog-panel {
+  background: var(--emr-dialog-bg);
+  border-radius: var(--emr-dialog-border-radius);
+  padding: var(--emr-dialog-padding);
+  max-height: var(--emr-dialog-max-height);
+  overflow-y: auto;
+  width: var(--emr-dialog-width-md);
+  max-width: calc(100vw - --spacing(8));
+  box-shadow: 0 24px 48px -12px color-mix(in srgb, var(--color-shadow) 25%, transparent);
+  animation: dialogSlideIn 200ms ease;
+
+  :host([data-size="sm"]) & { width: var(--emr-dialog-width-sm); }
+  :host([data-size="lg"]) & { width: var(--emr-dialog-width-lg); }
+  :host([data-size="xl"]) & { width: var(--emr-dialog-width-xl); }
+  :host([data-size="fullscreen"]) & {
+    width: 100vw;
+    height: 100dvh;
+    max-width: 100vw;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+}
+
+@keyframes dialogFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes dialogSlideIn {
+  from { transform: translateY(--spacing(4)); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

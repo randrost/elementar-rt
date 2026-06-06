@@ -1,0 +1,16 @@
+<div class="ep-header" (click)="_toggle()" [attr.aria-expanded]="expanded()">
+  <span class="ep-title">
+    <ng-content select="emr-expansion-panel-title,[emrExpansionPanelTitle]"/>
+  </span>
+  <span class="ep-description">
+    <ng-content select="emr-expansion-panel-description,[emrExpansionPanelDescription]"/>
+  </span>
+  <svg class="ep-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+  </svg>
+</div>
+<div class="ep-body">
+  <div class="ep-content">
+    <ng-content/>
+  </div>
+</div>

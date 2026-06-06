@@ -1,0 +1,70 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-chip-height: --spacing(8);
+  --emr-chip-padding: 0 --spacing(3);
+  --emr-chip-gap: --spacing(1.5);
+  --emr-chip-font-size: theme(--text-sm);
+  --emr-chip-font-weight: 500;
+  --emr-chip-border-radius: calc(infinity * 1px);
+  --emr-chip-bg: var(--color-surface-container-high);
+  --emr-chip-color: var(--color-on-surface);
+  --emr-chip-border: 1px solid var(--color-outline-variant);
+  --emr-chip-selected-bg: var(--color-secondary-container);
+  --emr-chip-selected-color: var(--color-on-secondary-container);
+  --emr-chip-disabled-opacity: 0.38;
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--emr-chip-gap);
+  height: var(--emr-chip-height);
+  padding: var(--emr-chip-padding);
+  font-size: var(--emr-chip-font-size);
+  font-weight: var(--emr-chip-font-weight);
+  border-radius: var(--emr-chip-border-radius);
+  background: var(--emr-chip-bg);
+  color: var(--emr-chip-color);
+  border: var(--emr-chip-border);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background 150ms ease, color 150ms ease;
+
+  &.is-selected {
+    background: var(--emr-chip-selected-bg);
+    color: var(--emr-chip-selected-color);
+    border-color: transparent;
+  }
+
+  &.is-disabled {
+    opacity: var(--emr-chip-disabled-opacity);
+    pointer-events: none;
+  }
+
+  .chip-leading {
+    display: contents;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .chip-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: --spacing(4.5);
+    height: --spacing(4.5);
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+    margin-inline-end: --spacing(-1);
+
+    &:hover {
+      background: color-mix(in srgb, currentColor 12%, transparent);
+    }
+  }
+}

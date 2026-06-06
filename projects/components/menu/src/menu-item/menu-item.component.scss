@@ -1,0 +1,42 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-menu-item-height: --spacing(10);
+  --emr-menu-item-padding: 0 --spacing(3);
+  --emr-menu-item-border-radius: theme(--radius-xl);
+  --emr-menu-item-gap: --spacing(2.5);
+  --emr-menu-item-font-size: theme(--text-sm);
+  --emr-menu-item-color: var(--color-on-surface);
+  --emr-menu-item-hover-bg: var(--color-surface-container-high);
+  --emr-menu-item-danger-color: var(--color-error);
+
+  display: flex;
+  align-items: center;
+  gap: var(--emr-menu-item-gap);
+  min-height: var(--emr-menu-item-height);
+  padding: var(--emr-menu-item-padding);
+  border-radius: var(--emr-menu-item-border-radius);
+  font-size: var(--emr-menu-item-font-size);
+  color: var(--emr-menu-item-color);
+  cursor: pointer;
+  user-select: none;
+  transition: background 100ms;
+
+  &:hover:not(.is-disabled) {
+    background: var(--emr-menu-item-hover-bg);
+  }
+
+  &.is-disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+  }
+
+  &.is-danger { color: var(--emr-menu-item-danger-color); }
+
+  .item-icon, .item-trailing {
+    display: contents;
+    &:empty { display: none; }
+  }
+
+  .item-label { flex: 1; }
+}

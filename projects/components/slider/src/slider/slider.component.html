@@ -1,0 +1,28 @@
+<div class="sl-track">
+  <div class="sl-fill" [style]="_fillStyle"></div>
+  <input
+    class="sl-input"
+    type="range"
+    [min]="min()"
+    [max]="max()"
+    [step]="step()"
+    [value]="value()"
+    [disabled]="disabled()"
+    (input)="_onInput($event, 'low')"
+  />
+  @if (range()) {
+    <input
+      class="sl-input sl-input-high"
+      type="range"
+      [min]="min()"
+      [max]="max()"
+      [step]="step()"
+      [value]="valueHigh()"
+      [disabled]="disabled()"
+      (input)="_onInput($event, 'high')"
+    />
+  }
+</div>
+@if (showValue()) {
+  <span class="sl-value">{{ range() ? value() + ' – ' + valueHigh() : value() }}</span>
+}

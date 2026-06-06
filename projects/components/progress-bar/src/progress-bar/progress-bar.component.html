@@ -1,0 +1,6 @@
+<div class="pb-track">
+  @if (mode() === 'buffer') {
+    <div class="pb-buffer" [style.width]="_bufferWidth()"></div>
+  }
+  <div class="pb-fill" [style.width]="mode() === 'determinate' ? _fillWidth() : '100%'"></div>
+</div>

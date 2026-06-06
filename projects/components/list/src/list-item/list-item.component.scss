@@ -1,0 +1,33 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-li-height: --spacing(14);
+  --emr-li-padding: 0 --spacing(4);
+  --emr-li-gap: --spacing(3);
+  --emr-li-selected-bg: var(--color-secondary-container);
+  --emr-li-hover-bg: var(--color-surface-container);
+
+  display: flex;
+  align-items: center;
+  gap: var(--emr-li-gap);
+  min-height: var(--emr-li-height);
+  padding: var(--emr-li-padding);
+
+  &.is-interactive {
+    cursor: pointer;
+    border-radius: theme(--radius-xl);
+    transition: background 100ms;
+
+    &:hover:not(.is-disabled) { background: var(--emr-li-hover-bg); }
+  }
+
+  &.is-selected { background: var(--emr-li-selected-bg); border-radius: theme(--radius-xl); }
+  &.is-disabled { opacity: 0.38; pointer-events: none; }
+
+  .li-leading { display: contents; &:empty { display: none; } }
+  .li-trailing { display: contents; margin-inline-start: auto; &:empty { display: none; } }
+
+  .li-body { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+  .li-title { font-size: theme(--text-sm); font-weight: 500; color: var(--color-on-surface); }
+  .li-subtitle { font-size: theme(--text-xs); color: var(--color-on-surface-variant); margin-top: --spacing(0.5); &:empty { display: none; } }
+}

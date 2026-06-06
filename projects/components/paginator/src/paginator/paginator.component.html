@@ -1,0 +1,31 @@
+<span class="pag-info">{{ _startItem() }}–{{ _endItem() }} of {{ length() }}</span>
+
+<div class="pag-size">
+  <span>Rows:</span>
+  <select [value]="pageSize()" (change)="_onPageSizeChange($event)">
+    @for (size of pageSizeOptions(); track size) {
+      <option [value]="size">{{ size }}</option>
+    }
+  </select>
+</div>
+
+<nav class="pag-nav" aria-label="Pagination">
+  @if (showFirstLastButtons()) {
+    <button class="pag-btn" [disabled]="pageIndex() === 0" (click)="_go(0)" aria-label="First page">&#171;</button>
+  }
+  <button class="pag-btn" [disabled]="pageIndex() === 0" (click)="_go(pageIndex() - 1)" aria-label="Previous page">&#8249;</button>
+
+  @for (page of _pages; track page) {
+    <button
+      class="pag-btn pag-page"
+      [class.is-active]="pageIndex() === page"
+      (click)="_go(page)"
+      [attr.aria-current]="pageIndex() === page ? 'page' : null"
+    >{{ page + 1 }}</button>
+  }
+
+  <button class="pag-btn" [disabled]="pageIndex() === _totalPages() - 1" (click)="_go(pageIndex() + 1)" aria-label="Next page">&#8250;</button>
+  @if (showFirstLastButtons()) {
+    <button class="pag-btn" [disabled]="pageIndex() === _totalPages() - 1" (click)="_go(_totalPages() - 1)" aria-label="Last page">&#187;</button>
+  }
+</nav>

@@ -1,0 +1,77 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-snackbar-bg: var(--color-inverse-surface);
+  --emr-snackbar-color: var(--color-inverse-on-surface);
+  --emr-snackbar-border-radius: theme(--radius-xl);
+  --emr-snackbar-padding: --spacing(3) --spacing(4);
+  --emr-snackbar-font-size: theme(--text-sm);
+  --emr-snackbar-action-color: var(--color-inverse-primary);
+  --emr-snackbar-min-width: --spacing(72);
+  --emr-snackbar-max-width: --spacing(120);
+
+  display: flex;
+  align-items: center;
+  gap: --spacing(3);
+  min-width: var(--emr-snackbar-min-width);
+  max-width: var(--emr-snackbar-max-width);
+  padding: var(--emr-snackbar-padding);
+  background: var(--emr-snackbar-bg);
+  color: var(--emr-snackbar-color);
+  border-radius: var(--emr-snackbar-border-radius);
+  font-size: var(--emr-snackbar-font-size);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-shadow) 20%, transparent);
+  animation: snackbarIn 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &[data-variant="success"] { --emr-snackbar-bg: var(--color-green); --emr-snackbar-color: var(--color-on-green); }
+  &[data-variant="error"]   { --emr-snackbar-bg: var(--color-red); --emr-snackbar-color: var(--color-on-red); }
+  &[data-variant="warning"] { --emr-snackbar-bg: var(--color-orange); --emr-snackbar-color: var(--color-on-orange); }
+  &[data-variant="info"]    { --emr-snackbar-bg: var(--color-blue); --emr-snackbar-color: var(--color-on-blue); }
+}
+
+.snackbar-message {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.snackbar-actions {
+  display: flex;
+  align-items: center;
+  gap: --spacing(1);
+  flex-shrink: 0;
+}
+
+.snackbar-action {
+  font-size: var(--emr-snackbar-font-size);
+  font-weight: 600;
+  color: var(--emr-snackbar-action-color);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: --spacing(1) --spacing(2);
+  border-radius: theme(--radius-lg);
+  letter-spacing: 0.03em;
+
+  &:hover { background: color-mix(in srgb, currentColor 12%, transparent); }
+}
+
+.snackbar-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: --spacing(8);
+  height: --spacing(8);
+  background: transparent;
+  border: none;
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:hover { opacity: 1; background: color-mix(in srgb, currentColor 12%, transparent); }
+}
+
+@keyframes snackbarIn {
+  from { transform: translateY(--spacing(4)); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}

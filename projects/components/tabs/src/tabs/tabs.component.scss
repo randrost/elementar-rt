@@ -1,0 +1,118 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-tabs-bar-gap: --spacing(1);
+  --emr-tabs-bar-border-color: var(--color-outline-variant);
+  --emr-tabs-header-height: --spacing(10);
+  --emr-tabs-header-padding: 0 --spacing(4);
+  --emr-tabs-header-border-radius: theme(--radius-lg);
+  --emr-tabs-header-font-size: theme(--text-sm);
+  --emr-tabs-header-font-weight: 500;
+  --emr-tabs-header-color: var(--color-on-surface-variant);
+  --emr-tabs-header-active-color: var(--color-primary);
+  --emr-tabs-header-active-bg: var(--color-secondary-container);
+  --emr-tabs-header-hover-bg: var(--color-surface-container);
+  --emr-tabs-indicator-height: 2px;
+  --emr-tabs-indicator-color: var(--color-primary);
+  --emr-tabs-content-padding: --spacing(4) 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--emr-tabs-bar-gap);
+  border-bottom: 1px solid var(--emr-tabs-bar-border-color);
+
+  :host(.is-scrollable) & {
+    overflow-x: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+}
+
+.tab-header {
+  display: flex;
+  align-items: center;
+  gap: --spacing(2);
+  height: var(--emr-tabs-header-height);
+  padding: var(--emr-tabs-header-padding);
+  font-size: var(--emr-tabs-header-font-size);
+  font-weight: var(--emr-tabs-header-font-weight);
+  color: var(--emr-tabs-header-color);
+  background: transparent;
+  border: none;
+  border-radius: var(--emr-tabs-header-border-radius);
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: color 150ms, background 150ms;
+
+  &:hover:not(:disabled) {
+    background: var(--emr-tabs-header-hover-bg);
+  }
+
+  &.is-active {
+    color: var(--emr-tabs-header-active-color);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: var(--emr-tabs-indicator-height);
+      background: var(--emr-tabs-indicator-color);
+      border-radius: var(--emr-tabs-indicator-height) var(--emr-tabs-indicator-height) 0 0;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+  }
+}
+
+.tab-content {
+  padding: var(--emr-tabs-content-padding);
+}
+
+/* pills variant */
+:host([data-variant="pills"]) {
+  .tab-bar {
+    border-bottom: none;
+    background: var(--color-surface-container-low);
+    border-radius: theme(--radius-xl);
+    padding: --spacing(1);
+  }
+
+  .tab-header {
+    border-radius: theme(--radius-lg);
+
+    &.is-active {
+      background: var(--color-surface);
+      color: var(--color-on-surface);
+      box-shadow: 0 1px 3px color-mix(in srgb, var(--color-shadow) 12%, transparent);
+
+      &::after { display: none; }
+    }
+  }
+}
+
+/* underline variant */
+:host([data-variant="underline"]) {
+  .tab-bar { background: transparent; }
+
+  .tab-header {
+    border-radius: 0;
+    padding: 0 --spacing(1);
+    height: --spacing(12);
+
+    &.is-active::after {
+      height: 3px;
+      border-radius: 3px 3px 0 0;
+    }
+  }
+}

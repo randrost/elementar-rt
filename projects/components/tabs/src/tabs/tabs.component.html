@@ -1,0 +1,25 @@
+<div class="tab-bar" role="tablist">
+  @for (tab of _tabs(); track $index) {
+    <button
+      class="tab-header"
+      role="tab"
+      [class.is-active]="activeIndex() === $index"
+      [disabled]="tab.disabled()"
+      [attr.aria-selected]="activeIndex() === $index"
+      (click)="_select($index)"
+      type="button"
+    >
+      @if (tab.icon()) {
+        <span class="tab-icon">{{ tab.icon() }}</span>
+      }
+      {{ tab.label() }}
+    </button>
+  }
+</div>
+<div class="tab-content" role="tabpanel">
+  @for (tab of _tabs(); track $index) {
+    @if (activeIndex() === $index) {
+      <ng-container [ngTemplateOutlet]="tab.contentRef()"/>
+    }
+  }
+</div>

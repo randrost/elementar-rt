@@ -1,0 +1,30 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-menu-bg: var(--color-surface-container);
+  --emr-menu-border-radius: theme(--radius-2xl);
+  --emr-menu-padding: --spacing(1.5);
+  --emr-menu-min-width: --spacing(48);
+  --emr-menu-shadow: 0 8px 24px color-mix(in srgb, var(--color-shadow) 15%, transparent);
+  --emr-menu-border: 1px solid var(--color-outline-variant);
+
+  display: none;
+  flex-direction: column;
+  min-width: var(--emr-menu-min-width);
+  background: var(--emr-menu-bg);
+  border-radius: var(--emr-menu-border-radius);
+  padding: var(--emr-menu-padding);
+  box-shadow: var(--emr-menu-shadow);
+  border: var(--emr-menu-border);
+  z-index: 100;
+  animation: menuIn 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+@keyframes menuIn {
+  from { opacity: 0; transform: scale(0.95) translateY(--spacing(-1)); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}

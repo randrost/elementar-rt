@@ -1,0 +1,71 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-pag-height: --spacing(12);
+  --emr-pag-btn-size: --spacing(9);
+  --emr-pag-btn-radius: theme(--radius-lg);
+  --emr-pag-active-bg: var(--color-primary);
+  --emr-pag-active-color: var(--color-on-primary);
+  --emr-pag-hover-bg: var(--color-surface-container-high);
+
+  display: flex;
+  align-items: center;
+  gap: --spacing(3);
+  padding: --spacing(2) 0;
+  flex-wrap: wrap;
+}
+
+.pag-info {
+  font-size: theme(--text-sm);
+  color: var(--color-on-surface-variant);
+  margin-inline-end: auto;
+}
+
+.pag-size {
+  display: flex;
+  align-items: center;
+  gap: --spacing(2);
+  font-size: theme(--text-sm);
+  color: var(--color-on-surface-variant);
+
+  select {
+    border: 1px solid var(--color-outline);
+    border-radius: theme(--radius-lg);
+    padding: --spacing(1) --spacing(2);
+    background: var(--color-surface);
+    font-size: theme(--text-sm);
+    color: var(--color-on-surface);
+    cursor: pointer;
+  }
+}
+
+.pag-nav {
+  display: flex;
+  align-items: center;
+  gap: --spacing(0.5);
+}
+
+.pag-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--emr-pag-btn-size);
+  height: var(--emr-pag-btn-size);
+  padding: 0 --spacing(2);
+  background: transparent;
+  border: none;
+  border-radius: var(--emr-pag-btn-radius);
+  font-size: theme(--text-sm);
+  color: var(--color-on-surface);
+  cursor: pointer;
+  transition: background 100ms;
+
+  &:hover:not(:disabled) { background: var(--emr-pag-hover-bg); }
+  &:disabled { opacity: 0.38; cursor: not-allowed; }
+
+  &.is-active {
+    background: var(--emr-pag-active-bg);
+    color: var(--emr-pag-active-color);
+    font-weight: 600;
+  }
+}

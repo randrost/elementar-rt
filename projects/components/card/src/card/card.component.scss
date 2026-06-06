@@ -1,0 +1,43 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-card-bg: var(--color-surface-container-low);
+  --emr-card-border-radius: theme(--radius-3xl);
+  --emr-card-border: 1px solid transparent;
+  --emr-card-shadow: 0 1px 3px color-mix(in srgb, var(--color-shadow) 8%, transparent),
+                     0 4px 12px color-mix(in srgb, var(--color-shadow) 6%, transparent);
+  --emr-card-padding: --spacing(5);
+  --emr-card-gap: --spacing(0);
+
+  display: flex;
+  flex-direction: column;
+  background: var(--emr-card-bg);
+  border-radius: var(--emr-card-border-radius);
+  border: var(--emr-card-border);
+  overflow: hidden;
+
+  &[data-variant="elevated"] {
+    box-shadow: var(--emr-card-shadow);
+  }
+
+  &[data-variant="outlined"] {
+    --emr-card-bg: var(--color-surface);
+    --emr-card-border: 1px solid var(--color-outline-variant);
+    box-shadow: none;
+  }
+
+  &[data-variant="flat"] {
+    --emr-card-bg: var(--color-surface-container-low);
+    box-shadow: none;
+  }
+
+  &.is-interactive {
+    cursor: pointer;
+    transition: box-shadow 150ms ease, transform 150ms ease;
+
+    &:hover {
+      box-shadow: 0 4px 16px color-mix(in srgb, var(--color-shadow) 12%, transparent);
+      transform: translateY(-1px);
+    }
+  }
+}
