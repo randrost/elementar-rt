@@ -1,0 +1,45 @@
+@if (_open()) {
+  <div class="vv-backdrop" (click)="_close()">
+    <div class="vv-player" (click)="$event.stopPropagation()">
+      <button type="button" class="vv-close" (click)="_close()" aria-label="Close">×</button>
+
+      @if (_videoType() === 'mp4') {
+        <video
+          class="vv-video"
+          [src]="src()"
+          [poster]="poster()"
+          [muted]="_muted()"
+          [volume]="_volume()"
+          [autoplay]="true"
+          (timeupdate)="_onTimeUpdate($event)"
+          (play)="_playing.set(true)"
+          (pause)="_playing.set(false)"
+          (click)="_togglePlay()"
+        ></video>
+        <div class="vv-controls">
+          <button type="button" class="vv-btn" (click)="_togglePlay()">
+            @if (_playing()) { ⏸ } @else { ▶ }
+          </button>
+          <span class="vv-time">{{ _formatTime(_currentTime()) }} / {{ _formatTime(_duration()) }}</span>
+          <input
+            type="range" class="vv-seek" min="0" max="100"
+            [value]="_progress()"
+            (change)="_onSeek($event)"
+          />
+          <button type="button" class="vv-btn" (click)="_toggleMute()">
+            @if (_muted()) { 🔇 } @else { 🔊 }
+          </button>
+          <button type="button" class="vv-btn" (click)="_fullscreen()">⛶</button>
+        </div>
+      } @else {
+        <iframe
+          class="vv-embed"
+          [src]="_embedUrl()"
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay; fullscreen; picture-in-picture"
+        ></iframe>
+      }
+    </div>
+  </div>
+}
