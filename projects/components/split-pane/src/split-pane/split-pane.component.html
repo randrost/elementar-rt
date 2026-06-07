@@ -1,0 +1,14 @@
+<div class="pane pane--first" [style.flex-basis.%]="_firstSize()">
+  <ng-content select="[emrSplitFirst]" />
+</div>
+<div
+  class="split-divider"
+  role="separator"
+  [attr.aria-orientation]="orientation()"
+  (mousedown)="_onDividerMouseDown($event)"
+>
+  <div class="divider-handle"></div>
+</div>
+<div class="pane pane--second" [style.flex-basis.%]="100 - _firstSize()">
+  <ng-content select="[emrSplitSecond]" />
+</div>

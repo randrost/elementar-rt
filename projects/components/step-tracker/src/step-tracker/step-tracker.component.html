@@ -1,0 +1,24 @@
+<div class="steps-list">
+  @for (step of _resolvedSteps(); track step.index; let last = $last) {
+    <div class="step-item" [attr.data-state]="step.state">
+      <div class="step-indicator">
+        <div class="step-circle">
+          @if (step.state === 'completed') {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          } @else {
+            <span>{{ step.index }}</span>
+          }
+        </div>
+        @if (!last) { <div class="step-line"></div> }
+      </div>
+      <div class="step-content">
+        <span class="step-label">{{ step.label }}</span>
+        @if (step.description) {
+          <span class="step-description">{{ step.description }}</span>
+        }
+      </div>
+    </div>
+  }
+</div>

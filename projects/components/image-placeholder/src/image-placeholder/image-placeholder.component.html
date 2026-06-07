@@ -1,0 +1,39 @@
+@if (mode() === 'blur' && lowResSrc() && !_loaded()) {
+  <img class="img-blur-preview" [src]="lowResSrc()" [alt]="alt()" aria-hidden="true" />
+}
+
+@if (!_error()) {
+  <img
+    class="img-main"
+    [src]="src()"
+    [alt]="alt()"
+    (load)="_onLoad()"
+    (error)="_onError()"
+  />
+}
+
+@if (!_loaded() && !_error()) {
+  @if (mode() === 'skeleton') {
+    <div class="img-skeleton"></div>
+  } @else if (mode() === 'icon') {
+    <div class="img-icon-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+    </div>
+  }
+}
+
+@if (_error()) {
+  <ng-content select="[emrErrorSlot]">
+    <div class="img-error-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="12"/>
+        <line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+    </div>
+  </ng-content>
+}

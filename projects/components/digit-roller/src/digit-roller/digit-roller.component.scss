@@ -1,0 +1,37 @@
+@reference 'tailwindcss';
+
+:host {
+  display: inline-flex;
+  align-items: baseline;
+  font-variant-numeric: tabular-nums;
+}
+
+.roller-wrapper {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.digit-column {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.2em;
+  position: relative;
+}
+
+.digit-strip {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(var(--target, 0) * -1.2em));
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.digit {
+  display: block;
+  height: 1.2em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.separator {
+  display: inline-block;
+}

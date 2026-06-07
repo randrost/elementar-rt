@@ -1,0 +1,15 @@
+<span class="roller-wrapper">
+  @for (char of _chars(); track $index) {
+    @if (_isDigit(char)) {
+      <span class="digit-column" [attr.data-digit]="char">
+        <span class="digit-strip" [style.--target]="char">
+          @for (d of [0,1,2,3,4,5,6,7,8,9]; track d) {
+            <span class="digit">{{ d }}</span>
+          }
+        </span>
+      </span>
+    } @else {
+      <span class="separator">{{ char }}</span>
+    }
+  }
+</span>

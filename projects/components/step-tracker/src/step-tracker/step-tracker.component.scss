@@ -1,0 +1,122 @@
+@reference 'tailwindcss';
+
+:host {
+  display: block;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+
+  :host([data-orientation="vertical"]) & {
+    flex-direction: column;
+  }
+}
+
+.step-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  :host([data-orientation="vertical"]) & {
+    flex-direction: row;
+    align-items: flex-start;
+    flex: none;
+  }
+}
+
+.step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+
+  :host([data-orientation="vertical"]) & {
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    margin-right: --spacing(3);
+  }
+}
+
+.step-circle {
+  width: --spacing(9);
+  height: --spacing(9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: theme(--text-sm);
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: all 200ms ease;
+  border: 2px solid var(--color-outline-variant);
+  background: var(--color-surface);
+  color: var(--color-on-surface-variant);
+  z-index: 1;
+
+  svg { width: --spacing(4); height: --spacing(4); }
+
+  .step-item[data-state="active"] & {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+
+  .step-item[data-state="completed"] & {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  width: 100%;
+  background: var(--color-outline-variant);
+  margin: --spacing(1) 0;
+  transition: background 200ms ease;
+
+  :host([data-orientation="vertical"]) & {
+    width: 2px;
+    height: --spacing(8);
+    margin: --spacing(1) 0;
+    flex: none;
+  }
+
+  .step-item[data-state="completed"] & { background: var(--color-primary); }
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: --spacing(2) --spacing(1) 0;
+  text-align: center;
+
+  :host([data-orientation="vertical"]) & {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 0 --spacing(6) 0;
+  }
+}
+
+.step-label {
+  font-size: theme(--text-sm);
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+
+  .step-item[data-state="active"] & { color: var(--color-primary); }
+  .step-item[data-state="completed"] & { color: var(--color-on-surface); }
+}
+
+.step-description {
+  font-size: theme(--text-xs);
+  color: var(--color-on-surface-variant);
+  margin-top: --spacing(0.5);
+}
