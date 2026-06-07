@@ -1,0 +1,104 @@
+@reference 'tailwindcss';
+
+:host {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: theme(--radius-xl);
+  background: var(--color-surface);
+}
+
+.grid-container {
+  --grid-cols: 1fr;
+}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: var(--grid-cols);
+  background: var(--color-surface-container);
+  border-bottom: 2px solid var(--color-outline-variant);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: var(--grid-cols);
+  border-bottom: 1px solid var(--color-outline-variant);
+  transition: background 100ms ease;
+
+  &:hover { background: var(--color-surface-container); }
+  &[data-selected] { background: var(--color-primary-container); }
+  &:last-child { border-bottom: none; }
+}
+
+.grid-cell {
+  display: flex;
+  align-items: center;
+  padding: 0 --spacing(3);
+  font-size: theme(--text-sm);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+
+  &--header {
+    font-weight: 600;
+    font-size: theme(--text-xs);
+    color: var(--color-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    gap: --spacing(1);
+    user-select: none;
+
+    &[data-sortable] { cursor: pointer; &:hover { color: var(--color-on-surface); } }
+    &[data-sorted] { color: var(--color-primary); }
+  }
+
+  &--check {
+    justify-content: center;
+    padding: 0;
+  }
+
+  &[data-editable] { cursor: cell; }
+}
+
+.sort-icon { font-size: theme(--text-xs); opacity: 0.7; }
+
+.cell-input {
+  width: 100%;
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: theme(--radius-sm);
+  padding: --spacing(0.5) --spacing(1);
+  font-size: theme(--text-sm);
+  outline: none;
+  color: var(--color-on-surface);
+}
+
+.grid-body {
+  display: block;
+}
+
+.grid-loading,
+.grid-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: --spacing(3);
+  padding: --spacing(10);
+  color: var(--color-on-surface-variant);
+  font-size: theme(--text-sm);
+}
+
+.loading-spinner {
+  width: --spacing(5);
+  height: --spacing(5);
+  border: 2px solid var(--color-outline-variant);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,86 @@
+<div class="cal-toolbar">
+  <div class="cal-nav">
+    <button type="button" class="nav-btn" (click)="_navigate(-1)" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <span class="cal-title">{{ _title() }}</span>
+    <button type="button" class="nav-btn" (click)="_navigate(1)" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+  <div class="cal-actions">
+    <button type="button" class="today-btn" (click)="_goToToday()">Today</button>
+    <div class="view-switcher">
+      @for (v of ['month','week','day']; track v) {
+        <button type="button" class="view-btn" [attr.data-active]="view() === v || null" (click)="_setView(v)">{{ v | titlecase }}</button>
+      }
+    </div>
+  </div>
+</div>
+
+@if (view() === 'month') {
+  <div class="cal-grid-month">
+    @for (day of _DAYS; track day) {
+      <div class="cal-day-header">{{ day }}</div>
+    }
+    @for (day of _calendarDays(); track day.toISOString()) {
+      <div
+        class="cal-cell"
+        [attr.data-today]="_isToday(day) || null"
+        [attr.data-other-month]="!_isCurrentMonth(day) || null"
+        [attr.data-selected]="_isSelected(day) || null"
+        (click)="_onDateClick(day)"
+      >
+        <span class="cal-date-num">{{ day.getDate() }}</span>
+        <div class="cal-events">
+          @for (ev of _getEventsForDay(day); track ev.id) {
+            <div class="cal-event" [style.background]="ev.color || null" (click)="_onEventClick(ev, $event)">
+              {{ ev.title }}
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+}
+
+@if (view() === 'week') {
+  <div class="cal-week-header">
+    <div class="time-gutter"></div>
+    @for (day of _weekDays(); track day.toISOString()) {
+      <div class="week-day-label" [attr.data-today]="_isToday(day) || null">
+        <span class="week-day-name">{{ _DAYS[day.getDay()] }}</span>
+        <span class="week-day-num" [attr.data-today]="_isToday(day) || null">{{ day.getDate() }}</span>
+      </div>
+    }
+  </div>
+  <div class="cal-week-body">
+    @for (hour of _hours; track hour) {
+      <div class="time-row">
+        <div class="time-label">{{ _formatHour(hour) }}</div>
+        @for (day of _weekDays(); track day.toISOString()) {
+          <div class="time-cell" (click)="_onDateClick(day)">
+            @for (ev of _getEventsForHour(day, hour); track ev.id) {
+              <div class="cal-event" [style.background]="ev.color || null" (click)="_onEventClick(ev, $event)">{{ ev.title }}</div>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+}
+
+@if (view() === 'day') {
+  <div class="cal-day-view">
+    @for (hour of _hours; track hour) {
+      <div class="time-row">
+        <div class="time-label">{{ _formatHour(hour) }}</div>
+        <div class="time-cell" (click)="_onDateClick(date())">
+          @for (ev of _getEventsForHour(date(), hour); track ev.id) {
+            <div class="cal-event" [style.background]="ev.color || null" (click)="_onEventClick(ev, $event)">{{ ev.title }}</div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+}

@@ -1,0 +1,82 @@
+<div class="grid-container" [style.--grid-cols]="_gridTemplateColumns()">
+  <!-- Header -->
+  <div class="grid-header">
+    @if (selectable()) {
+      <div class="grid-cell grid-cell--check">
+        @if (multiSelect()) {
+          <input type="checkbox" [checked]="_allSelected()" (change)="_toggleAll()" />
+        }
+      </div>
+    }
+    @for (col of columns(); track col.field) {
+      <div
+        class="grid-cell grid-cell--header"
+        [attr.data-sortable]="col.sortable || null"
+        [attr.data-sorted]="_sortField() === col.field || null"
+        [attr.data-sort-dir]="_sortField() === col.field ? _sortDir() : null"
+        (click)="_sort(col)"
+      >
+        <span>{{ col.header }}</span>
+        @if (col.sortable) {
+          <span class="sort-icon">
+            @if (_sortField() === col.field && _sortDir() === 'asc') { ↑ }
+            @else if (_sortField() === col.field && _sortDir() === 'desc') { ↓ }
+            @else { ↕ }
+          </span>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Virtual scroll body -->
+  @if (loading()) {
+    <div class="grid-loading">
+      <div class="loading-spinner"></div>
+      <span>Loading…</span>
+    </div>
+  } @else if (_sortedRows().length === 0) {
+    <div class="grid-empty">{{ emptyMessage() }}</div>
+  } @else {
+    <cdk-virtual-scroll-viewport
+      class="grid-body"
+      [itemSize]="rowHeight()"
+      [style.height.px]="virtualScrollHeight()"
+    >
+      <div
+        *cdkVirtualFor="let row of _sortedRows(); let i = index"
+        class="grid-row"
+        [attr.data-selected]="_isSelected(row) || null"
+        (click)="_toggleRow(row)"
+      >
+        @if (selectable()) {
+          <div class="grid-cell grid-cell--check">
+            <input type="checkbox" [checked]="_isSelected(row)" (click)="$event.stopPropagation(); _toggleRow(row)" />
+          </div>
+        }
+        @for (col of columns(); track col.field) {
+          <div
+            class="grid-cell"
+            [attr.data-editable]="col.editable || null"
+            (dblclick)="_startEdit(i, col, _getCellValue(row, col))"
+          >
+            @if (_isEditing(i, col.field)) {
+              <input
+                class="cell-input"
+                [value]="_editValue()"
+                (input)="_editValue.set($any($event.target).value)"
+                (blur)="_commitEdit(row, col)"
+                (keydown.enter)="_commitEdit(row, col)"
+                (keydown.escape)="_editingCell.set(null)"
+                autofocus
+              />
+            } @else if (col.cellTemplate) {
+              <ng-container *ngTemplateOutlet="col.cellTemplate; context: { $implicit: row, value: _getCellValue(row, col) }"></ng-container>
+            } @else {
+              {{ _getCellValue(row, col) }}
+            }
+          </div>
+        }
+      </div>
+    </cdk-virtual-scroll-viewport>
+  }
+</div>

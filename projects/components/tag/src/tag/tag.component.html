@@ -1,0 +1,7 @@
+@if (dot()) {
+  <span class="tag-dot"></span>
+}
+@if (icon()) {
+  <span class="tag-icon">{{ icon() }}</span>
+}
+<span class="tag-content"><ng-content /></span>
