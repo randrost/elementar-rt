@@ -1,0 +1,19 @@
+<div class="flex flex-col items-start gap-4 p-6">
+  <emr-cookie-popup [visible]="visible()" (cookieAccepted)="onCookieAccepted($event)">
+    <ng-container emrCookiePopupTitle>Cookie Preferences</ng-container>
+    We use cookies to enhance your experience. You can manage your preferences at any time.
+    <ng-container emrCookiePopupAcceptNecessaryOnlyButton>Necessary only</ng-container>
+    <ng-container emrCookiePopupAcceptAllButton>Accept all</ng-container>
+  </emr-cookie-popup>
+
+  <div class="flex items-center gap-4">
+    <button mat-stroked-button (click)="visible.set(true)">
+      Manage Cookie Preferences
+    </button>
+    @if (preference()) {
+      <span class="text-sm text-neutral-500">
+        Current preference: <strong>{{ preference() }}</strong>
+      </span>
+    }
+  </div>
+</div>

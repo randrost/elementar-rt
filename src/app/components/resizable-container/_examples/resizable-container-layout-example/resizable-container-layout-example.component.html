@@ -1,0 +1,24 @@
+<div class="flex h-64 border border-default rounded-xl overflow-hidden">
+  <emr-resizable-container minWidth="120" class="border-r border-default bg-surface-container shrink-0">
+    <div class="p-4 flex flex-col gap-1">
+      <div class="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">Files</div>
+      @for (item of ['index.ts', 'app.component.ts', 'main.ts', 'styles.scss', 'angular.json']; track item) {
+        <div class="flex items-center gap-2 text-sm px-2 py-1 rounded-lg hover:bg-surface-container-high cursor-pointer">
+          <span class="text-neutral-400">📄</span>
+          <span>{{ item }}</span>
+        </div>
+      }
+    </div>
+  </emr-resizable-container>
+
+  <div class="flex-1 p-4 font-mono text-sm overflow-auto bg-surface">
+    <div class="text-neutral-400">// Select a file to view its contents</div>
+    <div class="mt-2">
+      <span class="text-blue-500">import</span>
+      <span class="text-neutral-300"> &#123; Component &#125; </span>
+      <span class="text-blue-500">from</span>
+      <span class="text-green-400"> '@angular/core'</span>
+      <span>;</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="flex flex-col items-center gap-6 p-6">
+  <emr-screen-loader [opened]="opened()">
+    Saving your changes, please wait...
+  </emr-screen-loader>
+
+  <div class="w-full max-w-sm flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+      <label class="text-sm font-medium">Display name</label>
+      <input class="border border-default rounded-lg px-3 py-2 text-sm" value="John Doe" />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label class="text-sm font-medium">Email</label>
+      <input class="border border-default rounded-lg px-3 py-2 text-sm" value="john@example.com" />
+    </div>
+    @if (saved()) {
+      <div class="flex items-center gap-2 text-sm text-green-600 font-medium">
+        <span>✓</span>
+        <span>Changes saved successfully!</span>
+      </div>
+    }
+    <button mat-flat-button (click)="saveChanges()" [disabled]="opened()">
+      Save Changes
+    </button>
+  </div>
+</div>

@@ -5,6 +5,9 @@ import { PlaygroundComponent } from '@meta/playground/playground.component';
 import {
   BasicScreenLoaderExampleComponent
 } from '../_examples/basic-screen-loader-example/basic-screen-loader-example.component';
+import {
+  ScreenLoaderTriggeredExampleComponent
+} from '../_examples/screen-loader-triggered-example/screen-loader-triggered-example.component';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
 
 @Component({
@@ -13,6 +16,7 @@ import { PageTitleDirective } from '@meta/page/page-title.directive';
     PageContentDirective,
     PlaygroundComponent,
     BasicScreenLoaderExampleComponent,
+    ScreenLoaderTriggeredExampleComponent,
     PageTitleDirective
   ],
   templateUrl: './overview.component.html',

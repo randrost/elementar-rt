@@ -1,0 +1,40 @@
+<div class="p-6">
+  <emr-command-bar [open]="isOpen()">
+    {{ selectionCount() }} selected
+    <emr-command-bar-divider/>
+    <emr-command-bar-command shortcut="e">Edit</emr-command-bar-command>
+    <emr-command-bar-divider/>
+    <emr-command-bar-command shortcut="x">Export</emr-command-bar-command>
+    <emr-command-bar-divider/>
+    <emr-command-bar-command shortcut="d" (click)="clearSelection()">Deselect</emr-command-bar-command>
+  </emr-command-bar>
+
+  <div class="border border-default rounded-xl overflow-hidden">
+    <table class="emr-table not-mat-typography w-full">
+      <thead>
+        <tr class="bg-neutral-100 dark:bg-neutral-800">
+          <th class="w-10"></th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of items; track item.id) {
+          <tr [class.bg-primary/5]="isSelected(item.id)">
+            <td>
+              <mat-checkbox [checked]="isSelected(item.id)" (change)="toggleItem(item.id)"/>
+            </td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.role }}</td>
+            <td>
+              <span [class]="item.status === 'Active' ? 'text-green-600' : 'text-neutral-400'">
+                {{ item.status }}
+              </span>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

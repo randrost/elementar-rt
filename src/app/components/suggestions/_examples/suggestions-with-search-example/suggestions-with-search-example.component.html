@@ -1,0 +1,37 @@
+<div class="p-6 flex justify-center">
+  <div class="relative w-[480px]">
+    <div class="flex items-center gap-2 border border-default rounded-xl px-4 py-2 bg-surface"
+         [class.rounded-b-none]="showDropdown()"
+         [class.border-b-transparent]="showDropdown()">
+      <mat-icon class="text-neutral-400">search</mat-icon>
+      <input
+        class="flex-1 text-sm outline-none bg-transparent"
+        placeholder="Search pages and settings..."
+        [ngModel]="query()"
+        (ngModelChange)="query.set($event)"
+        (focus)="focused.set(true)"
+        (blur)="focused.set(false)"
+      />
+    </div>
+
+    @if (showDropdown()) {
+      <emr-suggestions class="absolute top-full left-0 right-0 border border-default border-t-0
+                               rounded-b-xl p-3 flex flex-col gap-2 z-10 bg-surface shadow-md">
+        @if (filtered().length > 0) {
+          <emr-suggestion-block heading="Results">
+            @for (item of filtered(); track item.label) {
+              <emr-suggestion>
+                <mat-icon emrSuggestionIcon>{{ item.icon }}</mat-icon>
+                <span>{{ item.label }}</span>
+                &ndash;
+                <span class="text-neutral-400">{{ item.sublabel }}</span>
+              </emr-suggestion>
+            }
+          </emr-suggestion-block>
+        } @else {
+          <p class="text-sm text-neutral-400 px-2 py-1">No results found</p>
+        }
+      </emr-suggestions>
+    }
+  </div>
+</div>

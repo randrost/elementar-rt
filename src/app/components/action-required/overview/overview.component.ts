@@ -5,6 +5,9 @@ import { PlaygroundComponent } from '@meta/playground/playground.component';
 import {
   BasicActionRequiredExampleComponent
 } from '../_examples/basic-action-required-example/basic-action-required-example.component';
+import {
+  ActionRequiredCustomExampleComponent
+} from '../_examples/action-required-custom-example/action-required-custom-example.component';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
 
@@ -14,6 +17,7 @@ import { PageTitleDirective } from '@meta/page/page-title.directive';
     PageContentDirective,
     PlaygroundComponent,
     BasicActionRequiredExampleComponent,
+    ActionRequiredCustomExampleComponent,
     MatTab,
     MatTabGroup,
     PageTitleDirective

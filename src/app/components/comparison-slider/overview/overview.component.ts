@@ -6,6 +6,9 @@ import { PlaygroundComponent } from '@meta/playground/playground.component';
 import {
   BasicComparisonSliderExampleComponent
 } from '../_examples/basic-comparison-slider-example/basic-comparison-slider-example.component';
+import {
+  ComparisonSliderVerticalExampleComponent
+} from '../_examples/comparison-slider-vertical-example/comparison-slider-vertical-example.component';
 
 @Component({
   selector: 'app-overview',
@@ -14,7 +17,8 @@ import {
     PageContentDirective,
     PageTitleDirective,
     PlaygroundComponent,
-    BasicComparisonSliderExampleComponent
+    BasicComparisonSliderExampleComponent,
+    ComparisonSliderVerticalExampleComponent
   ],
   templateUrl: './overview.component.html',
   styleUrl: './overview.component.scss'

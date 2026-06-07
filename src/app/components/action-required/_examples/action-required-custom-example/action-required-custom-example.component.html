@@ -1,0 +1,17 @@
+<div class="flex flex-col gap-6 p-6">
+  @if (!completed()) {
+    <emr-action-required
+      iconName="shield"
+      actionText="Security alert"
+      description="Two-factor authentication is not enabled on your account. Enable it now to secure your account and prevent unauthorized access."
+      buttonText="Enable 2FA"
+      (buttonClicked)="onAction()"
+    />
+  } @else {
+    <div class="flex flex-col items-center gap-3 py-8 text-center">
+      <span class="text-4xl">✅</span>
+      <p class="font-medium">Two-factor authentication enabled!</p>
+      <button class="text-sm text-primary underline" (click)="completed.set(false)">Reset demo</button>
+    </div>
+  }
+</div>

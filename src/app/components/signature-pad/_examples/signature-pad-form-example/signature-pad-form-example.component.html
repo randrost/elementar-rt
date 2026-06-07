@@ -1,0 +1,29 @@
+<div class="p-6 max-w-lg">
+  @if (!submitted()) {
+    <div class="border border-default rounded-2xl p-6 flex flex-col gap-4">
+      <h3 class="font-semibold text-lg">Terms &amp; Agreement</h3>
+      <p class="text-sm text-neutral-500">
+        By signing below, you confirm that you have read and agree to our Terms of Service
+        and Privacy Policy.
+      </p>
+      <div>
+        <label class="text-sm font-medium mb-2 block">Your signature</label>
+        <emr-signature-pad
+          class="border border-default rounded-xl overflow-hidden block"
+          [colors]="['#000', '#1d4ed8', '#15803d']"
+          (signatureSaved)="onSignatureSaved($event)"
+          (signatureCleared)="onSignatureCleared()"
+        />
+      </div>
+      <button mat-flat-button [disabled]="!signature()" (click)="onSubmit()">
+        Sign &amp; Submit
+      </button>
+    </div>
+  } @else {
+    <div class="flex flex-col items-center gap-3 py-8 text-center">
+      <span class="text-4xl">✅</span>
+      <p class="font-medium">Agreement signed successfully!</p>
+      <button class="text-sm text-primary underline" (click)="reset()">Reset demo</button>
+    </div>
+  }
+</div>

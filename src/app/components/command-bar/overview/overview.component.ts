@@ -3,6 +3,9 @@ import { PlaygroundComponent } from '@meta/playground/playground.component';
 import {
   BasicCommandBarExampleComponent
 } from '../_examples/basic-command-bar-example/basic-command-bar-example.component';
+import {
+  CommandBarSelectionExampleComponent
+} from '../_examples/command-bar-selection-example/command-bar-selection-example.component';
 import { PageComponent } from '@meta/page/page.component';
 import { PageContentDirective } from '@meta/page/page-content.directive';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
@@ -12,6 +15,7 @@ import { PageTitleDirective } from '@meta/page/page-title.directive';
   imports: [
     PlaygroundComponent,
     BasicCommandBarExampleComponent,
+    CommandBarSelectionExampleComponent,
     PageComponent,
     PageContentDirective,
     PageTitleDirective

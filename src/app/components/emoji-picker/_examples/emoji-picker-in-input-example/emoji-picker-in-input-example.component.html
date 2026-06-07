@@ -1,0 +1,20 @@
+<div class="p-6 max-w-md">
+  <ng-template #emojiPicker>
+    <emr-emoji-picker language="en" (emojiSelected)="onEmojiSelected($event)"/>
+  </ng-template>
+
+  <div class="border border-default rounded-xl overflow-hidden">
+    <textarea
+      class="w-full px-4 pt-3 pb-2 text-sm resize-none outline-none bg-transparent"
+      rows="4"
+      placeholder="Type a message..."
+      [value]="message()"
+      (input)="message.set($any($event.target).value)"
+    ></textarea>
+    <div class="flex items-center px-2 py-1 border-t border-default">
+      <button mat-icon-button [emrEmojiPickerTriggerFor]="emojiPicker" title="Insert emoji">
+        <mat-icon>emoji_emotions</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

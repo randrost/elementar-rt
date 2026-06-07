@@ -5,6 +5,9 @@ import { PlaygroundComponent } from '@meta/playground/playground.component';
 import {
   BasicCookiePopupExampleComponent
 } from '../_examples/basic-cookie-popup-example/basic-cookie-popup-example.component';
+import {
+  CookiePopupReopenExampleComponent
+} from '../_examples/cookie-popup-reopen-example/cookie-popup-reopen-example.component';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
 
 @Component({
@@ -13,6 +16,7 @@ import { PageTitleDirective } from '@meta/page/page-title.directive';
     PageContentDirective,
     PlaygroundComponent,
     BasicCookiePopupExampleComponent,
+    CookiePopupReopenExampleComponent,
     PageTitleDirective
   ],
   templateUrl: './overview.component.html',
