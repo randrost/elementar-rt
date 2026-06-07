@@ -1,0 +1,43 @@
+<div class="p-6">
+  <emr-split-pane
+    orientation="vertical"
+    [initialSize]="35"
+    [minSize]="20"
+    [maxSize]="75"
+    style="height: 320px; display: block;"
+  >
+    <div class="h-full p-4 bg-surface-container rounded-t-xl overflow-auto">
+      <h4 class="font-semibold mb-2 text-sm">Query</h4>
+      <pre class="text-xs font-mono text-primary">SELECT users.name, orders.total
+FROM users
+JOIN orders ON users.id = orders.user_id
+WHERE orders.created_at > '2025-01-01'
+ORDER BY orders.total DESC
+LIMIT 10;</pre>
+    </div>
+    <div class="h-full p-4 bg-surface-container-low rounded-b-xl overflow-auto">
+      <h4 class="font-semibold mb-2 text-sm">Results</h4>
+      <table class="w-full text-xs">
+        <thead>
+          <tr class="border-b border-outline-variant text-left">
+            <th class="pb-2 pr-4 font-medium">Name</th>
+            <th class="pb-2 font-medium text-right">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of [
+            {name: 'Alice Martin', total: '$4,280'},
+            {name: 'Bob Chen', total: '$3,120'},
+            {name: 'Carol White', total: '$2,890'},
+            {name: 'Dan Lee', total: '$2,450'}
+          ]; track row.name) {
+            <tr class="border-b border-outline-variant/30">
+              <td class="py-1.5 pr-4">{{ row.name }}</td>
+              <td class="py-1.5 text-right text-green-600">{{ row.total }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </emr-split-pane>
+</div>

@@ -5,6 +5,9 @@ import { PlaygroundComponent } from '@meta/playground/playground.component';
 import {
   BasicImageResizerExampleComponent
 } from '../_examples/basic-image-resizer-example/basic-image-resizer-example.component';
+import {
+  ImageResizerConstrainedExampleComponent
+} from '../_examples/image-resizer-constrained-example/image-resizer-constrained-example.component';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
 
@@ -14,6 +17,7 @@ import { PageTitleDirective } from '@meta/page/page-title.directive';
     PageContentDirective,
     PlaygroundComponent,
     BasicImageResizerExampleComponent,
+    ImageResizerConstrainedExampleComponent,
     MatTab,
     MatTabGroup,
     PageTitleDirective

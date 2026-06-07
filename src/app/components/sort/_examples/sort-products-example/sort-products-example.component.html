@@ -1,0 +1,22 @@
+<div class="p-6 overflow-auto">
+  <table class="w-full text-sm" emrSort (sortChange)="onSort($event)">
+    <thead>
+      <tr class="border-b border-outline-variant text-left">
+        <th class="py-3 pr-6 font-medium cursor-pointer select-none" emrSortHeader="name">Product</th>
+        <th class="py-3 pr-6 font-medium cursor-pointer select-none" emrSortHeader="category">Category</th>
+        <th class="py-3 pr-6 font-medium cursor-pointer select-none text-right" emrSortHeader="price">Price</th>
+        <th class="py-3 font-medium cursor-pointer select-none text-right" emrSortHeader="stock">In Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of rows(); track row.name) {
+        <tr class="border-b border-outline-variant/50 hover:bg-surface-container-low transition-colors">
+          <td class="py-3 pr-6 font-medium">{{ row.name }}</td>
+          <td class="py-3 pr-6 text-neutral-500">{{ row.category }}</td>
+          <td class="py-3 pr-6 text-right">{{ row.price | currency }}</td>
+          <td class="py-3 text-right">{{ row.stock }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

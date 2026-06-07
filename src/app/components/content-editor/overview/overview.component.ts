@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PlaygroundComponent } from '@meta/playground/playground.component';
 import { BasicContentEditorExampleComponent } from '../_examples/basic-content-editor-example/basic-content-editor-example.component';
+import { ContentEditorBlogExampleComponent } from '../_examples/content-editor-blog-example/content-editor-blog-example.component';
 import { PageComponent } from '@meta/page/page.component';
 import { PageContentDirective } from '@meta/page/page-content.directive';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
@@ -9,6 +10,7 @@ import { PageTitleDirective } from '@meta/page/page-title.directive';
   imports: [
     PlaygroundComponent,
     BasicContentEditorExampleComponent,
+    ContentEditorBlogExampleComponent,
     PageComponent, PageContentDirective, PageTitleDirective
   ],
   templateUrl: './overview.component.html',

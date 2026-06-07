@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PlaygroundComponent } from '@meta/playground/playground.component';
 import { BasicSplitPaneExampleComponent } from '../_examples/basic-split-pane-example/basic-split-pane-example.component';
+import { SplitPaneVerticalExampleComponent } from '../_examples/split-pane-vertical-example/split-pane-vertical-example.component';
 import { PageComponent } from '@meta/page/page.component';
 import { PageContentDirective } from '@meta/page/page-content.directive';
 import { PageTitleDirective } from '@meta/page/page-title.directive';
@@ -9,6 +10,7 @@ import { PageTitleDirective } from '@meta/page/page-title.directive';
   imports: [
     PlaygroundComponent,
     BasicSplitPaneExampleComponent,
+    SplitPaneVerticalExampleComponent,
     PageComponent, PageContentDirective, PageTitleDirective
   ],
   templateUrl: './overview.component.html',
