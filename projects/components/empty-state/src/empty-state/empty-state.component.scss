@@ -1,0 +1,61 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-es-gap: --spacing(4);
+  --emr-es-icon-size: --spacing(20);
+  --emr-es-title-size: theme(--text-lg);
+  --emr-es-title-weight: 600;
+  --emr-es-desc-size: theme(--text-sm);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--emr-es-gap);
+  padding: --spacing(12) --spacing(6);
+  width: 100%;
+}
+
+.es-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--emr-es-icon-size);
+  height: var(--emr-es-icon-size);
+
+  &:empty { display: none; }
+}
+
+.es-emoji {
+  font-size: --spacing(12);
+  line-height: 1;
+  display: block;
+}
+
+.es-body {
+  display: flex;
+  flex-direction: column;
+  gap: --spacing(2);
+  max-width: --spacing(96);
+}
+
+.es-title {
+  margin: 0;
+  font-size: var(--emr-es-title-size);
+  font-weight: var(--emr-es-title-weight);
+  color: var(--color-on-surface);
+}
+
+.es-description {
+  margin: 0;
+  font-size: var(--emr-es-desc-size);
+  color: var(--color-on-surface-variant);
+  line-height: 1.6;
+}
+
+.es-actions {
+  display: flex;
+  gap: --spacing(3);
+  &:empty { display: none; }
+}

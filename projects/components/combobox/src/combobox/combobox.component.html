@@ -1,0 +1,37 @@
+<div class="cb-input-wrap">
+  <input
+    class="cb-input"
+    type="text"
+    [value]="_query()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    (input)="_onInput($any($event.target).value)"
+    (focus)="_onFocus()"
+    (blur)="_onBlur()"
+    autocomplete="off"
+    role="combobox"
+    [attr.aria-expanded]="_open()"
+  />
+  <span class="cb-arrow">
+    @if (loading()) {
+      <span class="cb-spinner"></span>
+    } @else {
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7 10l5 5 5-5z"/>
+      </svg>
+    }
+  </span>
+</div>
+@if (_open() && _filtered().length) {
+  <div class="cb-dropdown" role="listbox">
+    @for (opt of _filtered(); track opt.value) {
+      <div
+        class="cb-option"
+        role="option"
+        [class.is-selected]="_isSelected(opt)"
+        [class.is-disabled]="opt.disabled"
+        (mousedown)="_select(opt)"
+      >{{ opt.label }}</div>
+    }
+  </div>
+}

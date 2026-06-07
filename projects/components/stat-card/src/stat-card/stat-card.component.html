@@ -1,0 +1,26 @@
+<div class="sc-header">
+  <span class="sc-label">{{ label() }}</span>
+  @if (icon()) {
+    <span class="sc-icon">{{ icon() }}</span>
+  } @else {
+    <ng-content select="[emrStatCardIcon]"/>
+  }
+</div>
+
+<div class="sc-value">{{ value() }}</div>
+
+<ng-content select="emr-micro-chart,[emrStatCardChart]"/>
+
+@if (trendValue()) {
+  <div class="sc-trend">
+    <span class="sc-trend-arrow">
+      @if (trend() === 'up') { ▲ }
+      @else if (trend() === 'down') { ▼ }
+      @else { — }
+    </span>
+    <span class="sc-trend-value">{{ trendValue() }}</span>
+    <span class="sc-trend-label">{{ trendLabel() }}</span>
+  </div>
+}
+
+<ng-content/>

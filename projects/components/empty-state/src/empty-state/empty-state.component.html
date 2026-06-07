@@ -1,0 +1,16 @@
+<div class="es-icon">
+  <ng-content select="[emrEmptyStateIcon]">
+    <span class="es-emoji">{{ _icon }}</span>
+  </ng-content>
+</div>
+<div class="es-body">
+  <p class="es-title">
+    <ng-content select="[emrEmptyStateTitle]">{{ _title }}</ng-content>
+  </p>
+  <p class="es-description">
+    <ng-content select="[emrEmptyStateDescription]">{{ _description }}</ng-content>
+  </p>
+</div>
+<div class="es-actions">
+  <ng-content select="[emrEmptyStateActions]"/>
+</div>

@@ -1,0 +1,23 @@
+<div class="toast-body">
+  <div class="toast-icon">
+    @switch (variant()) {
+      @case ('success') { ✓ }
+      @case ('error') { ✕ }
+      @case ('warning') { ⚠ }
+      @case ('info') { ℹ }
+    }
+  </div>
+  <div class="toast-content">
+    @if (title()) { <strong class="toast-title">{{ title() }}</strong> }
+    <span class="toast-message">{{ message() }}</span>
+  </div>
+  <div class="toast-controls">
+    @if (action()) {
+      <button class="toast-action" type="button" (click)="actionClick.emit()">{{ action() }}</button>
+    }
+    <button class="toast-close" type="button" (click)="_dismiss()" aria-label="Close">✕</button>
+  </div>
+</div>
+@if (showProgress() && duration() > 0) {
+  <div class="toast-progress" [style.width]="_progress() + '%'"></div>
+}

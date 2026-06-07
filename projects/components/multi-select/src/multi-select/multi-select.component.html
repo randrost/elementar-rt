@@ -1,0 +1,43 @@
+<div class="ms-trigger" (click)="_toggle_open()" (blur)="_onBlur()" tabindex="0">
+  <div class="ms-chips">
+    @if (_selectedOptions().length === 0) {
+      <span class="ms-placeholder">{{ placeholder() }}</span>
+    }
+    @for (opt of _selectedOptions().slice(0, maxDisplay()); track opt.value) {
+      <span class="ms-chip">
+        {{ opt.label }}
+        <button class="ms-chip-remove" type="button" (click)="_remove(opt.value, $event)" aria-label="Remove">✕</button>
+      </span>
+    }
+    @if (_selectedOptions().length > maxDisplay()) {
+      <span class="ms-chip ms-chip-more">+{{ _selectedOptions().length - maxDisplay() }}</span>
+    }
+  </div>
+  <svg class="ms-arrow" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M7 10l5 5 5-5z"/>
+  </svg>
+</div>
+
+@if (_open()) {
+  <div class="ms-dropdown">
+    <div class="ms-search">
+      <input
+        type="text"
+        placeholder="Search…"
+        [value]="_query()"
+        (input)="_query.set($any($event.target).value)"
+        (click)="$event.stopPropagation()"
+        autocomplete="off"
+      />
+    </div>
+    @for (opt of _filtered(); track opt.value) {
+      <label class="ms-option" [class.is-disabled]="opt.disabled">
+        <input type="checkbox" [checked]="_isChecked(opt)" (change)="_toggle(opt)" [disabled]="opt.disabled"/>
+        {{ opt.label }}
+      </label>
+    }
+    @if (_filtered().length === 0) {
+      <div class="ms-empty">No options</div>
+    }
+  </div>
+}
