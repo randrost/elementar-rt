@@ -1,0 +1,35 @@
+<div
+  class="zoom-container"
+  (wheel)="_onWheel($event)"
+  (mousedown)="_onMouseDown($event)"
+  (mousemove)="_onMouseMove($event)"
+  (mouseup)="_onMouseUp()"
+  (mouseleave)="_onMouseUp()"
+  (touchstart)="_onTouchStart($event)"
+  (touchmove)="_onTouchMove($event)"
+  (touchend)="_onTouchEnd()"
+>
+  <img
+    class="zoom-img"
+    [src]="src()"
+    [alt]="alt()"
+    [style]="_imgStyle()"
+    draggable="false"
+  />
+
+  @if (showMinimap() && _isZoomed()) {
+    <div class="minimap">
+      <img class="minimap-img" [src]="src()" [alt]="alt()" aria-hidden="true" />
+      <div class="minimap-viewport" [style]="_minimapStyle()"></div>
+    </div>
+  }
+
+  <div class="zoom-controls">
+    <button type="button" class="zoom-btn" (click)="_zoomIn()" aria-label="Zoom in">+</button>
+    <span class="zoom-label">{{ _scaleLabel() }}%</span>
+    <button type="button" class="zoom-btn" (click)="_zoomOut()" aria-label="Zoom out">−</button>
+    @if (_isZoomed()) {
+      <button type="button" class="zoom-btn" (click)="_reset()" aria-label="Reset zoom">↺</button>
+    }
+  </div>
+</div>

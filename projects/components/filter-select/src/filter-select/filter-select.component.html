@@ -1,0 +1,54 @@
+<div class="fs-trigger" (click)="_toggle()">
+  <span class="fs-display">{{ _displayLabel() }}</span>
+  <div class="fs-controls">
+    @if (clearable() && _selected() !== null && (!multiple() || (_selected() as unknown[]).length > 0)) {
+      <button type="button" class="fs-clear" (click)="_clear($event)" aria-label="Clear">×</button>
+    }
+    <span class="fs-arrow" [attr.data-open]="_open() || null">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </span>
+  </div>
+</div>
+
+@if (_open()) {
+  <div class="fs-dropdown">
+    <div class="fs-search-wrap">
+      <input
+        class="fs-search"
+        type="text"
+        placeholder="Search…"
+        [ngModel]="_search()"
+        (ngModelChange)="_search.set($event)"
+        autofocus
+        (click)="$event.stopPropagation()"
+      />
+    </div>
+
+    @if (loading()) {
+      <div class="fs-loading">Loading options…</div>
+    } @else if (_filtered().length === 0) {
+      <div class="fs-empty">No options found</div>
+    } @else {
+      <ul class="fs-list" role="listbox">
+        @for (entry of _groups() | keyvalue; track entry.key) {
+          @if (entry.key) {
+            <li class="fs-group-label">{{ entry.key }}</li>
+          }
+          @for (opt of entry.value; track opt.value) {
+            <li
+              class="fs-option"
+              role="option"
+              [attr.data-selected]="_isSelected(opt) || null"
+              (click)="_select(opt)"
+            >
+              @if (multiple()) {
+                <span class="fs-checkbox" [attr.data-checked]="_isSelected(opt) || null">✓</span>
+              }
+              {{ opt.label }}
+            </li>
+          }
+        }
+      </ul>
+    }
+  </div>
+}
