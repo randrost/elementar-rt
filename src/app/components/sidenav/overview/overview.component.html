@@ -1,16 +1,27 @@
 <app-page>
   <h1 appPageTitle>Sidenav</h1>
   <div appPageContent>
+    <main class="mb-10">
+      <p>A slide-in side navigation panel. Supports side, push, and overlay modes with responsive auto-open breakpoints.</p>
+    </main>
+
     <h3 class="mat-title-large">Basic sidenav</h3>
     <emr-playground exampleUrl="_docs/components/sidenav/_examples" exampleName="basic-sidenav-example">
       <app-basic-sidenav-example/>
     </emr-playground>
-  </div>
-  <div>
-    <h2>API Reference</h2>
-    <p>
-      This is an Angular Material component. See the
-      <a href="https://material.angular.dev/components/sidenav/overview" target="_blank" class="link">documentation</a>.
-    </p>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Persistent (side mode)</h3>
+    <emr-playground exampleUrl="_docs/components/sidenav/_examples" exampleName="sidenav-persistent-example">
+      <app-sidenav-persistent-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Overlay mode</h3>
+    <emr-playground exampleUrl="_docs/components/sidenav/_examples" exampleName="sidenav-overlay-example">
+      <app-sidenav-overlay-example />
+    </emr-playground>
   </div>
 </app-page>

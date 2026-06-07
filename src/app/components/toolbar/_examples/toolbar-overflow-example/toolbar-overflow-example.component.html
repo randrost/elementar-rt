@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-4 p-6">
+  <emr-toolbar>
+    <button mat-icon-button title="Bold"><mat-icon>format_bold</mat-icon></button>
+    <button mat-icon-button title="Italic"><mat-icon>format_italic</mat-icon></button>
+    <button mat-icon-button title="Underline"><mat-icon>format_underlined</mat-icon></button>
+    <div class="w-px h-6 bg-outline-variant mx-1"></div>
+    <button mat-icon-button title="Align left"><mat-icon>format_align_left</mat-icon></button>
+    <button mat-icon-button title="Align center"><mat-icon>format_align_center</mat-icon></button>
+    <button mat-icon-button title="Align right"><mat-icon>format_align_right</mat-icon></button>
+    <div class="w-px h-6 bg-outline-variant mx-1"></div>
+    <button mat-icon-button title="Bulleted list"><mat-icon>format_list_bulleted</mat-icon></button>
+    <button mat-icon-button title="Numbered list"><mat-icon>format_list_numbered</mat-icon></button>
+    <div class="w-px h-6 bg-outline-variant mx-1"></div>
+    <button mat-icon-button title="Insert link"><mat-icon>insert_link</mat-icon></button>
+    <button mat-icon-button title="Insert image"><mat-icon>image</mat-icon></button>
+    <span class="flex-1"></span>
+    <button mat-icon-button title="More options"><mat-icon>more_vert</mat-icon></button>
+  </emr-toolbar>
+
+  <emr-toolbar [dense]="true">
+    <button mat-icon-button><mat-icon>arrow_back</mat-icon></button>
+    <button mat-icon-button><mat-icon>arrow_forward</mat-icon></button>
+    <button mat-icon-button><mat-icon>refresh</mat-icon></button>
+    <span class="flex-1 mx-2 px-3 py-1 rounded-full bg-surface-container text-sm text-surface-variant">
+      https://example.com
+    </span>
+    <button mat-icon-button><mat-icon>star_border</mat-icon></button>
+    <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
+  </emr-toolbar>
+</div>

@@ -1,0 +1,26 @@
+<div class="flex flex-wrap items-end gap-8 p-6">
+  <div class="flex flex-col items-center gap-2">
+    <emr-progress-spinner [diameter]="24" mode="indeterminate" />
+    <span class="text-xs text-surface-variant">24px</span>
+  </div>
+  <div class="flex flex-col items-center gap-2">
+    <emr-progress-spinner [diameter]="36" mode="indeterminate" />
+    <span class="text-xs text-surface-variant">36px</span>
+  </div>
+  <div class="flex flex-col items-center gap-2">
+    <emr-progress-spinner [diameter]="48" mode="indeterminate" />
+    <span class="text-xs text-surface-variant">48px</span>
+  </div>
+  <div class="flex flex-col items-center gap-2">
+    <emr-progress-spinner [diameter]="64" mode="indeterminate" />
+    <span class="text-xs text-surface-variant">64px</span>
+  </div>
+  <div class="flex flex-col items-center gap-2">
+    <emr-progress-spinner [diameter]="80" [value]="72" mode="determinate" />
+    <span class="text-xs text-surface-variant">72% (80px)</span>
+  </div>
+  <div class="flex flex-col items-center gap-2">
+    <emr-progress-spinner [diameter]="100" [value]="45" mode="determinate" [strokeWidth]="8" />
+    <span class="text-xs text-surface-variant">45% (100px, w8)</span>
+  </div>
+</div>

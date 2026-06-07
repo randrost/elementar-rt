@@ -1,0 +1,13 @@
+<div class="flex gap-6 p-6 flex-wrap">
+  @for (i of [1,2,3]; track i) {
+    <div class="border border-outline-variant rounded-xl p-4 w-64">
+      <emr-skeleton>
+        <emr-skeleton-block class="h-40 rounded-lg mb-3" />
+        <emr-skeleton-line class="h-5 w-3/4" />
+        <emr-skeleton-line class="h-4 w-full" />
+        <emr-skeleton-line class="h-4 w-5/6" />
+        <emr-skeleton-line class="h-4 w-2/3" />
+      </emr-skeleton>
+    </div>
+  }
+</div>

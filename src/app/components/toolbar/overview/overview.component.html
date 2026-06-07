@@ -1,17 +1,27 @@
 <app-page>
   <h1 appPageTitle>Toolbar</h1>
   <div appPageContent>
+    <main class="mb-10">
+      <p>A flexible toolbar component for navigation bars, editor toolbars, and action strips. Supports dense mode and sticky positioning.</p>
+    </main>
+
     <h3 class="mat-title-large">Basic Toolbar</h3>
     <emr-playground exampleUrl="_docs/components/toolbar/_examples" exampleName="basic-toolbar-example">
       <app-basic-toolbar-example/>
     </emr-playground>
 
-    <div>
-      <h2>API Reference</h2>
-      <p>
-        This is an Angular Material component. See the
-        <a href="https://material.angular.io/components/toolbar/overview" target="_blank" class="link">documentation</a>.
-      </p>
-    </div>
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">With actions</h3>
+    <emr-playground exampleUrl="_docs/components/toolbar/_examples" exampleName="toolbar-with-actions-example">
+      <app-toolbar-with-actions-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Rich toolbar</h3>
+    <emr-playground exampleUrl="_docs/components/toolbar/_examples" exampleName="toolbar-overflow-example">
+      <app-toolbar-overflow-example />
+    </emr-playground>
   </div>
 </app-page>
