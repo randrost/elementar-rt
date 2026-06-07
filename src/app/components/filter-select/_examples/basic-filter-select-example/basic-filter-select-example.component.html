@@ -1,0 +1,12 @@
+<div class="flex flex-col gap-6 p-6">
+  <div class="flex flex-col gap-2" style="max-width: 280px">
+    <label class="text-sm font-medium">Single select</label>
+    <emr-filter-select [options]="options" [(ngModel)]="selected" placeholder="Choose a framework…" [clearable]="true" />
+    <p class="text-xs text-surface-variant">Value: {{ selected() }}</p>
+  </div>
+  <div class="flex flex-col gap-2" style="max-width: 280px">
+    <label class="text-sm font-medium">Multi select</label>
+    <emr-filter-select [options]="options" [(ngModel)]="selectedMulti" placeholder="Choose frameworks…" [multiple]="true" [clearable]="true" />
+    <p class="text-xs text-surface-variant">Values: {{ selectedMulti().join(', ') }}</p>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="flex flex-col gap-4 p-6 items-start">
+  <emr-button-toggle-group [(ngModel)]="selected">
+    <emr-button-toggle value="day">Day</emr-button-toggle>
+    <emr-button-toggle value="week">Week</emr-button-toggle>
+    <emr-button-toggle value="month">Month</emr-button-toggle>
+  </emr-button-toggle-group>
+  <p class="text-sm text-surface-variant">Selected: {{ selected() }}</p>
+</div>

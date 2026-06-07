@@ -1,0 +1,26 @@
+<div class="flex flex-col gap-6 p-6 items-start">
+  <div class="flex flex-col gap-2">
+    <p class="text-sm font-medium">Default</p>
+    <emr-button-toggle-group [(ngModel)]="v1">
+      <emr-button-toggle value="left">Left</emr-button-toggle>
+      <emr-button-toggle value="center">Center</emr-button-toggle>
+      <emr-button-toggle value="right">Right</emr-button-toggle>
+    </emr-button-toggle-group>
+  </div>
+  <div class="flex flex-col gap-2">
+    <p class="text-sm font-medium">Pill</p>
+    <emr-button-toggle-group variant="pill" [(ngModel)]="v2">
+      <emr-button-toggle value="left">Left</emr-button-toggle>
+      <emr-button-toggle value="center">Center</emr-button-toggle>
+      <emr-button-toggle value="right">Right</emr-button-toggle>
+    </emr-button-toggle-group>
+  </div>
+  <div class="flex flex-col gap-2">
+    <p class="text-sm font-medium">Segmented</p>
+    <emr-button-toggle-group variant="segmented" [(ngModel)]="v3" style="width: 240px">
+      <emr-button-toggle value="bold">Bold</emr-button-toggle>
+      <emr-button-toggle value="italic">Italic</emr-button-toggle>
+      <emr-button-toggle value="underline">Underline</emr-button-toggle>
+    </emr-button-toggle-group>
+  </div>
+</div>

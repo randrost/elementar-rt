@@ -1,0 +1,9 @@
+<div class="flex flex-col gap-4 p-6 items-start">
+  <emr-button-toggle-group [multiple]="true" [(ngModel)]="selected">
+    <emr-button-toggle value="bold"><b>B</b></emr-button-toggle>
+    <emr-button-toggle value="italic"><i>I</i></emr-button-toggle>
+    <emr-button-toggle value="underline"><u>U</u></emr-button-toggle>
+    <emr-button-toggle value="strike"><s>S</s></emr-button-toggle>
+  </emr-button-toggle-group>
+  <p class="text-sm text-surface-variant">Active: {{ selected().join(', ') }}</p>
+</div>

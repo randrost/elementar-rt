@@ -51,10 +51,6 @@ const routes: Routes = [
     loadChildren: () => import('./chips/chips.module').then(m => m.ChipsModule)
   },
   {
-    path: 'chips',
-    loadChildren: () => import('./chips/chips.module').then(m => m.ChipsModule)
-  },
-  {
     path: 'crop',
     loadChildren: () => import('./crop/crop-module').then(m => m.CropModule)
   },
@@ -277,6 +273,62 @@ const routes: Routes = [
   {
     path: 'code-highlighter',
     loadChildren: () => import('./code-highlighter/code-highlighter.module').then(m => m.CodeHighlighterModule)
+  },
+  {
+    path: 'tag',
+    loadChildren: () => import('./tag/tag.module').then(m => m.TagModule)
+  },
+  {
+    path: 'rating',
+    loadChildren: () => import('./rating/rating.module').then(m => m.RatingModule)
+  },
+  {
+    path: 'button-toggle',
+    loadChildren: () => import('./button-toggle/button-toggle.module').then(m => m.ButtonToggleModule)
+  },
+  {
+    path: 'keyboard',
+    loadChildren: () => import('./keyboard/keyboard.module').then(m => m.KeyboardModule)
+  },
+  {
+    path: 'step-tracker',
+    loadChildren: () => import('./step-tracker/step-tracker.module').then(m => m.StepTrackerModule)
+  },
+  {
+    path: 'sort',
+    loadChildren: () => import('./sort/sort.module').then(m => m.SortModule)
+  },
+  {
+    path: 'digit-roller',
+    loadChildren: () => import('./digit-roller/digit-roller.module').then(m => m.DigitRollerModule)
+  },
+  {
+    path: 'content-editor',
+    loadChildren: () => import('./content-editor/content-editor.module').then(m => m.ContentEditorModule)
+  },
+  {
+    path: 'video-player',
+    loadChildren: () => import('./video-player/video-player.module').then(m => m.VideoPlayerModule)
+  },
+  {
+    path: 'video-viewer',
+    loadChildren: () => import('./video-viewer/video-viewer.module').then(m => m.VideoViewerModule)
+  },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule)
+  },
+  {
+    path: 'filter-select',
+    loadChildren: () => import('./filter-select/filter-select.module').then(m => m.FilterSelectModule)
+  },
+  {
+    path: 'image-zoom-viewer',
+    loadChildren: () => import('./image-zoom-viewer/image-zoom-viewer.module').then(m => m.ImageZoomViewerModule)
+  },
+  {
+    path: 'split-pane',
+    loadChildren: () => import('./split-pane/split-pane.module').then(m => m.SplitPaneModule)
   }
 ];
 

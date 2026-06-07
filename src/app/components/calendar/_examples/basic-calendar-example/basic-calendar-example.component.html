@@ -1,0 +1,6 @@
+<div class="p-6">
+  <emr-calendar (dateClick)="selected.set($event)" />
+  @if (selected()) {
+    <p class="text-sm text-surface-variant mt-4">Selected: {{ selected()!.toLocaleDateString() }}</p>
+  }
+</div>

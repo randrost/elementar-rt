@@ -1,0 +1,14 @@
+<div class="flex flex-col gap-4 p-6 items-start">
+  <div class="flex flex-col gap-1">
+    <p class="text-sm font-medium">Readonly (display only)</p>
+    <emr-rating [ngModel]="3.5" [readonly]="true" [allowHalf]="true" />
+  </div>
+  <div class="flex flex-col gap-1">
+    <p class="text-sm font-medium">Disabled</p>
+    <emr-rating [ngModel]="2" [disabled]="true" />
+  </div>
+  <div class="flex flex-col gap-1">
+    <p class="text-sm font-medium">Half-star enabled</p>
+    <emr-rating [ngModel]="3.5" [allowHalf]="true" />
+  </div>
+</div>

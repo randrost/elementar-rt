@@ -1,0 +1,7 @@
+<div class="flex flex-col gap-6 p-6">
+  <emr-step-tracker [steps]="steps" [currentStep]="currentStep()" />
+  <div class="flex gap-3">
+    <button mat-stroked-button (click)="prev()" [disabled]="currentStep() === 0">Back</button>
+    <button mat-flat-button (click)="next()" [disabled]="currentStep() === steps.length - 1">Next</button>
+  </div>
+</div>

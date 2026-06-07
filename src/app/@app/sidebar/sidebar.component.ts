@@ -679,6 +679,90 @@ export class SidebarComponent implements OnInit {
           name: 'Block Loader',
           link: '/components/block-loader'
         },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Tag',
+          link: '/components/tag'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Rating',
+          link: '/components/rating'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Button Toggle',
+          link: '/components/button-toggle'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Keyboard',
+          link: '/components/keyboard'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Step Tracker',
+          link: '/components/step-tracker'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Sort',
+          link: '/components/sort'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Digit Roller',
+          link: '/components/digit-roller'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Split Pane',
+          link: '/components/split-pane'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Filter Select',
+          link: '/components/filter-select'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Image Zoom Viewer',
+          link: '/components/image-zoom-viewer'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Video Viewer',
+          link: '/components/video-viewer'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Video Player',
+          link: '/components/video-player'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Content Editor',
+          link: '/components/content-editor'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Calendar',
+          link: '/components/calendar'
+        },
       ]
     },
     {
