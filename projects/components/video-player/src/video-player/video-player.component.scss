@@ -1,0 +1,149 @@
+@reference 'tailwindcss';
+
+:host { display: block; }
+
+.vp-container {
+  position: relative;
+  background: #000;
+  border-radius: theme(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+
+  &:hover .vp-controls { opacity: 1; }
+}
+
+.vp-video {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  display: block;
+}
+
+.vp-chapter-badge {
+  position: absolute;
+  top: --spacing(3);
+  left: --spacing(3);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: theme(--text-xs);
+  font-weight: 600;
+  padding: --spacing(0.5) --spacing(2);
+  border-radius: theme(--radius-full);
+}
+
+.vp-controls {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: --spacing(4) --spacing(3) --spacing(2);
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  opacity: 0;
+  transition: opacity 200ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: --spacing(2);
+}
+
+.vp-progress-wrap {
+  position: relative;
+  height: --spacing(4);
+  display: flex;
+  align-items: center;
+}
+
+.vp-buffered {
+  position: absolute;
+  left: 0; height: 3px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vp-seek {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  background: transparent;
+  height: 3px;
+}
+
+.vp-chapter-marker {
+  position: absolute;
+  width: 2px; height: --spacing(2.5);
+  background: rgba(255,255,255,0.6);
+  border-radius: 1px;
+  z-index: 2;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.vp-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: --spacing(2);
+}
+
+.vp-bar-left,
+.vp-bar-right {
+  display: flex;
+  align-items: center;
+  gap: --spacing(1);
+}
+
+.vp-btn {
+  width: --spacing(8); height: --spacing(8);
+  display: flex; align-items: center; justify-content: center;
+  background: transparent; border: none; cursor: pointer;
+  color: #fff; border-radius: theme(--radius-md);
+  &:hover { background: rgba(255,255,255,0.15); }
+  svg { width: --spacing(4); height: --spacing(4); }
+}
+
+.vp-volume {
+  width: --spacing(20);
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.vp-time {
+  font-size: theme(--text-xs);
+  color: rgba(255,255,255,0.85);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.vp-speed-wrap { position: relative; }
+
+.vp-speed-btn {
+  font-size: theme(--text-xs);
+  font-weight: 700;
+  width: auto;
+  padding: 0 --spacing(1.5);
+  min-width: --spacing(9);
+}
+
+.vp-speed-menu {
+  position: absolute;
+  bottom: calc(100% + --spacing(2));
+  right: 0;
+  background: var(--color-surface-container-high);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: theme(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: --spacing(16);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.vp-speed-opt {
+  font-size: theme(--text-sm);
+  padding: --spacing(1.5) --spacing(3);
+  background: transparent; border: none; cursor: pointer;
+  text-align: center; color: var(--color-on-surface);
+  &:hover { background: var(--color-surface-container); }
+  &[data-active] { color: var(--color-primary); font-weight: 600; }
+}

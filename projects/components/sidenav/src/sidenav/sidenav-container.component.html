@@ -1,0 +1,12 @@
+@if (_open() && _effectiveMode() === 'overlay') {
+  <div class="sidenav-backdrop" (click)="_onBackdropClick()"></div>
+}
+
+<div class="sidenav-panel" [attr.data-open]="_open() || null">
+  <ng-content select="emr-sidenav" />
+</div>
+
+<div class="sidenav-content">
+  <ng-content select="[emrSidenavContent]" />
+  <ng-content />
+</div>

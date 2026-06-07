@@ -1,0 +1,92 @@
+<div class="vp-container">
+  <video
+    #videoEl
+    class="vp-video"
+    [src]="src()"
+    [poster]="poster()"
+    [loop]="loop()"
+    [muted]="_muted()"
+    (timeupdate)="_onTimeUpdate()"
+    (play)="_onPlay()"
+    (pause)="_onPause()"
+    (loadedmetadata)="_onLoadedMetadata()"
+    (click)="_togglePlay()"
+  ></video>
+
+  @if (_currentChapter()) {
+    <div class="vp-chapter-badge">{{ _currentChapter() }}</div>
+  }
+
+  <div class="vp-controls">
+    <!-- Progress bar -->
+    <div class="vp-progress-wrap">
+      <div class="vp-buffered" [style.width.%]="_bufferedPct()"></div>
+      <input
+        type="range" class="vp-seek"
+        min="0" max="100" step="0.1"
+        [value]="_progress()"
+        (input)="_onSeek($event)"
+      />
+      @for (ch of chapters(); track ch.time) {
+        <div class="vp-chapter-marker" [style.left.%]="_chapterOffset(ch)" [title]="ch.label"></div>
+      }
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="vp-bar">
+      <div class="vp-bar-left">
+        <!-- Play/Pause -->
+        <button type="button" class="vp-btn" (click)="_togglePlay()" [attr.aria-label]="_playing() ? 'Pause' : 'Play'">
+          @if (_playing()) {
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          } @else {
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          }
+        </button>
+
+        <!-- Volume -->
+        <button type="button" class="vp-btn" (click)="_toggleMute()" aria-label="Mute">
+          @if (_muted() || _volume() === 0) {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          } @else {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          }
+        </button>
+        <input type="range" class="vp-volume" min="0" max="1" step="0.05" [value]="_volume()" (input)="_onVolumeChange($event)" aria-label="Volume" />
+
+        <!-- Time -->
+        <span class="vp-time">{{ _formatTime(_currentTime()) }} / {{ _formatTime(_duration()) }}</span>
+      </div>
+
+      <div class="vp-bar-right">
+        <!-- Speed -->
+        <div class="vp-speed-wrap">
+          <button type="button" class="vp-btn vp-speed-btn" (click)="_showSpeedMenu.set(!_showSpeedMenu())">
+            {{ _speed() }}×
+          </button>
+          @if (_showSpeedMenu()) {
+            <div class="vp-speed-menu">
+              @for (s of _speeds; track s) {
+                <button type="button" class="vp-speed-opt" [attr.data-active]="_speed() === s || null" (click)="_setSpeed(s)">{{ s }}×</button>
+              }
+            </div>
+          }
+        </div>
+
+        <!-- PiP -->
+        <button type="button" class="vp-btn" (click)="_togglePiP()" aria-label="Picture in picture">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><rect x="12" y="10" width="8" height="6" rx="1" fill="currentColor"/></svg>
+        </button>
+
+        <!-- Fullscreen -->
+        <button type="button" class="vp-btn" (click)="_toggleFullscreen()" aria-label="Fullscreen">
+          @if (_fullscreen()) {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 0 2-2h3M3 16h3a2 2 0 0 0 2 2v3"/></svg>
+          } @else {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          }
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

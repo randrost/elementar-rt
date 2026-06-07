@@ -51,6 +51,10 @@
     "jsdom": "^26.1.0"
   },
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "exports": {
     "./styles/themes/": "./styles/themes/"
   }

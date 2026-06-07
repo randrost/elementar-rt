@@ -1,0 +1,62 @@
+@reference 'tailwindcss';
+
+:host {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidenav-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 10;
+  animation: fadeIn 200ms ease;
+}
+
+.sidenav-panel {
+  flex-shrink: 0;
+  height: 100%;
+  z-index: 11;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* side/push: take up space in layout */
+  :host([data-mode="side"]) &,
+  :host([data-mode="push"]) & {
+    width: var(--emr-sidenav-width, --spacing(64));
+    overflow: hidden;
+
+    &:not([data-open]) {
+      width: 0;
+    }
+  }
+
+  /* overlay: float over content */
+  :host([data-mode="overlay"]) & {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+
+    &[data-open] {
+      transform: translateX(0);
+    }
+  }
+}
+
+.sidenav-content {
+  flex: 1;
+  overflow: auto;
+  min-width: 0;
+  height: 100%;
+
+  :host([data-mode="push"][data-open]) & {
+    transform: translateX(var(--emr-sidenav-width, --spacing(64)));
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
