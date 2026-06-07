@@ -1,0 +1,132 @@
+@reference 'tailwindcss';
+
+.auth-layout {
+  display: flex;
+  min-height: 100dvh;
+}
+
+.auth-illustration {
+  flex: 1;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: --spacing(12);
+  display: none;
+
+  @media (min-width: 768px) { display: flex; }
+}
+
+.illustration-inner {
+  max-width: --spacing(96);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: --spacing(3);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: --spacing(10);
+
+  svg { width: --spacing(10); height: --spacing(10); }
+}
+
+.illustration-headline {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: --spacing(4);
+}
+
+.illustration-sub {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  margin-bottom: --spacing(8);
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: --spacing(3);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: --spacing(3);
+  font-size: 0.95rem;
+}
+
+.feature-check {
+  width: --spacing(6); height: --spacing(6);
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.auth-form-panel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: --spacing(8) --spacing(6);
+  background: var(--color-surface);
+
+  @media (min-width: 768px) {
+    width: --spacing(128);
+    flex: none;
+  }
+}
+
+.auth-form-inner {
+  width: 100%;
+  max-width: --spacing(96);
+}
+
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: --spacing(1);
+  color: var(--color-on-surface);
+}
+
+.auth-sub {
+  color: var(--color-on-surface-variant);
+  margin-bottom: --spacing(6);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: --spacing(1);
+}
+
+.auth-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: --spacing(2);
+}
+
+.auth-link {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+.auth-submit {
+  width: 100%;
+  height: --spacing(11);
+}
+
+.auth-footer {
+  text-align: center;
+  color: var(--color-on-surface-variant);
+  font-size: 0.9rem;
+}

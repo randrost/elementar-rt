@@ -1,0 +1,58 @@
+<div class="auth-layout">
+  <div class="auth-illustration">
+    <div class="illustration-inner">
+      <div class="brand-logo">
+        <svg viewBox="0 0 40 40" fill="none">
+          <rect width="40" height="40" rx="10" fill="currentColor" class="text-primary"/>
+          <path d="M10 20L20 10L30 20L20 30L10 20Z" fill="white"/>
+        </svg>
+        <span>Elementar RT</span>
+      </div>
+      <h1 class="illustration-headline">Build beautiful Angular apps faster</h1>
+      <p class="illustration-sub">A complete UI component library based on Material 3 and Tailwind CSS.</p>
+      <div class="feature-list">
+        @for (f of features; track f) {
+          <div class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>{{ f }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-form-panel">
+    <div class="auth-form-inner">
+      <h2 class="auth-title">Sign in</h2>
+      <p class="auth-sub">Welcome back! Please enter your details.</p>
+
+      <form (ngSubmit)="onSubmit()" class="auth-form">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [ngModel]="email()" (ngModelChange)="email.set($event)" name="email" autocomplete="email" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" [ngModel]="password()" (ngModelChange)="password.set($event)" name="password" autocomplete="current-password" required />
+        </mat-form-field>
+
+        <div class="auth-row">
+          <mat-checkbox [checked]="remember()" (change)="remember.set($event.checked)">Remember me</mat-checkbox>
+          <a routerLink="/auth/forgot-password" class="auth-link">Forgot password?</a>
+        </div>
+
+        <button mat-flat-button color="primary" type="submit" class="auth-submit" [disabled]="loading()">
+          {{ loading() ? 'Signing in…' : 'Sign in' }}
+        </button>
+      </form>
+
+      <mat-divider class="my-6" />
+
+      <p class="auth-footer">
+        Don't have an account?
+        <a routerLink="/auth/register" class="auth-link">Sign up</a>
+      </p>
+    </div>
+  </div>
+</div>

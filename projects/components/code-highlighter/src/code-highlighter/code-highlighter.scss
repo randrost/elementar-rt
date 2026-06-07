@@ -2,6 +2,7 @@
 
 :host {
   display: block;
+  position: relative;
   margin: --spacing(5) 0;
 
   &.inline {
@@ -22,4 +23,40 @@
   }
 
   &.loading { opacity: 0.6; }
+}
+
+.copy-btn {
+  position: absolute;
+  top: --spacing(3);
+  right: --spacing(3);
+  z-index: 2;
+  width: --spacing(8);
+  height: --spacing(8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: theme(--radius-md);
+  cursor: pointer;
+  color: rgba(255,255,255,0.7);
+  transition: all 150ms ease;
+  opacity: 0;
+
+  :host:hover & { opacity: 1; }
+
+  &:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+
+  &[data-copied] {
+    color: #4ade80;
+    border-color: rgba(74,222,128,0.4);
+  }
+
+  svg {
+    width: --spacing(4);
+    height: --spacing(4);
+  }
 }

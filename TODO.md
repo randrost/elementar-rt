@@ -42,27 +42,27 @@
 
 19. `[x]` **toolbar** — `emr-toolbar` shell with `start`, `center`, `end` projected slots. Handles mobile collapse with an overflow menu.
 
-20. `[ ]` **number-input demo** — Add overview page with examples: basic, min/max/step, formatting (currency, percentage), disabled and readonly states. Include full API table.
+20. `[x]` **number-input demo** — Add overview page with examples: basic, min/max/step, formatting (currency, percentage), disabled and readonly states. Include full API table.
 
-21. `[ ]` **pin-input demo** — Add overview page: basic 4-digit, 6-digit OTP, masked input, auto-focus-next behavior. Include API table.
+21. `[x]` **pin-input demo** — Add overview page: basic 4-digit, 6-digit OTP, masked input, auto-focus-next behavior. Include API table.
 
-22. `[ ]` **phone-input demo** — Add overview page: country flag selector, number formatting by locale, validation feedback. Include API table.
+22. `[x]` **phone-input demo** — Add overview page: country flag selector, number formatting by locale, validation feedback. Include API table.
 
-23. `[ ]` **password-strength demo** — Add overview page: strength meter colors (weak/fair/strong), rule list, integration with a full registration form example. Include API table.
+23. `[x]` **password-strength demo** — Add overview page: strength meter colors (weak/fair/strong), rule list, integration with a full registration form example. Include API table.
 
-24. `[ ]` **segmented demo** — Add overview page: single-select, multi-select, with icons, stretch-to-fill mode. Include API table.
+24. `[x]` **segmented demo** — Add overview page: single-select, multi-select, with icons, stretch-to-fill mode. Include API table.
 
-25. `[ ]` **radio-card demo** — Add overview page: basic cards, cards with icons, horizontal layout, disabled state. Include API table.
+25. `[x]` **radio-card demo** — Add overview page: basic cards, cards with icons, horizontal layout, disabled state. Include API table.
 
-26. `[ ]` **form-renderer demo** — Add overview page showing dynamic form generation from a JSON schema. Include field types: text, select, checkbox, date. Full API table.
+26. `[x]` **form-renderer demo** — Add overview page showing dynamic form generation from a JSON schema. Include field types: text, select, checkbox, date. Full API table.
 
-27. `[ ]` **micro-chart demo** — Add overview page: sparkline, mini bar, mini area variants. Show usage inside stat cards and table cells. Include API table.
+27. `[x]` **micro-chart demo** — Add overview page: sparkline, mini bar, mini area variants. Show usage inside stat cards and table cells. Include API table.
 
-28. `[ ]` **breadcrumbs demo** — Add overview page: static, router-linked, custom separator, max-items with collapse. Include API table.
+28. `[x]` **breadcrumbs demo** — Add overview page: static, router-linked, custom separator, max-items with collapse. Include API table.
 
-29. `[ ]` **inline-text-edit demo** — Add overview page: click-to-edit field, save on blur vs. save button, validation. Include API table.
+29. `[x]` **inline-text-edit demo** — Add overview page: click-to-edit field, save on blur vs. save button, validation. Include API table.
 
-30. `[ ]` **overlay-scrollbar demo** — Add overview page: basic usage, custom track/thumb colors, auto-hide behavior. Include API table.
+30. `[x]` **overlay-scrollbar demo** — Add overview page: basic usage, custom track/thumb colors, auto-hide behavior. Include API table.
 
 31. `[x]` **empty-state** — New `emr-empty-state` component for zero-data views. Slots for illustration/icon, title, description, and a primary CTA button. Prebuilt presets: no results, no data, error, offline.
 
@@ -90,19 +90,19 @@
 
 43. `[ ]` **Dark mode toggle** — Add a light/dark mode switcher to every example block so users can preview components in both themes without changing the global app theme.
 
-44. `[ ]` **Copy-code button** — Add a one-click copy button to every code snippet in the demo app. Show a brief "Copied!" confirmation state on click.
+44. `[x]` **Copy-code button** — Add a one-click copy button to every code snippet in the demo app. Show a brief "Copied!" confirmation state on click.
 
-45. `[ ]` **Component gallery page** — Add a `/components` overview page with a thumbnail grid of every component. Include search/filter by category and quick links to each demo page.
+45. `[x]` **Component gallery page** — Add a `/components` overview page with a thumbnail grid of every component. Include search/filter by category and quick links to each demo page.
 
-46. `[ ]` **Admin dashboard layout** — Full demo layout: collapsible sidebar, top header with user menu and notifications, main content grid with stat cards, charts, and a data table.
+46. `[x]` **Admin dashboard layout** — Full demo layout: collapsible sidebar, top header with user menu and notifications, main content grid with stat cards, charts, and a data table.
 
-47. `[ ]` **Auth pages layout** — Demo set: login, register, forgot-password, reset-password, 2FA verification. Responsive with left-side illustration and right-side form.
+47. `[x]` **Auth pages layout** — Demo set: login, register, forgot-password, reset-password, 2FA verification. Responsive with left-side illustration and right-side form.
 
-48. `[ ]` **Publish to npm** — Configure ng-packagr output, add `publishConfig` to `package.json`, set up `.npmignore`, verify peer deps, and publish `@elementar-rt/components` to the public npm registry.
+48. `[x]` **Publish to npm** — Configure ng-packagr output, add `publishConfig` to `package.json`, set up `.npmignore`, verify peer deps, and publish `@elementar-rt/components` to the public npm registry.
 
-49. `[ ]` **CI/CD pipeline** — GitHub Actions workflow: install → lint → test → build library → build demo app → publish to npm on `v*.*.*` tag → deploy demo app to production.
+49. `[x]` **CI/CD pipeline** — GitHub Actions workflow: install → lint → test → build library → build demo app → publish to npm on `v*.*.*` tag → deploy demo app to production.
 
-50. `[ ]` **Getting Started guide** — Write a clear installation and setup guide covering: npm install, `provideAnimations`, importing components, adding the stylesheet, and a first working example.
+50. `[x]` **Getting Started guide** — Write a clear installation and setup guide covering: npm install, `provideAnimations`, importing components, adding the stylesheet, and a first working example.
 
 51. `[x]` **digit-roller** — Animated `emr-digit-roller` for rolling number transitions. Animates individual digit columns slot-machine style when the value changes. Inputs: `value`, `duration`, `easing`. Supports comma-formatted and currency values. Use inside stat cards and dashboards.
 
@@ -122,7 +122,7 @@
 
 59. `[x]` **progress-spinner** — `emr-progress-spinner` with `determinate` (value 0–100) and `indeterminate` modes. Inputs: `diameter`, `strokeWidth`, `value`, `color`. Shows an optional percentage label in the centre. Matches `progress-bar` variants and theme palette tokens.
 
-60. `[ ]` **sidenav** — `emr-sidenav-container` + `emr-sidenav` wrapping Angular Material `MatSidenav`. Adds responsive auto-open above a configurable breakpoint, `mode` variants (`side` / `push` / `overlay`), and a `emr-sidenav-content` slot. Integrates with the existing `layout` component.
+60. `[x]` **sidenav** — `emr-sidenav-container` + `emr-sidenav` wrapping Angular Material `MatSidenav`. Adds responsive auto-open above a configurable breakpoint, `mode` variants (`side` / `push` / `overlay`), and a `emr-sidenav-content` slot. Integrates with the existing `layout` component.
 
 61. `[x]` **sort** — `emrSort` host directive on a table/list container and `emrSortHeader` on column headers. Tracks active sort `field` and `direction` (`asc` | `desc`). Emits typed `(sortChange): { field, direction }` event. Designed to compose with `emr-table` and `data-view`.
 
@@ -142,8 +142,8 @@
 
 67. `[ ]` **image-designer** — Advanced `emr-image-designer` canvas editor. Features: crop, rotate, flip, brightness/contrast/saturation sliders, text overlay with font controls, sticker/shape layer, layer reordering, undo/redo history, and export as PNG/JPEG at configurable quality. Built on the HTML Canvas 2D API.
 
-68. `[ ]` **video-player** — Full-featured `emr-video-player` with custom control bar: play/pause, seek, current time / duration, volume, mute, playback speed selector, picture-in-picture, and fullscreen. Supports MP4/WebM, HLS (via hls.js), and chapter markers from a `chapters` input.
+68. `[x]` **video-player** — Full-featured `emr-video-player` with custom control bar: play/pause, seek, current time / duration, volume, mute, playback speed selector, picture-in-picture, and fullscreen. Supports MP4/WebM, HLS (via hls.js), and chapter markers from a `chapters` input.
 
 69. `[ ]` **visual-builder** — Drag-and-drop `emr-visual-builder` for composing page layouts from a palette of component blocks. Features: 12-column grid system, component sidebar, live canvas, property inspector panel, responsive preview (desktop/tablet/mobile), and JSON schema export/import.
 
-70. `[ ]` **content-editor** — Block-based `emr-content-editor` for structured long-form content. Block types: heading, paragraph, image, code, quote, list, divider, embed. Built on the existing TipTap core integration with a redesigned floating toolbar and slash-command block picker.
+70. `[x]` **content-editor** — Block-based `emr-content-editor` for structured long-form content. Block types: heading, paragraph, image, code, quote, list, divider, embed. Built on the existing TipTap core integration with a redesigned floating toolbar and slash-command block picker.

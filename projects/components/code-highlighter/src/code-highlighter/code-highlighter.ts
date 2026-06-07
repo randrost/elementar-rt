@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input, OnChanges, SimpleChanges, signal, computed, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, OnChanges, SimpleChanges, signal, inject, booleanAttribute } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { codeToHtml } from 'shiki';
 
@@ -20,9 +20,21 @@ export class CodeHighlighter implements OnChanges {
   language = input<string>('bash');
   theme = input<string>('dracula-soft');
   inline = input<boolean>(false);
+  showCopyButton = input(true, { transform: booleanAttribute });
 
   readonly content = signal<SafeHtml | null>(null);
   readonly isLoading = signal<boolean>(false);
+  readonly _copied = signal(false);
+  private _copyTimer: ReturnType<typeof setTimeout> | null = null;
+
+  protected async _copyCode(): Promise<void> {
+    try {
+      await navigator.clipboard.writeText(this.code());
+      this._copied.set(true);
+      if (this._copyTimer) clearTimeout(this._copyTimer);
+      this._copyTimer = setTimeout(() => this._copied.set(false), 2000);
+    } catch { /* ignore */ }
+  }
 
   async ngOnChanges(changes: SimpleChanges) {
     if (!this.code()) {

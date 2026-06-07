@@ -13,6 +13,21 @@ export const routes: Routes = [
     title: 'Installation'
   },
   {
+    path: 'auth/login',
+    loadComponent: () => import('./auth/login/login.component').then(c => c.LoginComponent),
+    title: 'Sign In'
+  },
+  {
+    path: 'auth/register',
+    loadComponent: () => import('./auth/register/register.component').then(c => c.RegisterComponent),
+    title: 'Create Account'
+  },
+  {
+    path: 'auth/forgot-password',
+    loadComponent: () => import('./auth/forgot-password/forgot-password.component').then(c => c.ForgotPasswordComponent),
+    title: 'Forgot Password'
+  },
+  {
     path: 'theme',
     loadChildren: () => import('./theme/theme.module').then(m => m.ThemeModule)
   },
