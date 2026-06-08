@@ -5,7 +5,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import {
   TextEditorComponent, TextEditorToolbarComponent, TextEditorDividerComponent,
-  TextEditorBubbleMenuComponent, TextEditorFloatingMenuComponent,
+  TextEditorBubbleMenuComponent,
   TextEditorCommandBoldDirective, TextEditorCommandItalicDirective,
   TextEditorCommandStrikeDirective, TextEditorCommandBulletListDirective,
   TextEditorCommandOrderedListDirective, TextEditorCommandBlockquoteDirective,
@@ -21,7 +21,6 @@ import {
     TextEditorToolbarComponent,
     TextEditorDividerComponent,
     TextEditorBubbleMenuComponent,
-    TextEditorFloatingMenuComponent,
     TextEditorCommandBoldDirective,
     TextEditorCommandItalicDirective,
     TextEditorCommandStrikeDirective,
