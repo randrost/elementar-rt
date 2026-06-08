@@ -46,7 +46,7 @@
 
 .divider-handle {
   background: var(--color-on-surface-variant);
-  border-radius: theme(--radius-full);
+  border-radius: 9999px;
   opacity: 0.5;
 
   :host([data-orientation="horizontal"]) & {

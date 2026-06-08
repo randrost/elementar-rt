@@ -21,7 +21,7 @@ export type ButtonToggleVariant = 'default' | 'pill' | 'segmented';
       background: var(--color-surface-container);
 
       &[data-variant="pill"] {
-        border-radius: theme(--radius-full);
+        border-radius: 9999px;
         background: var(--color-surface-container-low);
         padding: --spacing(0.5);
         gap: --spacing(0.5);

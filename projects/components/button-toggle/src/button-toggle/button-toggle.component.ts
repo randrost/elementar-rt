@@ -36,7 +36,7 @@ import { ButtonToggleGroupComponent } from './button-toggle-group.component';
       &[data-icon-only] { padding: --spacing(2); }
 
       :host-context(emr-button-toggle-group[data-variant="pill"]) & {
-        border-radius: theme(--radius-full);
+        border-radius: 9999px;
         border: none;
         &[data-active] { background: var(--color-primary); color: var(--color-on-primary); }
       }
