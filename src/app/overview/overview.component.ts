@@ -237,50 +237,42 @@ export class OverviewComponent {
     {
       routerLink: '/components/image-resizer',
       imageUrl: 'assets/overview/image-resizer.svg',
-      name: 'Image Resizer',
-      isNew: true
+      name: 'Image Resizer'
     },
     {
       routerLink: '/components/resizable-container',
       imageUrl: 'assets/overview/resizable-container.svg',
-      name: 'Resizable Container',
-      isNew: true
+      name: 'Resizable Container'
     },
     {
       routerLink: '/components/cookie-popup',
       imageUrl: 'assets/overview/cookie-popup.svg',
-      name: 'Cookie Popup',
-      isNew: true
+      name: 'Cookie Popup'
     },
     {
       routerLink: '/components/emoji-picker',
       imageUrl: 'assets/overview/emoji-picker.svg',
-      name: 'Emoji Picker',
-      isNew: true
+      name: 'Emoji Picker'
     },
     {
       routerLink: '/components/signature-pad',
       imageUrl: 'assets/overview/signature-pad.svg',
-      name: 'Signature Pad',
-      isNew: true
+      name: 'Signature Pad'
     },
     {
       routerLink: '/components/suggestions',
       imageUrl: 'assets/overview/suggestions.svg',
-      name: 'Suggestions',
-      isNew: true
+      name: 'Suggestions'
     },
     {
       routerLink: '/components/comparison-slider',
       imageUrl: 'assets/overview/comparison-slider.svg',
-      name: 'Comparison Slider',
-      isNew: true
+      name: 'Comparison Slider'
     },
     {
       routerLink: '/components/crop',
       imageUrl: 'assets/overview/crop.svg',
-      name: 'Crop',
-      isNew: true
+      name: 'Crop'
     },
     {
       routerLink: '/components/action-required',
@@ -290,8 +282,7 @@ export class OverviewComponent {
     {
       routerLink: '/components/screen-loader',
       imageUrl: 'assets/overview/screen-loader.svg',
-      name: 'Screen Loader',
-      isNew: true
+      name: 'Screen Loader'
     },
   ]);
 }
