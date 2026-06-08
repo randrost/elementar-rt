@@ -156,5 +156,120 @@ export class OverviewComponent {
       imageUrl: 'assets/overview/icons.svg',
       name: 'Icon'
     },
+    {
+      routerLink: '/components/tag',
+      imageUrl: 'assets/overview/tag.svg',
+      name: 'Tag'
+    },
+    {
+      routerLink: '/components/rating',
+      imageUrl: 'assets/overview/rating.svg',
+      name: 'Rating'
+    },
+    {
+      routerLink: '/components/keyboard',
+      imageUrl: 'assets/overview/keyboard.svg',
+      name: 'Keyboard'
+    },
+    {
+      routerLink: '/components/step-tracker',
+      imageUrl: 'assets/overview/step-tracker.svg',
+      name: 'Step Tracker'
+    },
+    {
+      routerLink: '/components/sort',
+      imageUrl: 'assets/overview/sort.svg',
+      name: 'Sort'
+    },
+    {
+      routerLink: '/components/digit-roller',
+      imageUrl: 'assets/overview/digit-roller.svg',
+      name: 'Digit Roller'
+    },
+    {
+      routerLink: '/components/content-editor',
+      imageUrl: 'assets/overview/content-editor.svg',
+      name: 'Content Editor'
+    },
+    {
+      routerLink: '/components/video-player',
+      imageUrl: 'assets/overview/video-player.svg',
+      name: 'Video Player'
+    },
+    {
+      routerLink: '/components/video-viewer',
+      imageUrl: 'assets/overview/video-viewer.svg',
+      name: 'Video Viewer'
+    },
+    {
+      routerLink: '/components/calendar',
+      imageUrl: 'assets/overview/calendar.svg',
+      name: 'Calendar'
+    },
+    {
+      routerLink: '/components/filter-select',
+      imageUrl: 'assets/overview/filter-select.svg',
+      name: 'Filter Select'
+    },
+    {
+      routerLink: '/components/image-zoom-viewer',
+      imageUrl: 'assets/overview/image-zoom-viewer.svg',
+      name: 'Image Zoom Viewer'
+    },
+    {
+      routerLink: '/components/split-pane',
+      imageUrl: 'assets/overview/split-pane.svg',
+      name: 'Split Pane'
+    },
+    {
+      routerLink: '/components/image-resizer',
+      imageUrl: 'assets/overview/image-resizer.svg',
+      name: 'Image Resizer'
+    },
+    {
+      routerLink: '/components/resizable-container',
+      imageUrl: 'assets/overview/resizable-container.svg',
+      name: 'Resizable Container'
+    },
+    {
+      routerLink: '/components/cookie-popup',
+      imageUrl: 'assets/overview/cookie-popup.svg',
+      name: 'Cookie Popup'
+    },
+    {
+      routerLink: '/components/emoji-picker',
+      imageUrl: 'assets/overview/emoji-picker.svg',
+      name: 'Emoji Picker'
+    },
+    {
+      routerLink: '/components/signature-pad',
+      imageUrl: 'assets/overview/signature-pad.svg',
+      name: 'Signature Pad'
+    },
+    {
+      routerLink: '/components/suggestions',
+      imageUrl: 'assets/overview/suggestions.svg',
+      name: 'Suggestions'
+    },
+    {
+      routerLink: '/components/comparison-slider',
+      imageUrl: 'assets/overview/comparison-slider.svg',
+      name: 'Comparison Slider'
+    },
+    {
+      routerLink: '/components/crop',
+      imageUrl: 'assets/overview/crop.svg',
+      name: 'Crop'
+    },
+    {
+      routerLink: '/components/action-required',
+      imageUrl: 'assets/overview/action-required.svg',
+      name: 'Action Required'
+    },
+    {
+      routerLink: '/components/screen-loader',
+      imageUrl: 'assets/overview/screen-loader.svg',
+      name: 'Screen Loader'
+    },
   ]);
 }

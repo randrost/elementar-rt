@@ -1,0 +1,7 @@
+<emr-crop shape="circle" (selectionApplied)="onSelectionApplied($event)">
+  <img src="https://images.pexels.com/photos/34492076/pexels-photo-34492076.jpeg" width="500" alt="">
+</emr-crop>
+
+@if (selection()) {
+  <div class="mt-4 text-sm text-neutral-500">{{ selection() | json }}</div>
+}

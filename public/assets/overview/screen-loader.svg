@@ -1,0 +1,14 @@
+<svg width="296" height="141" viewBox="0 0 296 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="83" y="20" width="130" height="101" rx="6" fill="white" stroke="#D3D4D5"/>
+<!-- faded background content -->
+<rect x="93" y="32" width="70" height="5" rx="2" fill="#F9FAFA"/>
+<rect x="93" y="43" width="100" height="4" rx="2" fill="#F9FAFA"/>
+<rect x="93" y="52" width="80" height="4" rx="2" fill="#F9FAFA"/>
+<!-- overlay -->
+<rect x="83" y="20" width="130" height="101" rx="6" fill="white" opacity="0.85"/>
+<!-- spinner -->
+<circle cx="148" cy="65" r="18" stroke="#E7E7E8" stroke-width="4"/>
+<path d="M148 47 A18 18 0 0 1 166 65" stroke="#8952E0" stroke-width="4" stroke-linecap="round"/>
+<!-- loading text -->
+<rect x="120" y="90" width="56" height="5" rx="2" fill="#D3D4D5"/>
+</svg>

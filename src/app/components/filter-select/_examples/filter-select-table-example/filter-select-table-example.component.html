@@ -1,0 +1,54 @@
+<div class="p-6 flex flex-col gap-4">
+  <div class="flex items-center gap-4 flex-wrap">
+    <div style="width: 200px;">
+      <emr-filter-select
+        [options]="deptOptions"
+        [(ngModel)]="selectedDepts"
+        placeholder="Department…"
+        [multiple]="true"
+        [clearable]="true"
+      />
+    </div>
+    <div style="width: 160px;">
+      <emr-filter-select
+        [options]="statusOptions"
+        [(ngModel)]="selectedStatus"
+        placeholder="Status…"
+        [clearable]="true"
+      />
+    </div>
+    <span class="text-sm text-neutral-500">{{ employees().length }} results</span>
+  </div>
+
+  <div class="border border-default rounded-xl overflow-hidden">
+    <table class="emr-table not-mat-typography w-full">
+      <thead>
+        <tr class="bg-neutral-100 dark:bg-neutral-800">
+          <th>Name</th>
+          <th>Role</th>
+          <th>Department</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (emp of employees(); track emp.name) {
+          <tr>
+            <td class="font-medium">{{ emp.name }}</td>
+            <td class="text-neutral-500">{{ emp.role }}</td>
+            <td class="capitalize">{{ emp.department }}</td>
+            <td>
+              <span [class]="emp.status === 'active' ? 'text-green-600' : 'text-neutral-400'">
+                {{ emp.status | titlecase }}
+              </span>
+            </td>
+          </tr>
+        }
+        @empty {
+          <tr>
+            <td colspan="4" class="text-center text-neutral-400 py-6">No employees match the filters</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

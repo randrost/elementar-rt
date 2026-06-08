@@ -1,0 +1,16 @@
+<svg width="296" height="141" viewBox="0 0 296 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="83" y="20" width="130" height="80" rx="6" fill="white" stroke="#D3D4D5"/>
+<rect x="93" y="32" width="50" height="6" rx="3" fill="#33373D"/>
+<rect x="93" y="44" width="100" height="4" rx="2" fill="#E7E7E8"/>
+<rect x="93" y="52" width="80" height="4" rx="2" fill="#E7E7E8"/>
+<rect x="93" y="66" width="45" height="14" rx="4" fill="#8952E0"/>
+<rect x="144" y="66" width="45" height="14" rx="4" fill="#F9FAFA" stroke="#D3D4D5"/>
+<rect x="100" y="70" width="31" height="5" rx="2" fill="white"/>
+<rect x="151" y="70" width="31" height="5" rx="2" fill="#D3D4D5"/>
+<!-- cookie icon -->
+<circle cx="192" cy="35" r="10" fill="#FEF2E0"/>
+<circle cx="189" cy="33" r="2" fill="#F59E0B"/>
+<circle cx="193" cy="37" r="1.5" fill="#F59E0B"/>
+<circle cx="188" cy="38" r="1" fill="#F59E0B"/>
+<circle cx="195" cy="32" r="1" fill="#F59E0B"/>
+</svg>
