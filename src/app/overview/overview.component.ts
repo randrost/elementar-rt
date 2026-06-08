@@ -285,8 +285,7 @@ export class OverviewComponent {
     {
       routerLink: '/components/action-required',
       imageUrl: 'assets/overview/action-required.svg',
-      name: 'Action Required',
-      isNew: true
+      name: 'Action Required'
     },
     {
       routerLink: '/components/screen-loader',
