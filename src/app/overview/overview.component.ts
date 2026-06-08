@@ -159,117 +159,140 @@ export class OverviewComponent {
     {
       routerLink: '/components/tag',
       imageUrl: 'assets/overview/tag.svg',
-      name: 'Tag'
+      name: 'Tag',
+      isNew: true
     },
     {
       routerLink: '/components/rating',
       imageUrl: 'assets/overview/rating.svg',
-      name: 'Rating'
+      name: 'Rating',
+      isNew: true
     },
     {
       routerLink: '/components/keyboard',
       imageUrl: 'assets/overview/keyboard.svg',
-      name: 'Keyboard'
+      name: 'Keyboard',
+      isNew: true
     },
     {
       routerLink: '/components/step-tracker',
       imageUrl: 'assets/overview/step-tracker.svg',
-      name: 'Step Tracker'
+      name: 'Step Tracker',
+      isNew: true
     },
     {
       routerLink: '/components/sort',
       imageUrl: 'assets/overview/sort.svg',
-      name: 'Sort'
+      name: 'Sort',
+      isNew: true
     },
     {
       routerLink: '/components/digit-roller',
       imageUrl: 'assets/overview/digit-roller.svg',
-      name: 'Digit Roller'
+      name: 'Digit Roller',
+      isNew: true
     },
     {
       routerLink: '/components/content-editor',
       imageUrl: 'assets/overview/content-editor.svg',
-      name: 'Content Editor'
+      name: 'Content Editor',
+      isNew: true
     },
     {
       routerLink: '/components/video-player',
       imageUrl: 'assets/overview/video-player.svg',
-      name: 'Video Player'
+      name: 'Video Player',
+      isNew: true
     },
     {
       routerLink: '/components/video-viewer',
       imageUrl: 'assets/overview/video-viewer.svg',
-      name: 'Video Viewer'
+      name: 'Video Viewer',
+      isNew: true
     },
     {
       routerLink: '/components/calendar',
       imageUrl: 'assets/overview/calendar.svg',
-      name: 'Calendar'
+      name: 'Calendar',
+      isNew: true
     },
     {
       routerLink: '/components/filter-select',
       imageUrl: 'assets/overview/filter-select.svg',
-      name: 'Filter Select'
+      name: 'Filter Select',
+      isNew: true
     },
     {
       routerLink: '/components/image-zoom-viewer',
       imageUrl: 'assets/overview/image-zoom-viewer.svg',
-      name: 'Image Zoom Viewer'
+      name: 'Image Zoom Viewer',
+      isNew: true
     },
     {
       routerLink: '/components/split-pane',
       imageUrl: 'assets/overview/split-pane.svg',
-      name: 'Split Pane'
+      name: 'Split Pane',
+      isNew: true
     },
     {
       routerLink: '/components/image-resizer',
       imageUrl: 'assets/overview/image-resizer.svg',
-      name: 'Image Resizer'
+      name: 'Image Resizer',
+      isNew: true
     },
     {
       routerLink: '/components/resizable-container',
       imageUrl: 'assets/overview/resizable-container.svg',
-      name: 'Resizable Container'
+      name: 'Resizable Container',
+      isNew: true
     },
     {
       routerLink: '/components/cookie-popup',
       imageUrl: 'assets/overview/cookie-popup.svg',
-      name: 'Cookie Popup'
+      name: 'Cookie Popup',
+      isNew: true
     },
     {
       routerLink: '/components/emoji-picker',
       imageUrl: 'assets/overview/emoji-picker.svg',
-      name: 'Emoji Picker'
+      name: 'Emoji Picker',
+      isNew: true
     },
     {
       routerLink: '/components/signature-pad',
       imageUrl: 'assets/overview/signature-pad.svg',
-      name: 'Signature Pad'
+      name: 'Signature Pad',
+      isNew: true
     },
     {
       routerLink: '/components/suggestions',
       imageUrl: 'assets/overview/suggestions.svg',
-      name: 'Suggestions'
+      name: 'Suggestions',
+      isNew: true
     },
     {
       routerLink: '/components/comparison-slider',
       imageUrl: 'assets/overview/comparison-slider.svg',
-      name: 'Comparison Slider'
+      name: 'Comparison Slider',
+      isNew: true
     },
     {
       routerLink: '/components/crop',
       imageUrl: 'assets/overview/crop.svg',
-      name: 'Crop'
+      name: 'Crop',
+      isNew: true
     },
     {
       routerLink: '/components/action-required',
       imageUrl: 'assets/overview/action-required.svg',
-      name: 'Action Required'
+      name: 'Action Required',
+      isNew: true
     },
     {
       routerLink: '/components/screen-loader',
       imageUrl: 'assets/overview/screen-loader.svg',
-      name: 'Screen Loader'
+      name: 'Screen Loader',
+      isNew: true
     },
   ]);
 }

@@ -5,8 +5,11 @@
       <mat-card class="overflow-hidden hover:outline-2 hover:outline-primary cursor-pointer"
                 [routerLink]="item.routerLink">
         <mat-card-content>
-          <a [routerLink]="item.routerLink">
+          <a [routerLink]="item.routerLink" class="relative block">
             <img [src]="item.imageUrl" alt="" class="w-[240px]">
+            @if (item.isNew) {
+              <span class="absolute top-2 right-2 bg-primary text-on-primary text-xs font-bold px-2 py-0.5 rounded-full">New</span>
+            }
           </a>
         </mat-card-content>
         <mat-card-footer class="bg-surface-container-lowest font-bold p-4">
