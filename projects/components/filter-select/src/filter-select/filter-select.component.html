@@ -1,7 +1,7 @@
 <div class="fs-trigger" (click)="_toggle()">
   <span class="fs-display">{{ _displayLabel() }}</span>
   <div class="fs-controls">
-    @if (clearable() && _selected() !== null && (!multiple() || (_selected() as unknown[]).length > 0)) {
+    @if (clearable() && _hasValue()) {
       <button type="button" class="fs-clear" (click)="_clear($event)" aria-label="Clear">×</button>
     }
     <span class="fs-arrow" [attr.data-open]="_open() || null">

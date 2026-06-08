@@ -53,7 +53,7 @@ import {
           <button emrTextEditorCommandOrderedList title="Numbered list">1. List</button>
           <emr-text-editor-divider />
           <button emrTextEditorCommandBlockquote title="Blockquote">" Quote</button>
-          <button emrTextEditorCommandCodeBlock title="Code block">{ } Code</button>
+          <button emrTextEditorCommandCodeBlock title="Code block">&#123;&#125; Code</button>
           <button emrTextEditorCommandHorizontalRule title="Divider">— HR</button>
         </emr-text-editor-toolbar>
 

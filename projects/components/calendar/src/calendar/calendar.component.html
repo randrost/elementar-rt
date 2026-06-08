@@ -12,7 +12,7 @@
     <button type="button" class="today-btn" (click)="_goToToday()">Today</button>
     <div class="view-switcher">
       @for (v of ['month','week','day']; track v) {
-        <button type="button" class="view-btn" [attr.data-active]="view() === v || null" (click)="_setView(v)">{{ v | titlecase }}</button>
+        <button type="button" class="view-btn" [attr.data-active]="view() === v || null" (click)="_setView($any(v))">{{ v | titlecase }}</button>
       }
     </div>
   </div>

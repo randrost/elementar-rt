@@ -49,6 +49,12 @@ export class FilterSelectComponent implements ControlValueAccessor {
     return v;
   });
 
+  protected _hasValue = computed(() => {
+    const s = this._selected();
+    if (this.multiple()) return Array.isArray(s) && (s as unknown[]).length > 0;
+    return s !== null && s !== undefined;
+  });
+
   protected _displayLabel = computed(() => {
     const v = this._value();
     if (this.multiple()) {
