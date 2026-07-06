@@ -62,7 +62,7 @@ export class DataGridComponent<T extends Record<string, unknown> = Record<string
     const data = [...this.rows()];
     if (!field) return data;
     return data.sort((a, b) => {
-      const av = a[field]; const bv = b[field];
+      const av = a[field] as any; const bv = b[field] as any;
       const cmp = av < bv ? -1 : av > bv ? 1 : 0;
       return dir === 'asc' ? cmp : -cmp;
     });
