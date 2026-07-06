@@ -62,8 +62,11 @@ export class DataGridComponent<T extends Record<string, unknown> = Record<string
     const data = [...this.rows()];
     if (!field) return data;
     return data.sort((a, b) => {
-      const av = a[field] as any; const bv = b[field] as any;
-      const cmp = av < bv ? -1 : av > bv ? 1 : 0;
+      const av = a[field];
+      const bv = b[field];
+      const cmp = typeof av === 'number' && typeof bv === 'number'
+        ? av - bv
+        : String(av).localeCompare(String(bv));
       return dir === 'asc' ? cmp : -cmp;
     });
   });

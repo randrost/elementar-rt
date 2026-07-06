@@ -1,10 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotificationListComponent } from './notification-list.component';
+import { Notification } from '../types';
 
 describe('NotificationListComponent', () => {
-  let component: NotificationListComponent;
-  let fixture: ComponentFixture<NotificationListComponent>;
+  let component: NotificationListComponent<Notification>;
+  let fixture: ComponentFixture<NotificationListComponent<Notification>>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

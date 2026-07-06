@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CustomHeaderComponent } from './custom-header.component';
 
 describe('CustomHeaderComponent', () => {
-  let component: CustomHeaderComponent;
-  let fixture: ComponentFixture<CustomHeaderComponent>;
+  let component: CustomHeaderComponent<unknown>;
+  let fixture: ComponentFixture<CustomHeaderComponent<unknown>>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

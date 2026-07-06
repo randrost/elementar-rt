@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DataViewComponent } from './data-view.component';
 
 describe('DataViewComponent', () => {
-  let component: DataViewComponent;
-  let fixture: ComponentFixture<DataViewComponent>;
+  let component: DataViewComponent<unknown>;
+  let fixture: ComponentFixture<DataViewComponent<unknown>>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

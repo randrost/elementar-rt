@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BreadcrumbsComponent } from './breadcrumbs.component';
 
 describe('BreadcrumbsComponent', () => {
-  let component: BreadcrumbsComponent;
-  let fixture: ComponentFixture<BreadcrumbsComponent>;
+  let component: BreadcrumbsComponent<unknown>;
+  let fixture: ComponentFixture<BreadcrumbsComponent<unknown>>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
