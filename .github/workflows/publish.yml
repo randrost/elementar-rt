@@ -58,7 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write   # push the git tag + create the GitHub release
-      id-token: write   # npm provenance
+      id-token: write   # OIDC token for npm trusted publishing + provenance
     steps:
       - uses: actions/checkout@v4
 
@@ -69,14 +69,9 @@ jobs:
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Ensure NPM_TOKEN is configured
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          if [ -z "$NODE_AUTH_TOKEN" ]; then
-            echo "::error::The NPM_TOKEN repository secret is not set. Create an npm automation token and add it as NPM_TOKEN under Settings > Secrets and variables > Actions."
-            exit 1
-          fi
+      # Trusted publishing (OIDC) needs npm >= 11.5.1; Node 22 ships an older npm.
+      - name: Upgrade npm for trusted publishing
+        run: npm install -g npm@latest
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
@@ -97,10 +92,10 @@ jobs:
           fi
           echo "Publishing ${{ needs.check.outputs.name }}@$OUT"
 
+      # Authenticated via OIDC trusted publishing configured on npmjs.com
+      # (no NPM_TOKEN); provenance is attached automatically.
       - name: Publish to npm
         run: npm publish dist/components --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Tag the release commit
         env:
