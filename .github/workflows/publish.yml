@@ -1,16 +1,64 @@
-name: Publish to npm
+name: Release
+
+# Simple release flow:
+#   * Bump the version in projects/components/package.json and merge to main, OR
+#   * Trigger this workflow manually ("Run workflow" / the "release" button).
+# The workflow reads the version from projects/components/package.json and, if
+# that exact version is NOT already on npm, builds and publishes it (and tags
+# the commit). If the version already exists on npm, it is a no-op — so it is
+# always safe to re-run.
 
 on:
+  workflow_dispatch:
   push:
-    tags:
-      - 'v*.*.*'
+    branches: [main]
+    paths:
+      - 'projects/components/package.json'
+
+# Never let two releases run at once.
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      name: ${{ steps.pkg.outputs.name }}
+      version: ${{ steps.pkg.outputs.version }}
+      should_publish: ${{ steps.pkg.outputs.should_publish }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Determine version and whether it needs publishing
+        id: pkg
+        run: |
+          NAME=$(node -p "require('./projects/components/package.json').name")
+          VERSION=$(node -p "require('./projects/components/package.json').version")
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Resolved package: $NAME@$VERSION"
+          if npm view "$NAME@$VERSION" version > /dev/null 2>&1; then
+            echo "::notice::$NAME@$VERSION is already published — nothing to do."
+            echo "should_publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::$NAME@$VERSION is not on npm — it will be published."
+            echo "should_publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
   publish:
+    needs: check
+    if: needs.check.outputs.should_publish == 'true'
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      id-token: write
+      contents: write   # push the git tag + create the GitHub release
+      id-token: write   # OIDC token for npm trusted publishing + provenance
     steps:
       - uses: actions/checkout@v4
 
@@ -21,20 +69,59 @@ jobs:
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
 
+      # Trusted publishing (OIDC) needs npm >= 11.5.1; Node 22 ships an older npm.
+      - name: Upgrade npm for trusted publishing
+        run: npm install -g npm@latest
+
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
+
+      - name: Lint
+        run: npm run lint --if-present
 
       - name: Build library
         run: npm run build:components:prod
 
+      - name: Verify built version matches source
+        run: |
+          SRC="${{ needs.check.outputs.version }}"
+          OUT=$(node -p "require('./dist/components/package.json').version")
+          if [ "$SRC" != "$OUT" ]; then
+            echo "::error::Version mismatch: source is $SRC but built package is $OUT."
+            exit 1
+          fi
+          echo "Publishing ${{ needs.check.outputs.name }}@$OUT"
+
+      # Authenticated via OIDC trusted publishing configured on npmjs.com
+      # (no NPM_TOKEN); provenance is attached automatically.
       - name: Publish to npm
         run: npm publish dist/components --provenance --access public
+
+      - name: Tag the release commit
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          if git rev-parse "v$VERSION" > /dev/null 2>&1; then
+            echo "Tag v$VERSION already exists — skipping."
+          else
+            git tag "v$VERSION"
+            git push origin "v$VERSION"
+          fi
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ needs.check.outputs.version }}
+        run: |
+          if gh release view "v$VERSION" > /dev/null 2>&1; then
+            echo "Release v$VERSION already exists — skipping."
+          else
+            gh release create "v$VERSION" --title "v$VERSION" --generate-notes
+          fi
 
   deploy:
-    runs-on: ubuntu-latest
     needs: publish
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
