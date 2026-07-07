@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TextContentComponent } from './text-content.component';
 
 describe('TextContentComponent', () => {
@@ -8,12 +7,12 @@ describe('TextContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TextContentComponent]
-    })
-    .compileComponents();
+      imports: [TextContentComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TextContentComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('config', { name: 'txt', type: 'text', kind: 'content', content: { text: 'hello' } } as any);
     fixture.detectChanges();
   });
 

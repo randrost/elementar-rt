@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ThumbnailMakerComponent } from './thumbnail-maker.component';
 
 describe('ThumbnailMakerComponent', () => {
@@ -8,12 +7,12 @@ describe('ThumbnailMakerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ThumbnailMakerComponent]
-    })
-    .compileComponents();
+      imports: [ThumbnailMakerComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ThumbnailMakerComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('src', 'https://example.com/image.png');
     fixture.detectChanges();
   });
 

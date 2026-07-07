@@ -24,11 +24,10 @@ jobs:
       - name: Lint
         run: npm run lint --if-present
 
-      # Specs are auto-generated `toBeTruthy` boilerplate; many fail until real
-      # tests are written. Keep the step for visibility but don't block CI on it.
+      # Runs the component library and demo app unit suites headless. A failing
+      # spec now fails the build — the suites are green and must stay that way.
       - name: Test
-        continue-on-error: true
-        run: npm test -- --watch=false --browsers=ChromeHeadless --no-progress
+        run: npm run test:ci
 
       - name: Build library
         run: npm run build:components:prod

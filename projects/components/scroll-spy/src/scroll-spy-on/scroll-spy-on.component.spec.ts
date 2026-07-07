@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SCROLL_SPY_NAV } from '../types';
 import { ScrollSpyOnComponent } from './scroll-spy-on.component';
 
 describe('ScrollSpyOnComponent', () => {
@@ -8,12 +9,13 @@ describe('ScrollSpyOnComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ScrollSpyOnComponent]
-    })
-    .compileComponents();
-    
+      imports: [ScrollSpyOnComponent],
+      providers: [{ provide: SCROLL_SPY_NAV, useValue: { activeId: null, scrollTo: () => {} } }],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ScrollSpyOnComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('targetId', 'section-1');
     fixture.detectChanges();
   });
 

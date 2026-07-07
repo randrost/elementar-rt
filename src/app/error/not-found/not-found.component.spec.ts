@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 import { NotFoundComponent } from './not-found.component';
 
@@ -8,10 +12,15 @@ describe('NotFoundComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NotFoundComponent]
-    })
-    .compileComponents();
-    
+      imports: [NotFoundComponent],
+      providers: [
+        provideRouter([]),
+        provideHttpClient(),
+        provideNativeDateAdapter(),
+        provideNoopAnimations(),
+      ],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(NotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

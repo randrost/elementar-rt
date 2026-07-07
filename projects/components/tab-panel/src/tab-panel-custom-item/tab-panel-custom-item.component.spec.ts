@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TabPanelApiService } from '../tab-panel-api.service';
 import { TabPanelCustomItemComponent } from './tab-panel-custom-item.component';
 
 describe('TabPanelCustomItemComponent', () => {
@@ -8,10 +8,10 @@ describe('TabPanelCustomItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TabPanelCustomItemComponent]
-    })
-    .compileComponents();
-    
+      imports: [TabPanelCustomItemComponent],
+      providers: [TabPanelApiService],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TabPanelCustomItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

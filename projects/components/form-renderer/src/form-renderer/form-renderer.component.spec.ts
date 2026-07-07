@@ -8,12 +8,12 @@ describe('FormRendererComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormRendererComponent]
-    })
-    .compileComponents();
+      imports: [FormRendererComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FormRendererComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('config', { elements: [], layout: { columns: 1, gap: '0', children: [] } } as any);
     fixture.detectChanges();
   });
 

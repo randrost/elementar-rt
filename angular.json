@@ -104,7 +104,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -117,7 +118,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }
@@ -154,8 +156,10 @@
             "tsConfig": "projects/components/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
-            ]
+              "zone.js/testing",
+              "@angular/localize/init"
+            ],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }
