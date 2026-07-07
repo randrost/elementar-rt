@@ -48,4 +48,22 @@ describe('HueComponent', () => {
     // green (#00ff00) has hue 120 -> left ~33.33%
     expect(parseFloat(pointer.style.left)).toBeCloseTo(120 / 360 * 100, 2);
   });
+
+  it('should track real mousedown + mousemove drag events via the shared BaseComponent pipeline', async () => {
+    spyOn(fixture.nativeElement, 'getBoundingClientRect').and.returnValue(
+      { width: 360, height: 20, top: 0, left: 0 } as DOMRect
+    );
+
+    const emitted: TinyColor[] = [];
+    component.colorChange.subscribe(c => emitted.push(c));
+
+    fixture.nativeElement.dispatchEvent(new MouseEvent('mousedown', { clientX: 90, clientY: 0, bubbles: true }));
+    // BaseComponent schedules the coordinate calculation via requestAnimationFrame.
+    await new Promise(resolve => requestAnimationFrame(resolve));
+
+    expect(emitted.length).toBeGreaterThan(0);
+    expect(Math.round(emitted[emitted.length - 1].toHsv().h)).toBe(90);
+
+    document.dispatchEvent(new MouseEvent('mouseup'));
+  });
 });

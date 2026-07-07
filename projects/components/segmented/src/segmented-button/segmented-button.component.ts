@@ -46,6 +46,10 @@ export class SegmentedButtonComponent {
   }
 
   protected _handleClick() {
+    if (this.disabled()) {
+      return;
+    }
+
     this._segmented.api.select(this.value());
   }
 }
