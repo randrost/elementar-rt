@@ -70,7 +70,7 @@
     "@tiptap/extension-history": "2.10.2",
     "@tiptap/extension-horizontal-rule": "2.10.3",
     "@tiptap/extension-image": "2.10.2",
-    "@tiptap/extension-link": "2.10.2",
+    "@tiptap/extension-link": "2.10.4",
     "@tiptap/extension-list-item": "2.10.2",
     "@tiptap/extension-ordered-list": "2.10.2",
     "@tiptap/extension-placeholder": "2.10.2",
