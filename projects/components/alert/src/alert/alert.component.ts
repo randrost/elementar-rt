@@ -74,5 +74,6 @@ export class AlertComponent {
   private _close() {
     clearTimeout(this._autoCloseTimeout);
     this._elementRef.nativeElement.remove();
+    this.closed.emit();
   }
 }

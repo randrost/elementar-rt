@@ -37,12 +37,17 @@ export class SplashScreenComponent {
   }); // in milliseconds
 
   constructor() {
-    const initialState = getState<SplashScreenState>(this._store);
+    let isFirstRun = true;
 
     effect(() => {
       const currentState = getState<SplashScreenState>(this._store);
 
-      if (initialState.visible === currentState.visible) {
+      // Skip only the very first invocation: the component's default styles
+      // already reflect the initial state, so no imperative show/hide is
+      // needed yet. Every subsequent change must still be applied, even if
+      // it happens to match the original value (e.g. hide() then show()).
+      if (isFirstRun) {
+        isFirstRun = false;
         return;
       }
 
@@ -70,13 +75,16 @@ export class SplashScreenComponent {
   }
 
   ngOnInit() {
-    this._renderer.setProperty(
-      this._elementRef.nativeElement, '--emr-splash-screen-hide-animation-duration', (this.animationDuration() / 1000) + 's'
+    // Renderer2.setStyle() does not apply custom CSS properties (`--*`) in this
+    // Angular version; set it directly on the element's style declaration instead.
+    (this._elementRef.nativeElement as HTMLElement).style.setProperty(
+      '--emr-splash-screen-hide-animation-duration', (this.animationDuration() / 1000) + 's'
     );
   }
 
   private _show(): void {
     const loaderEl = this._elementRef.nativeElement as HTMLElement;
+    this._renderer.removeClass(loaderEl, 'hide');
     this._renderer.setStyle(loaderEl, 'visibility', 'visible');
     this._renderer.setStyle(loaderEl, 'zIndex', '9999999');
   }

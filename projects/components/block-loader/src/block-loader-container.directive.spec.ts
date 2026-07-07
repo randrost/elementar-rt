@@ -1,28 +1,29 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { BlockLoaderContainerDirective } from './block-loader-container.directive';
 
 @Component({
-  standalone: true,
   imports: [BlockLoaderContainerDirective],
-  template: `<div emrBlockLoaderContainer></div>`,
+  template: `<div emrBlockLoaderContainer></div>`
 })
-class HostComponent {
-  @ViewChild(BlockLoaderContainerDirective) directive!: BlockLoaderContainerDirective;
-}
+class HostComponent {}
 
 describe('BlockLoaderContainerDirective', () => {
   let fixture: ComponentFixture<HostComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HostComponent],
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({ imports: [HostComponent] }).compileComponents();
     fixture = TestBed.createComponent(HostComponent);
     fixture.detectChanges();
   });
 
-  it('should create an instance', () => {
-    expect(fixture.componentInstance.directive).toBeTruthy();
+  it('should set position relative on init and remove it on destroy', () => {
+    const el = fixture.nativeElement.querySelector('div') as HTMLElement;
+    expect(el.style.position).toBe('relative');
+
+    fixture.destroy();
+
+    expect(el.style.position).toBe('');
   });
 });
