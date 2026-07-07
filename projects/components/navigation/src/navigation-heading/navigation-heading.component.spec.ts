@@ -3,21 +3,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavigationHeadingComponent } from './navigation-heading.component';
 
 describe('NavigationHeadingComponent', () => {
-  let component: NavigationHeadingComponent;
   let fixture: ComponentFixture<NavigationHeadingComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-    imports: [NavigationHeadingComponent]
-})
-    .compileComponents();
-
+    await TestBed.configureTestingModule({ imports: [NavigationHeadingComponent] }).compileComponents();
     fixture = TestBed.createComponent(NavigationHeadingComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should apply its host class', () => {
+    expect(fixture.nativeElement.classList.contains('emr-navigation-heading')).toBe(true);
   });
 });
