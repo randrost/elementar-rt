@@ -5,6 +5,7 @@ import {
   inject, input,
   numberAttribute,
   OnInit,
+  signal,
   viewChildren
 } from '@angular/core';
 import {
@@ -61,9 +62,9 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
   });
 
   protected form: FormGroup;
-  private _disabled = false;
+  private _disabled = signal(false);
   protected isDisabled = computed(() => {
-    return this._disabled || this.disabled();
+    return this._disabled() || this.disabled();
   })
 
   onChange: any = () => {};
@@ -96,7 +97,7 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    this._disabled = coerceBooleanProperty(isDisabled);
+    this._disabled.set(coerceBooleanProperty(isDisabled));
   }
 
   writeValue(value: any): void {
@@ -113,7 +114,7 @@ export class PinInputComponent implements ControlValueAccessor, OnInit {
     for (let i = 0; i < value.length; i++) {
       const control = this.controls[i];
 
-      if (control && value[i].match(this.acceptOnly)) {
+      if (control && value[i].match(this.acceptOnly())) {
         control.setValue(value[i]);
       }
     }
