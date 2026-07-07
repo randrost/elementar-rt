@@ -95,7 +95,9 @@ jobs:
       # Authenticated via OIDC trusted publishing configured on npmjs.com
       # (no NPM_TOKEN); provenance is attached automatically.
       - name: Publish to npm
-        run: npm publish dist/components --provenance --access public
+        # Leading ./ is required so npm treats the target as a local directory
+        # and not a "owner/repo" GitHub shorthand package spec.
+        run: npm publish ./dist/components --provenance --access public
 
       - name: Tag the release commit
         env:
