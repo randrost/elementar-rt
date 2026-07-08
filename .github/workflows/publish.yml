@@ -79,6 +79,10 @@ jobs:
       - name: Lint
         run: npm run lint --if-present
 
+      # Never publish a release that fails its unit suites.
+      - name: Test
+        run: npm run test:ci
+
       - name: Build library
         run: npm run build:components:prod
 

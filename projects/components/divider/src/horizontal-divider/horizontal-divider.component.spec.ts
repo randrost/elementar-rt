@@ -2,22 +2,16 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HorizontalDividerComponent } from './horizontal-divider.component';
 
-describe('HDividerComponent', () => {
-  let component: HorizontalDividerComponent;
+describe('HorizontalDividerComponent', () => {
   let fixture: ComponentFixture<HorizontalDividerComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HorizontalDividerComponent]
-    })
-    .compileComponents();
-
+    await TestBed.configureTestingModule({ imports: [HorizontalDividerComponent] }).compileComponents();
     fixture = TestBed.createComponent(HorizontalDividerComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should apply its host class', () => {
+    expect(fixture.nativeElement.classList.contains('emr-horizontal-divider')).toBe(true);
   });
 });

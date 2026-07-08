@@ -98,7 +98,9 @@ export class UploadAreaComponent {
     this.isDropInvalid.set(false);
 
     if (event.dataTransfer) {
-      const accept = (this.accept() as string).split(',');
+      // `accept` is optional; unlike handleDragEnter, this used to split it
+      // unconditionally, throwing on every drop when no accept was configured.
+      const accept = this.accept() ? (this.accept() as string).split(',') : ['*/*'];
       const files: File[] = Array.from(event.dataTransfer?.files).filter(file => this.isMimeTypeAllowed(file.type, accept));
 
       if (files.length === 0) {

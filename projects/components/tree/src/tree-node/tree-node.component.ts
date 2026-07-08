@@ -6,7 +6,8 @@ import { TreeNode } from '../types';
   selector: 'emr-tree-node',
   templateUrl: './tree-node.component.html',
   styleUrl: './tree-node.component.scss',
-  host: { 'class': 'emr-tree-node', 'role': 'treeitem' }
+  host: { 'class': 'emr-tree-node', 'role': 'treeitem' },
+  imports: [TreeNodeComponent]
 })
 export class TreeNodeComponent<T = any> {
   node = input.required<TreeNode<T>>();

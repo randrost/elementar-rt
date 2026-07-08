@@ -1,23 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { FormControl } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 import { AutocompleteManyFieldComponent } from './autocomplete-many-field.component';
 
 describe('AutocompleteManyFieldComponent', () => {
-  let component: AutocompleteManyFieldComponent;
-  let fixture: ComponentFixture<AutocompleteManyFieldComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AutocompleteManyFieldComponent]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(AutocompleteManyFieldComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
   it('should create', () => {
-    expect(component).toBeTruthy();
+    TestBed.configureTestingModule({
+      imports: [AutocompleteManyFieldComponent],
+      providers: [provideHttpClient()],
+    });
+    const fixture = TestBed.createComponent(AutocompleteManyFieldComponent);
+    fixture.componentRef.setInput('control', new FormControl(''));
+    fixture.componentRef.setInput('config', { name: 'ac', type: 'autocomplete', kind: 'field', label: 'AC', payload: {} } as any);
+    expect(fixture.componentInstance).toBeTruthy();
   });
 });

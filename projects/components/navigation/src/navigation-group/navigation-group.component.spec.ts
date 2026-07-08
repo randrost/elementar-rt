@@ -3,21 +3,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavigationGroupComponent } from './navigation-group.component';
 
 describe('NavigationGroupComponent', () => {
-  let component: NavigationGroupComponent;
-  let fixture: ComponentFixture<NavigationGroupComponent>;
+  it('should assign each instance a unique key', async () => {
+    await TestBed.configureTestingModule({ imports: [NavigationGroupComponent] }).compileComponents();
+    const fixture1: ComponentFixture<NavigationGroupComponent> = TestBed.createComponent(NavigationGroupComponent);
+    const fixture2: ComponentFixture<NavigationGroupComponent> = TestBed.createComponent(NavigationGroupComponent);
+    fixture1.detectChanges();
+    fixture2.detectChanges();
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-    imports: [NavigationGroupComponent]
-})
-    .compileComponents();
-
-    fixture = TestBed.createComponent(NavigationGroupComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture1.componentInstance.key()).not.toBe(fixture2.componentInstance.key());
   });
 });

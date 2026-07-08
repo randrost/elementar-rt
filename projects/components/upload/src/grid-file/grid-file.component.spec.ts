@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GridFileComponent } from './grid-file.component';
 
 describe('GridFileComponent', () => {
@@ -8,12 +7,12 @@ describe('GridFileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GridFileComponent]
-    })
-    .compileComponents();
-    
+      imports: [GridFileComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(GridFileComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('name', 'file.txt');
     fixture.detectChanges();
   });
 

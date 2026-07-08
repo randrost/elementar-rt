@@ -28,8 +28,15 @@ This file tells Claude how to work with this project.
 npm start                       # serve demo app (dev)
 npm run build:components:prod   # build the component library
 npm run build:prod              # build the demo app
-npm test                        # run unit tests
+npm test                        # run unit tests (default project, watch mode)
+npm run test:components         # library unit suite (headless)
+npm run test:app                # demo app unit suite (headless)
+npm run test:ci                 # both suites, sequentially — what CI runs
+npm run update:check            # `ng update` — list dependency updates/migrations
 ```
+
+See the README's "Testing" and "Keeping dependencies up to date" sections for
+how tests are wired and how to run `ng update` to resolve issues on a branch.
 
 ## Project Structure
 

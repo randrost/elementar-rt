@@ -43,6 +43,80 @@ ng add @elementar-rt/components
 > ```
 > Then link the built library into your project from `dist/components/`.
 
+## Development
+
+Common scripts:
+
+```bash
+npm start                       # serve the demo app (dev)
+npm run build:components:prod   # build the component library
+npm run build:prod              # build the demo app
+```
+
+## Testing
+
+The repository has two unit-test suites — one for the component library
+(`components`) and one for the demo app (`elementar-rt`). Both run headless with
+Karma + Jasmine.
+
+```bash
+npm run test:components   # library suite (headless)
+npm run test:app          # demo app suite (headless)
+npm run test:ci           # both suites, sequentially — what CI runs
+```
+
+`npm test` (i.e. `ng test`) still runs the default project in watch mode for
+local, interactive work.
+
+Headless runs use the `ChromeHeadlessNoSandbox` launcher defined in
+`karma.conf.js`, so they work in CI and inside containers that run as `root`.
+CI (`.github/workflows/ci.yml`) runs `npm run test:ci` on every push and pull
+request and **fails the build if any spec fails** — the suites are green and
+must stay that way. A release (`.github/workflows/publish.yml`) is likewise
+gated on the tests.
+
+## Keeping dependencies up to date
+
+Angular ships migration schematics, so **prefer `ng update` over editing
+`package.json` by hand or a bare `npm install`.** `ng update` bumps the
+packages *and* runs the code-mods that fix breaking changes, which is what keeps
+the build and the test suites green across major versions.
+
+Check what can be updated:
+
+```bash
+npm run update:check      # alias for `ng update`
+```
+
+Apply an update (example: Angular + CDK/Material):
+
+```bash
+ng update @angular/core @angular/cli
+ng update @angular/cdk @angular/material
+```
+
+### Resolving issues on an existing branch
+
+When a branch is failing because of an out-of-date or freshly bumped dependency
+— most commonly a Dependabot bump under `.github/dependabot.yml`, or an old
+feature branch — run the update **on that branch** so the migrations are applied
+in context, then re-run the suites:
+
+```bash
+git checkout <your-branch>
+npm ci --legacy-peer-deps        # install the branch's locked deps
+ng update                        # list what needs bumping
+ng update @angular/core @angular/cli   # apply bumps + migrations
+npm run test:ci                  # confirm both suites are green
+git add -A && git commit -m "chore(deps): apply ng update migrations"
+```
+
+`ng update` requires a clean git working tree (commit or stash first) and writes
+the migration changes directly into the branch. If a plain `npm update` /
+`npm install` pulls in a newer Angular package without its migrations, run the
+matching `ng update` afterwards to reconcile — otherwise the app may compile but
+fail at runtime or in tests.
+
 ## Demo Layouts
 
 Demo layouts are coming soon. They will be available as separate repositories under this project.
