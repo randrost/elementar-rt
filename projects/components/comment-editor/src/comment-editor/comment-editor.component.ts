@@ -106,8 +106,10 @@ export class CommentEditorComponent implements OnInit, OnDestroy {
       return true;
     }
 
+    // Some tiptap commands (e.g. toggleLink) destructure their argument
+    // internally and throw if called with undefined, so always pass an object.
     const canFocus = this.editor.can().chain().focus() as any;
-    return !canFocus[command]().run() || null;
+    return !canFocus[command]({}).run() || null;
   }
 
   ngOnDestroy() {
@@ -152,7 +154,7 @@ export class CommentEditorComponent implements OnInit, OnDestroy {
     }
 
     const chainFocus = this.editor.chain().focus() as any;
-    chainFocus[command]().run();
+    chainFocus[command]({}).run();
   }
 
   private _init(): void {

@@ -91,8 +91,10 @@ export class TextEditorComponent {
       return true;
     }
 
+    // Some tiptap commands (e.g. toggleLink) destructure their argument
+    // internally and throw if called with undefined, so always pass an object.
     const canFocus = this.editor.can().chain().focus() as any;
-    return !canFocus[command](options).run() || null;
+    return !canFocus[command](options ?? {}).run() || null;
   }
 
   ngOnDestroy() {
@@ -105,7 +107,7 @@ export class TextEditorComponent {
     }
 
     const chainFocus = this.editor.chain().focus() as any;
-    chainFocus[command](options).run();
+    chainFocus[command](options ?? {}).run();
   }
 
   private _init(): void {
