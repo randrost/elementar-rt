@@ -172,7 +172,7 @@ export class TimezoneSelectComponent implements OnInit, MatFormFieldControl<any>
     }
 
     this._focused.set(true);
-    this.selectRef().onContainerClick();
+    this.selectRef().onContainerClick(event);
   }
 
   setDescribedByIds(ids: string[]) {

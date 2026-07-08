@@ -13,7 +13,7 @@
 
 ## What's included:
 
-- Angular 20+ & Typescript
+- Angular 21+ & Typescript
 - Tailwind 4+ & SCSS
 - High resolution
 - Flexibly configurable themes (3 themes included)
@@ -25,7 +25,7 @@
 If you don't have a project yet, just create a new project (sass styles are mandatory):
 
 ```bash
-npx @angular/cli@20 new elementar-project-name --style=scss 
+npx @angular/cli@21 new elementar-project-name --style=scss 
 ```
 
 Go to directory `elementar-project-name` (or your project folder name) and run the command:
