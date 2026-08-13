@@ -10,7 +10,6 @@ import {
   MiniFabButtonsExampleComponent
 } from '../_examples/mini-fab-buttons-example/mini-fab-buttons-example.component';
 import { ButtonLoadingExampleComponent } from '../_examples/button-loading-example/button-loading-example.component';
-import { RouterLink } from '@angular/router';
 import { PageComponent } from '@meta/page/page.component';
 import { PageContentDirective } from '@meta/page/page-content.directive';
 import { PageAsideDirective } from '@meta/page/page-aside.directive';
@@ -39,7 +38,6 @@ import {
     FabButtonsExampleComponent,
     MiniFabButtonsExampleComponent,
     ButtonLoadingExampleComponent,
-    RouterLink,
     PageComponent,
     PageContentDirective,
     PageAsideDirective,

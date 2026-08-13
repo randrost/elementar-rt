@@ -1,6 +1,6 @@
 # Elementar RT
 
-[Overview](https://elementar-rt.r-tulika.me) | [Live Demo](https://admin.elementar-rt.r-tulika.me) | [Documentation](https://docs.elementar-rt.r-tulika.me)
+[Overview](https://elementar-rt.r-tulika.me) | [Live Demo](https://admin.elementar-rt.r-tulika.me)
 
 # Modern Angular UI Components & Admin Panel, based on [Angular Material 3](https://material.angular.io) components and [Tailwind](https://tailwindcss.com/) css framework
 
@@ -45,5 +45,10 @@ ng add @elementar-rt/components
 
 ## Demo Layouts
 
-Demo layouts are coming soon. They will be available as separate repositories under this project.
+**Elementar RT Admin**, an open-source admin template built on this library, is
+live at **[admin.elementar-rt.r-tulika.me](https://admin.elementar-rt.r-tulika.me)**.
+Its source is at
+[randrost/elementar-rt-demo](https://github.com/randrost/elementar-rt-demo).
+
+More demo layouts will follow, each as its own repository.
 
