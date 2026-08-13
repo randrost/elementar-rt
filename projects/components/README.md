@@ -45,5 +45,10 @@ ng add @elementar-rt/components
 
 ## Demo Layouts
 
-Demo layouts are coming soon. They will be available as separate repositories under this project.
+**Elementar RT Admin**, an open-source admin template built on this library, is
+live at **[admin.elementar-rt.r-tulika.me](https://admin.elementar-rt.r-tulika.me)**.
+Its source is at
+[randrost/elementar-rt-demo](https://github.com/randrost/elementar-rt-demo).
+
+More demo layouts will follow, each as its own repository.
 
