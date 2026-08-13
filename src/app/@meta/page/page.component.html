@@ -1,13 +1,18 @@
-<div class="flex gap-10 px-10 py-10">
-  <div class="grow">
-    <div class="container w-[876px] mx-auto mat-typography">
-      <div class="mb-14 title">
+<div class="flex gap-10 px-4 py-6 sm:px-6 lg:px-10 lg:py-10">
+  <!-- `min-w-0` lets the column shrink past the intrinsic width of wide
+       children (code blocks, tables), otherwise flex refuses to shrink it
+       and the whole page scrolls sideways on a phone. -->
+  <div class="grow min-w-0">
+    <div class="w-full max-w-[876px] mx-auto mat-typography">
+      <div class="mb-8 lg:mb-14 title">
         <ng-content select="[appPageTitle]"/>
       </div>
       <ng-content select="[appPageContent]"/>
     </div>
   </div>
-  <nav class="sticky top-32 w-72">
+  <!-- On-page table of contents: there is no room for a second column
+       until the viewport is genuinely wide. -->
+  <nav class="hidden xl:block sticky top-32 w-72">
     <ng-content select="[appPageAside]"/>
   </nav>
 </div>

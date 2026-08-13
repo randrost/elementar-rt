@@ -6,10 +6,22 @@
   <emr-layout-topbar class="border-b border-b-secondary-container">
     <emr-announcement-global/>
     <emr-incidents-global/>
-    <header class="px-7">
-      <div class="min-h-18 w-full py-10 md:py-0 space-y-10 md:space-y-0 md:flex items-center gap-10 relative">
+    <header class="px-4 md:px-7">
+      <div class="min-h-16 md:min-h-18 w-full flex items-center gap-3 md:gap-10 relative">
+        <!-- Material sets `display` on its button host from an unlayered
+             component stylesheet, which beats Tailwind's layered responsive
+             utilities, so the breakpoint class lives on a plain span. -->
+        <span class="inline-flex md:hidden">
+          <button mat-icon-button type="button"
+                  (click)="toggleMobileNav()"
+                  [attr.aria-expanded]="mobileNavOpen()"
+                  aria-controls="app-mobile-nav"
+                  aria-label="Toggle navigation">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </span>
         <a routerLink="/" emr-logo>ELEMENTAR</a>
-        <div>
+        <div class="hidden md:block">
           <nav class="flex items-center gap-8 md:absolute md:start-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-md">
             <a href="https://elementar-rt.r-tulika.me"
                class="hover:underline underline-offset-2">Home</a>
@@ -20,23 +32,53 @@
             </a>
           </nav>
         </div>
-        <div class="ms-auto flex items-center gap-4">
+        <div class="ms-auto flex items-center gap-2 md:gap-4">
           <emr-color-scheme-switcher matTooltip="Color Theme"
                                      emrSoundEffect
                                      (colorSchemeChanged)="onColorSchemeChanged($event)">
             <mat-icon *emrColorSchemeLight>light_mode</mat-icon>
             <mat-icon *emrColorSchemeDark>dark_mode</mat-icon>
           </emr-color-scheme-switcher>
-          <a href="https://github.com/randrost" target="_blank">
-            <img src="assets/github.svg" alt="GitHub" class="size-5.5">
+          <a href="https://github.com/randrost" target="_blank" aria-label="GitHub profile">
+            <img src="assets/github.svg" alt="" class="size-5.5">
           </a>
-          <a mat-stroked-button href="https://github.com/randrost/elementar-rt" target="_blank">Github</a>
+          <span class="hidden md:inline-flex">
+            <a mat-stroked-button href="https://github.com/randrost/elementar-rt" target="_blank">Github</a>
+          </span>
         </div>
       </div>
     </header>
   </emr-layout-topbar>
-  <emr-layout-sidebar>
-    <app-sidebar class="border-r border-r-secondary-container"/>
+  <emr-layout-sidebar id="app-mobile-nav" [class.is-open]="mobileNavOpen()">
+    <!-- While the drawer is open it covers the page, so it behaves like a
+         modal: focus moves in and stays there. Both inputs are driven by the
+         open state, which is only ever true below `md`, so the desktop
+         sidebar is untouched. -->
+    <div class="flex h-full flex-col border-r border-r-secondary-container"
+         [cdkTrapFocus]="mobileNavOpen()"
+         [cdkTrapFocusAutoCapture]="mobileNavOpen()">
+      <!-- The open drawer covers the topbar, so it carries its own dismiss
+           control rather than relying on the burger underneath it. -->
+      <div class="md:hidden flex items-center justify-between gap-3 px-4 min-h-16 shrink-0
+                  border-b border-b-secondary-container">
+        <a routerLink="/" emr-logo>ELEMENTAR</a>
+        <button mat-icon-button type="button"
+                (click)="closeMobileNav()"
+                aria-label="Close navigation">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <app-sidebar class="min-h-0 grow"/>
+      <!-- The topbar links do not fit on a phone, so they live at the foot of
+           the drawer instead. -->
+      <div class="md:hidden shrink-0 border-t border-t-secondary-container p-4 flex flex-col gap-3">
+        <a href="https://admin.elementar-rt.r-tulika.me" target="_blank"
+           class="hover:underline underline-offset-2">Live Preview</a>
+        <a mat-flat-button href="https://github.com/randrost/elementar-rt" target="_blank">
+          GET SOURCE
+        </a>
+      </div>
+    </div>
   </emr-layout-sidebar>
   <emr-layout>
     <emr-layout-body>
@@ -44,3 +86,6 @@
     </emr-layout-body>
   </emr-layout>
 </emr-layout>
+@if (mobileNavOpen()) {
+  <div class="fixed inset-0 z-[199] bg-black/50 md:hidden" (click)="closeMobileNav()" aria-hidden="true"></div>
+}
