@@ -22,7 +22,7 @@ describe('CommentEditorComponent', () => {
   });
 
   it('should track typed content and emit it on send, then clear', () => {
-    component.api.editor().commands.setContent('<p>Hello there</p>', true);
+    component.api.editor().commands.setContent('<p>Hello there</p>', { emitUpdate: true });
     fixture.detectChanges();
 
     const emitted: string[] = [];
