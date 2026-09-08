@@ -57,6 +57,10 @@ describe('CommentEditorComponent', () => {
   });
 
   it('should reflect active marks via isActive once a command runs', () => {
+    // The editor starts empty. tiptap 3 no longer reports a mark toggled over
+    // an empty document as active, so give it content first -- which is what
+    // the assertion is actually about, and matches TextEditorComponent's spec.
+    component.api.editor().commands.setContent('<p>Hello there</p>');
     component.api.editor().commands.selectAll();
     component.api.runCommand('toggleBold');
     expect(component.api.isActive('bold')).toBe(true);

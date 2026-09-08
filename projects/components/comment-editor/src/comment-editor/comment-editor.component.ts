@@ -200,13 +200,16 @@ export class CommentEditorComponent implements OnInit, OnDestroy {
         // FloatingMenu.configure({
         //   element: this._floatingMenu().nativeElement
         // }),
-        BubbleMenu.configure({
-          element: this._imageBubbleMenu().nativeElement,
-          shouldShow: ({ editor, view, state, oldState, from, to }) => {
-            // return editor.isActive('image');
-            return false;
-          },
-        }),
+        // Disabled image bubble menu, as in TextEditorComponent. It never showed
+        // (shouldShow returned false) but still registered a second extension
+        // named 'bubbleMenu', which tiptap 3 warns about as a duplicate.
+        // BubbleMenu.configure({
+        //   element: this._imageBubbleMenu().nativeElement,
+        //   shouldShow: ({ editor, view, state, oldState, from, to }) => {
+        //     // return editor.isActive('image');
+        //     return false;
+        //   },
+        // }),
         BubbleMenu.configure({
           element: this._bubbleMenu().nativeElement,
           appendTo: this._document.body,
