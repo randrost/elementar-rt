@@ -209,10 +209,7 @@ export class CommentEditorComponent implements OnInit, OnDestroy {
         }),
         BubbleMenu.configure({
           element: this._bubbleMenu().nativeElement,
-          tippyOptions: {
-            appendTo: this._document.body,
-            zIndex: 999
-          },
+          appendTo: this._document.body,
           shouldShow: ({ editor, view, state, oldState, from, to }) => {
             return !editor.isActive('image') &&
               !editor.isActive('youtube') &&
