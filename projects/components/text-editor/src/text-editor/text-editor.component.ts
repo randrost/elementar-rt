@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { TEXT_EDITOR, TextEditorAPI } from '../types';
 
-import { Editor } from '@tiptap/core';
+import { AnyExtension, Editor } from '@tiptap/core';
 import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
 import Text from '@tiptap/extension-text';
@@ -111,7 +111,7 @@ export class TextEditorComponent {
   }
 
   private _init(): void {
-    const extensions = [
+    const extensions: AnyExtension[] = [
       ...this.extensions(),
       Heading.configure({
         levels: [1, 2, 3],
@@ -158,10 +158,7 @@ export class TextEditorComponent {
       // }),
       BubbleMenu.configure({
         element: this._bubbleMenu().nativeElement,
-        tippyOptions: {
-          appendTo: this._document.body,
-          zIndex: 999
-        },
+        appendTo: this._document.body,
         shouldShow: ({ editor, view, state, oldState, from, to }) => {
           return !editor.isActive('image') &&
             !editor.isActive('youtube') &&
