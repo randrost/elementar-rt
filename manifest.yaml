@@ -40,10 +40,14 @@ spec:
       targetPort: 4000
       protocol: TCP
 ---
+# The root host elementar-rt.tulikas.de belongs to the landing page
+# (tls-infra apps/elementar-landing) since 2026-09-27. The library showcase
+# lives on docs.elementar-rt.tulikas.de; source of truth for this Ingress is
+# tls-infra apps/elementar-rt/docs-ingress.yaml (this Jenkinsfile doesn't deploy).
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: elementar-rt
+  name: elementar-rt-docs
   namespace: elementar-rt
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
@@ -57,10 +61,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - elementar-rt.tulikas.de
-      secretName: elementar-rt-tls
+        - docs.elementar-rt.tulikas.de
+      secretName: elementar-rt-docs-tls
   rules:
-    - host: elementar-rt.tulikas.de
+    - host: docs.elementar-rt.tulikas.de
       http:
         paths:
           - path: /
