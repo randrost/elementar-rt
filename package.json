@@ -64,7 +64,7 @@
     "@dicebear/core": "^9.4.3",
     "@iconify-json/circle-flags": "^1.2.10",
     "@iconify-json/ph": "^1.2.2",
-    "@ngrx/signals": "^21.1.1",
+    "@ngrx/signals": "^22.0.1",
     "@ngrx/store": "^21.1.1",
     "@tiptap/core": "^3.31.3",
     "@tiptap/extension-bubble-menu": "^3.31.3",
