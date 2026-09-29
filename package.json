@@ -92,7 +92,7 @@
     "iconify-icon": "^3.0.2",
     "libphonenumber-js": "^1.13.6",
     "lightningcss": "^1.32.0",
-    "marked": "^18.0.5",
+    "marked": "^18.0.13",
     "ngx-markdown": "^21.3.0",
     "postcss": "^8.5.25",
     "prismjs": "^1.29.0",
