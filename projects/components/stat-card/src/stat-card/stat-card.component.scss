@@ -24,6 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: --spacing(2);
 }
 
 .sc-label {
@@ -32,9 +33,12 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-on-surface-variant);
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .sc-icon {
+  flex-shrink: 0;
   font-size: --spacing(5);
   color: var(--color-on-surface-variant);
 }
@@ -45,10 +49,15 @@
   color: var(--color-on-surface);
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
+  /* Keep "156.1k kg" / "8 weeks" on one line; shrink the size via
+     --emr-sc-value-size (e.g. clamp()) in narrow grids instead. */
+  white-space: var(--emr-sc-value-white-space, nowrap);
+  min-width: 0;
 }
 
 .sc-trend {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: --spacing(1);
   font-size: theme(--text-xs);
@@ -65,6 +74,7 @@
 
 .sc-trend-value {
   font-weight: 600;
+  white-space: nowrap;
   :host([data-trend="up"]) & { color: var(--emr-sc-trend-up-color); }
   :host([data-trend="down"]) & { color: var(--emr-sc-trend-down-color); }
 }
