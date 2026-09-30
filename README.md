@@ -119,14 +119,24 @@ fail at runtime or in tests.
 
 ## Demo Layouts
 
-**Elementar RT Admin** is live at
-**[admin.elementar-rt.tulikas.de](https://admin.elementar-rt.tulikas.de)** —
-an open-source admin template built on this component library, with seven
-dashboards, sixteen application areas, a twelve-widget catalog, and the
-settings, account and UI-gallery pages an admin product actually needs.
+Every component in the library is documented with live examples at
+**[docs.elementar-rt.tulikas.de](https://docs.elementar-rt.tulikas.de)**.
 
-The source lives in a separate repository under this project:
-[randrost/elementar-rt-demo](https://github.com/randrost/elementar-rt-demo).
+The following templates are built on `@elementar-rt/components`, each in its
+own repository and deployed as a live demo:
 
-More demo layouts will follow, each as its own repository.
+| Template | Live demo | Source | What it is |
+|---|---|---|---|
+| **Elementar Admin** | [admin.elementar-rt.tulikas.de](https://admin.elementar-rt.tulikas.de) | [randrost/elementar-admin](https://github.com/randrost/elementar-admin) | Open-source admin template: seven dashboards, sixteen application areas, a twelve-widget catalog, and the settings, account and UI-gallery pages an admin product needs |
+| **Elementar Minimalistic** | [minimalistic.elementar-rt.tulikas.de](https://minimalistic.elementar-rt.tulikas.de) | [randrost/elementar-minimalistic](https://github.com/randrost/elementar-minimalistic) | Open-source starter: app shell and auth pages, ready for a new Angular project |
+| **FinTrack** (finance) | [finance.elementar-rt.tulikas.de](https://finance.elementar-rt.tulikas.de) | private | Personal-finance app: accounts, transactions, monthly budgets, savings goals and charts |
+| **FitLog** (fitness) | [fitlog.elementar-rt.tulikas.de](https://fitlog.elementar-rt.tulikas.de) | private | Health and fitness tracker: workout log, exercise library, nutrition, progress analytics and goals |
+| **FreelanceHQ** (freelance CRM) | [freelance.elementar-rt.tulikas.de](https://freelance.elementar-rt.tulikas.de) | private | CRM for freelancers: clients, projects (Kanban), time tracking and invoices |
+
+The finance, fitlog and freelance-crm templates are frontend-only and run on
+generated demo data, so every screen can be explored without a backend.
+
+## Author
+
+Elementar RT is developed and maintained by **Rostyslav Tulika**.
 
