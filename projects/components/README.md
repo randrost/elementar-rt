@@ -34,15 +34,6 @@ Go to directory `elementar-project-name` (or your project folder name) and run t
 ng add @elementar-rt/components
 ```
 
-> **Note:** The npm package is currently being republished. If `ng add` fails, build the library locally:
-> ```bash
-> git clone https://github.com/randrost/elementar-rt.git
-> cd elementar-rt
-> npm install
-> npm run build:components:prod
-> ```
-> Then link the built library into your project from `dist/components/`.
-
 ## Demo Layouts
 
 Every component is documented with live examples at
