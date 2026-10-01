@@ -45,10 +45,18 @@ ng add @elementar-rt/components
 
 ## Demo Layouts
 
-**Elementar RT Admin**, an open-source admin template built on this library, is
-live at **[admin.elementar-rt.tulikas.de](https://admin.elementar-rt.tulikas.de)**.
-Its source is at
-[randrost/elementar-rt-demo](https://github.com/randrost/elementar-rt-demo).
+Every component is documented with live examples at
+**[docs.elementar-rt.tulikas.de](https://docs.elementar-rt.tulikas.de)**.
 
-More demo layouts will follow, each as its own repository.
+Templates built on this library, each live as a demo:
+
+- **Elementar Admin**: [admin.elementar-rt.tulikas.de](https://admin.elementar-rt.tulikas.de), source [randrost/elementar-admin](https://github.com/randrost/elementar-admin)
+- **Elementar Minimalistic**: [minimalistic.elementar-rt.tulikas.de](https://minimalistic.elementar-rt.tulikas.de), source [randrost/elementar-minimalistic](https://github.com/randrost/elementar-minimalistic)
+- **FinTrack** (finance): [finance.elementar-rt.tulikas.de](https://finance.elementar-rt.tulikas.de)
+- **FitLog** (fitness): [fitlog.elementar-rt.tulikas.de](https://fitlog.elementar-rt.tulikas.de)
+- **FreelanceHQ** (freelance CRM): [freelance.elementar-rt.tulikas.de](https://freelance.elementar-rt.tulikas.de)
+
+## Author
+
+Rostyslav Tulika
 
