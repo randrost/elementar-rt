@@ -1,0 +1,102 @@
+<app-page>
+  <h1 appPageTitle>Loading Indicator</h1>
+  <div appPageContent>
+    <main class="mb-10">
+      <p>The Material 3 Expressive loading indicator shows indeterminate progress for short waits (under five seconds) by continuously morphing between a sequence of rounded shapes while it rotates. Use it in place of a circular progress spinner when a process has no measurable progress, for example on pull-to-refresh or while a small section of a page loads.</p>
+    </main>
+
+    <h3 class="mat-title-large">Basic</h3>
+    <emr-playground exampleUrl="_docs/components/loading-indicator/_examples" exampleName="basic-loading-indicator-example">
+      <app-basic-loading-indicator-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Sizes and colors</h3>
+    <emr-playground exampleUrl="_docs/components/loading-indicator/_examples" exampleName="loading-indicator-sizes-example">
+      <app-loading-indicator-sizes-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Loading content</h3>
+    <emr-playground exampleUrl="_docs/components/loading-indicator/_examples" exampleName="loading-indicator-in-context-example">
+      <app-loading-indicator-in-context-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">API</h3>
+
+    <h4 class="mat-title-medium mt-6">emr-loading-indicator</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>contained</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Draws the indicator on a filled circular container</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>duration</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Duration of a single shape-to-shape morph in milliseconds</div>
+              </td>
+              <td>number</td>
+              <td>680</td>
+            </tr>
+            <tr>
+              <td>
+                <div>aria-label</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Accessible label announced for the progress bar</div>
+              </td>
+              <td>string</td>
+              <td>Loading</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-loading-indicator-size</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: outer size of the indicator</div>
+              </td>
+              <td>length</td>
+              <td>48px</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-loading-indicator-color</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: shape color</div>
+              </td>
+              <td>color</td>
+              <td>var(--color-primary)</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-loading-indicator-contained-bg</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: container color when contained</div>
+              </td>
+              <td>color</td>
+              <td>var(--color-primary-container)</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-loading-indicator-contained-color</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: shape color when contained</div>
+              </td>
+              <td>color</td>
+              <td>var(--color-on-primary-container)</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-page>
