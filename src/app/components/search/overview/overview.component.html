@@ -1,0 +1,188 @@
+<app-page>
+  <h1 appPageTitle>Search</h1>
+  <div appPageContent>
+    <main class="mb-10">
+      <p>Search lets people enter a keyword or phrase to get relevant information. A search bar expands into a search view that shows suggestions or results while typing. Use the <code>docked</code> variant on medium and large windows, where the view opens as a panel below the bar, and the <code>fullscreen</code> variant on compact windows, where the view covers the whole screen. The input is an accessible combobox: arrow keys move through the results and Enter selects one.</p>
+    </main>
+
+    <h3 class="mat-title-large">Docked</h3>
+    <emr-playground exampleUrl="_docs/components/search/_examples" exampleName="basic-search-example">
+      <app-basic-search-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Full screen</h3>
+    <emr-playground exampleUrl="_docs/components/search/_examples" exampleName="fullscreen-search-example">
+      <app-fullscreen-search-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Submitting a query</h3>
+    <emr-playground exampleUrl="_docs/components/search/_examples" exampleName="search-submit-example">
+      <app-search-submit-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">API</h3>
+
+    <h4 class="mat-title-medium mt-6">emr-search</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>variant</div>
+                <div class="text-xs text-neutral-600 mt-0.5"><code>docked</code> shows the view below the bar, <code>fullscreen</code> covers the window</div>
+              </td>
+              <td>'docked' | 'fullscreen'</td>
+              <td>'docked'</td>
+            </tr>
+            <tr>
+              <td>
+                <div>open</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Whether the search view is open; supports <code>[(open)]</code></div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>query</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Text of the input; supports <code>[(query)]</code></div>
+              </td>
+              <td>string</td>
+              <td>''</td>
+            </tr>
+            <tr>
+              <td>
+                <div>placeholder</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Placeholder of the input</div>
+              </td>
+              <td>string</td>
+              <td>Search</td>
+            </tr>
+            <tr>
+              <td>
+                <div>disabled</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Disables the search</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>aria-label</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Accessible label of the input</div>
+              </td>
+              <td>string</td>
+              <td>Search</td>
+            </tr>
+            <tr>
+              <td>
+                <div>(search)</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Emits the query when Enter is pressed without an active item</div>
+              </td>
+              <td>string</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>(selected)</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Emits the <code>value</code> of the selected item</div>
+              </td>
+              <td>unknown</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">emr-search-item</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>value</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Value emitted by the search's <code>(selected)</code></div>
+              </td>
+              <td>unknown</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>disabled</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Disables the item and skips it in keyboard navigation</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>(selected)</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Emits when the item is selected</div>
+              </td>
+              <td>void</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">Content slots</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>[emrSearchLeading] / [emrSearchTrailing]</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Leading and trailing content of the closed bar. Buttons keep their own click behaviour; add the <code>emr-search-open</code> class to a button to make it open the search</div>
+              </td>
+              <td>directive</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>[emrSearchItemLeading] / [emrSearchItemTrailing]</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Leading icon or avatar and trailing content of an item</div>
+              </td>
+              <td>directive</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>[emrSearchItemSupporting]</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Supporting text below the item headline</div>
+              </td>
+              <td>directive</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-page>

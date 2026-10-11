@@ -1,0 +1,224 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-search-bar-height: --spacing(14);
+  --emr-search-bar-bg: var(--color-surface-container-high);
+  --emr-search-bar-radius: 28px;
+  --emr-search-view-bg: var(--color-surface-container-high);
+  --emr-search-view-max-height: min(60vh, 480px);
+  --emr-search-fullscreen-bg: var(--color-surface-container);
+  --emr-search-color: var(--color-on-surface);
+  --emr-search-muted-color: var(--color-on-surface-variant);
+  --emr-search-divider: var(--color-outline);
+  --emr-search-z-index: 1000;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  color: var(--emr-search-color);
+
+  &.is-disabled {
+    pointer-events: none;
+    opacity: 0.38;
+  }
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: --spacing(1);
+  height: var(--emr-search-bar-height);
+  padding-inline: --spacing(1);
+  border-radius: var(--emr-search-bar-radius);
+  background: var(--emr-search-bar-bg);
+  color: var(--emr-search-muted-color);
+  cursor: text;
+  transition: border-radius 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.bar-state-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-on-surface);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+
+  :host:not(.is-open) .bar:hover & {
+    opacity: 0.08;
+  }
+}
+
+.slot {
+  position: relative;
+  display: contents;
+
+  :host.is-open & {
+    display: none;
+  }
+
+  ::ng-deep {
+    .emr-search-leading,
+    .emr-search-trailing {
+      display: flex;
+      flex: none;
+      align-items: center;
+      justify-content: center;
+      min-width: --spacing(12);
+      height: --spacing(12);
+      color: var(--emr-search-muted-color);
+    }
+  }
+}
+
+:host:not(.is-open) .slot-leading:empty + .input {
+  padding-inline-start: --spacing(3);
+}
+
+.action {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: --spacing(12);
+  height: --spacing(12);
+  padding: 0;
+  border: 0;
+  border-radius: calc(infinity * 1px);
+  background: none;
+  color: var(--emr-search-muted-color);
+  cursor: pointer;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+  }
+
+  &:hover {
+    background: color-mix(in srgb, var(--color-on-surface-variant) 8%, transparent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: -2px;
+  }
+}
+
+.input {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--emr-search-color);
+  font: inherit;
+  font-size: var(--text-base);
+  line-height: --spacing(6);
+  letter-spacing: 0.5px;
+
+  &::placeholder {
+    color: var(--emr-search-muted-color);
+  }
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    appearance: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--emr-search-view-bg);
+
+  &[hidden] {
+    display: none;
+  }
+
+  &:empty {
+    min-height: --spacing(4);
+  }
+}
+
+// Docked: the view is a panel attached below the bar.
+:host.is-docked.is-open {
+  .bar {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: inset 0 -1px 0 var(--emr-search-divider);
+  }
+
+  .view {
+    position: absolute;
+    z-index: var(--emr-search-z-index);
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: var(--emr-search-view-max-height);
+    padding-block: --spacing(2);
+    border-bottom-left-radius: var(--emr-search-bar-radius);
+    border-bottom-right-radius: var(--emr-search-bar-radius);
+    box-shadow: 0 4px 8px 3px rgb(0 0 0 / 0.15), 0 1px 3px rgb(0 0 0 / 0.3);
+    animation: emr-search-view-enter 200ms cubic-bezier(0.2, 0, 0, 1);
+    transform-origin: top center;
+  }
+}
+
+// Full screen: the bar and view cover the whole window.
+:host.is-fullscreen.is-open {
+  .bar {
+    position: fixed;
+    z-index: calc(var(--emr-search-z-index) + 1);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: --spacing(18);
+    padding-inline: --spacing(2);
+    border-radius: 0;
+    background: var(--emr-search-fullscreen-bg);
+    box-shadow: inset 0 -1px 0 var(--emr-search-divider);
+  }
+
+  .view {
+    position: fixed;
+    z-index: var(--emr-search-z-index);
+    inset: 0;
+    padding-top: --spacing(18);
+    padding-bottom: --spacing(4);
+    background: var(--emr-search-fullscreen-bg);
+    animation: emr-search-fullscreen-enter 250ms cubic-bezier(0.2, 0, 0, 1);
+  }
+}
+
+@keyframes emr-search-view-enter {
+  from {
+    opacity: 0;
+    transform: scaleY(0.9);
+  }
+}
+
+@keyframes emr-search-fullscreen-enter {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="flex min-h-96 flex-col items-center gap-4">
+  <emr-search placeholder="Search cities" [(query)]="query" (selected)="pick($event)" class="max-w-md">
+    <button emrSearchLeading mat-icon-button aria-label="Open navigation">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button emrSearchTrailing mat-icon-button aria-label="Voice search">
+      <mat-icon>mic</mat-icon>
+    </button>
+
+    @if (query()) {
+      @for (city of results(); track city.name) {
+        <emr-search-item [value]="city.name">
+          <mat-icon emrSearchItemLeading>location_on</mat-icon>
+          {{ city.name }}
+          <span emrSearchItemSupporting>{{ city.country }}</span>
+        </emr-search-item>
+      } @empty {
+        <div class="px-4 py-3 text-sm text-on-surface-variant">No cities match “{{ query() }}”</div>
+      }
+    } @else {
+      @for (city of recent; track city) {
+        <emr-search-item [value]="city">
+          <mat-icon emrSearchItemLeading>history</mat-icon>
+          {{ city }}
+        </emr-search-item>
+      }
+    }
+  </emr-search>
+  <p class="text-sm text-on-surface-variant">Selected: {{ picked() ?? 'nothing yet' }}</p>
+</div>

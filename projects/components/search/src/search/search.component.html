@@ -1,0 +1,49 @@
+<form class="bar" role="search" (submit)="_onSubmit($event)" (click)="_onBarClick($event)">
+  <span class="bar-state-layer" aria-hidden="true"></span>
+
+  @if (open()) {
+    <button type="button" class="action" aria-label="Close search" (click)="close(); $event.stopPropagation()">
+      <svg viewBox="0 -960 960 960" aria-hidden="true">
+        <path d="m294.92-450 227.85 227.85q8.92 8.92 8.8 20.88-.11 11.96-9.42 21.27-9.3 8.69-21.15 9-11.85.31-21.15-9L195.69-464.15q-5.61-5.62-7.92-11.85-2.31-6.23-2.31-13.46t2.31-13.46q2.31-6.23 7.92-11.85l284.16-284.15q8.3-8.31 20.88-8.5 12.58-.19 21.27 8.5 9.31 9.3 9.31 21.38 0 12.08-9.31 21.39L294.92-510H760q12.77 0 21.38 8.62Q790-492.77 790-480t-8.62 21.38Q772.77-450 760-450H294.92Z"/>
+      </svg>
+    </button>
+  }
+
+  <span class="slot slot-leading">
+    <ng-content select="[emrSearchLeading]"/>
+  </span>
+
+  <input
+    #input
+    class="input"
+    type="search"
+    role="combobox"
+    autocomplete="off"
+    aria-autocomplete="list"
+    [attr.aria-label]="ariaLabel()"
+    [attr.aria-expanded]="open()"
+    [attr.aria-controls]="_listId"
+    [attr.aria-activedescendant]="_activeItemId()"
+    [placeholder]="placeholder()"
+    [value]="query()"
+    [disabled]="disabled()"
+    (focus)="_onFocus()"
+    (input)="_onInput($event)"
+    (keydown)="_onKeydown($event)">
+
+  @if (open()) {
+    <button type="button" class="action" aria-label="Clear search" (click)="_onClear(); $event.stopPropagation()">
+      <svg viewBox="0 -960 960 960" aria-hidden="true">
+        <path d="M480-437.85 277.08-234.92q-8.31 8.3-20.89 8.5-12.57.19-21.27-8.5-8.69-8.7-8.69-21.08 0-12.38 8.69-21.08L437.85-480 234.92-682.92q-8.3-8.31-8.5-20.89-.19-12.57 8.5-21.27 8.7-8.69 21.08-8.69 12.38 0 21.08 8.69L480-522.15l202.92-202.93q8.31-8.3 20.89-8.5 12.57-.19 21.27 8.5 8.69 8.7 8.69 21.08 0 12.38-8.69 21.08L522.15-480l202.93 202.92q8.3 8.31 8.5 20.89.19 12.57-8.5 21.27-8.7 8.69-21.08 8.69-12.38 0-21.08-8.69L480-437.85Z"/>
+      </svg>
+    </button>
+  }
+
+  <span class="slot slot-trailing">
+    <ng-content select="[emrSearchTrailing]"/>
+  </span>
+</form>
+
+<div class="view" role="listbox" [id]="_listId" [attr.aria-label]="ariaLabel()" [hidden]="!open()">
+  <ng-content/>
+</div>
