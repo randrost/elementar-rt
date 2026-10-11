@@ -1,0 +1,109 @@
+<app-page>
+  <h1 appPageTitle>Button Group</h1>
+  <div appPageContent>
+    <main class="mb-10">
+      <p>Button groups organize related buttons and toggles. In a <code>standard</code> group buttons are separated by a gap and widen slightly while pressed; in a <code>connected</code> group they are joined together, and the selected one becomes fully rounded, which makes connected groups a good fit for single or multi-select options. Toggles with a <code>value</code> are selected through the group's two-way bound <code>value</code>.</p>
+    </main>
+
+    <h3 class="mat-title-large">Standard</h3>
+    <emr-playground exampleUrl="_docs/forms/button-group/_examples" exampleName="basic-button-group-example">
+      <app-basic-button-group-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Mixing buttons and toggles</h3>
+    <emr-playground exampleUrl="_docs/forms/button-group/_examples" exampleName="button-group-actions-example">
+      <app-button-group-actions-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Connected</h3>
+    <emr-playground exampleUrl="_docs/forms/button-group/_examples" exampleName="connected-button-group-example">
+      <app-connected-button-group-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Connected with icons and labels</h3>
+    <emr-playground exampleUrl="_docs/forms/button-group/_examples" exampleName="connected-button-group-labels-example">
+      <app-connected-button-group-labels-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">API</h3>
+
+    <h4 class="mat-title-medium mt-6">emr-button-group</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>variant</div>
+                <div class="text-xs text-neutral-600 mt-0.5"><code>standard</code> separates items with a gap, <code>connected</code> joins them</div>
+              </td>
+              <td>'standard' | 'connected'</td>
+              <td>'standard'</td>
+            </tr>
+            <tr>
+              <td>
+                <div>value</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Selected toggle value, or array of values when <code>multiple</code>; supports <code>[(value)]</code></div>
+              </td>
+              <td>unknown</td>
+              <td>undefined</td>
+            </tr>
+            <tr>
+              <td>
+                <div>multiple</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Allows several toggles to be selected</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>required</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Prevents deselecting the last selected toggle</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>disabled</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Disables every toggle in the group</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-button-group-gap</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: gap of the standard variant</div>
+              </td>
+              <td>length</td>
+              <td>8px</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-button-group-connected-gap</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: gap of the connected variant</div>
+              </td>
+              <td>length</td>
+              <td>2px</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-page>

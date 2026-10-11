@@ -1,0 +1,9 @@
+<div class="flex flex-col items-start gap-3">
+  <emr-button-group multiple [(value)]="enabled" aria-label="Quick settings">
+    <button emrToggle iconOnly value="wifi" aria-label="Wi-Fi"><mat-icon>wifi</mat-icon></button>
+    <button emrToggle iconOnly value="bluetooth" aria-label="Bluetooth"><mat-icon>bluetooth</mat-icon></button>
+    <button emrToggle iconOnly value="alarm" aria-label="Alarm"><mat-icon>alarm</mat-icon></button>
+    <button emrToggle iconOnly value="link" aria-label="Hotspot"><mat-icon>link</mat-icon></button>
+  </emr-button-group>
+  <span class="text-sm text-on-surface-variant">Enabled: {{ enabled() }}</span>
+</div>

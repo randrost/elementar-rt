@@ -1,0 +1,8 @@
+<emr-button-group aria-label="Player controls">
+  <button mat-flat-button aria-label="Previous"><mat-icon>skip_previous</mat-icon></button>
+  <button emrToggle [(pressed)]="playing">
+    <mat-icon>{{ playing() ? 'pause' : 'play_arrow' }}</mat-icon>
+    {{ playing() ? 'Pause' : 'Play' }}
+  </button>
+  <button mat-flat-button aria-label="Next"><mat-icon>skip_next</mat-icon></button>
+</emr-button-group>

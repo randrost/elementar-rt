@@ -212,6 +212,18 @@ export class SidebarComponent implements OnInit {
         {
           key: uuid(),
           type: 'link',
+          name: 'Toggle',
+          link: '/forms/toggle'
+        },
+        {
+          key: uuid(),
+          type: 'link',
+          name: 'Button Group',
+          link: '/forms/button-group'
+        },
+        {
+          key: uuid(),
+          type: 'link',
           name: 'Phone Input',
           link: '/forms/phone-input'
         },
