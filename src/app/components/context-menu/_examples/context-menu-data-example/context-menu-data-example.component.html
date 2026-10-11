@@ -1,0 +1,28 @@
+<div class="mx-auto flex w-full max-w-sm flex-col gap-3">
+  <ul class="divide-y divide-outline-variant overflow-hidden rounded-lg border border-outline-variant">
+    @for (file of files(); track file) {
+      <li class="flex cursor-context-menu items-center gap-3 px-4 py-3 text-sm hover:bg-surface-container select-none"
+          [emrContextMenuTriggerFor]="menu"
+          [emrContextMenuTriggerData]="{ $implicit: file }">
+        <mat-icon class="text-on-surface-variant">description</mat-icon>
+        {{ file }}
+      </li>
+    } @empty {
+      <li class="px-4 py-3 text-sm text-on-surface-variant">No files left</li>
+    }
+  </ul>
+  <p class="text-sm text-on-surface-variant">{{ message() }}</p>
+</div>
+
+<ng-template #menu let-file>
+  <emr-context-menu class="w-48">
+    <button emr-context-menu-item (triggered)="open(file)">
+      <mat-icon emrContextMenuItemIcon>open_in_new</mat-icon>
+      Open
+    </button>
+    <button emr-context-menu-item (triggered)="remove(file)">
+      <mat-icon emrContextMenuItemIcon>delete</mat-icon>
+      Delete
+    </button>
+  </emr-context-menu>
+</ng-template>

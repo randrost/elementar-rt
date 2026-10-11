@@ -95,6 +95,10 @@ const routes: Routes = [
     loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule)
   },
   {
+    path: 'context-menu',
+    loadChildren: () => import('./context-menu/context-menu.module').then(m => m.ContextMenuModule)
+  },
+  {
     path: 'paginator',
     loadChildren: () => import('./paginator/paginator.module').then(m => m.PaginatorModule)
   },

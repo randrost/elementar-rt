@@ -1,0 +1,24 @@
+<div class="flex h-32 w-full max-w-sm items-center justify-center rounded-lg border border-dashed border-outline-variant text-sm text-on-surface-variant select-none mx-auto"
+     [emrContextMenuTriggerFor]="menu">
+  Right click here
+</div>
+
+<ng-template #menu>
+  <emr-context-menu compact class="w-44">
+    <button emr-context-menu-item>
+      <mat-icon emrContextMenuItemIcon>content_copy</mat-icon>
+      Copy
+      <span emrContextMenuShortcut>⌘C</span>
+    </button>
+    <button emr-context-menu-item>
+      <mat-icon emrContextMenuItemIcon>drive_file_rename_outline</mat-icon>
+      Rename
+    </button>
+    <emr-context-menu-separator />
+    <button emr-context-menu-item>
+      <mat-icon emrContextMenuItemIcon>delete</mat-icon>
+      Delete
+      <span emrContextMenuShortcut>⌫</span>
+    </button>
+  </emr-context-menu>
+</ng-template>

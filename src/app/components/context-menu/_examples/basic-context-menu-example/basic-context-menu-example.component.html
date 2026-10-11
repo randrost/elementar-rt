@@ -1,0 +1,56 @@
+<div class="flex flex-col items-center gap-3">
+  <div class="flex h-36 w-full max-w-md items-center justify-center rounded-lg border border-dashed border-outline-variant text-sm text-on-surface-variant select-none"
+       [emrContextMenuTriggerFor]="menu">
+    Right click here
+  </div>
+  <p class="text-sm text-on-surface-variant">
+    Last action: {{ lastAction() || 'none' }} · Bookmarks: {{ showBookmarks() }} · Person: {{ person() }}
+  </p>
+</div>
+
+<ng-template #menu>
+  <emr-context-menu class="w-56">
+    <emr-context-menu-group>
+      <button emr-context-menu-item (triggered)="lastAction.set('back')">
+        <mat-icon emrContextMenuItemIcon>undo</mat-icon>
+        Back
+        <span emrContextMenuShortcut>⌘[</span>
+      </button>
+      <button emr-context-menu-item disabled>
+        <mat-icon emrContextMenuItemIcon>redo</mat-icon>
+        Forward
+        <span emrContextMenuShortcut>⌘]</span>
+      </button>
+      <button emr-context-menu-item (triggered)="lastAction.set('reload')">
+        <mat-icon emrContextMenuItemIcon>refresh</mat-icon>
+        Reload
+        <span emrContextMenuShortcut>⌘R</span>
+      </button>
+      <button [emrContextMenuSubTriggerFor]="moreTools" inset>More tools</button>
+    </emr-context-menu-group>
+    <emr-context-menu-group>
+      <button emr-context-menu-checkbox-item [(checked)]="showBookmarks">Show bookmarks</button>
+      <button emr-context-menu-checkbox-item [(checked)]="showFullUrls">Show full URLs</button>
+    </emr-context-menu-group>
+    <emr-context-menu-group [(value)]="person">
+      <emr-context-menu-label inset>People</emr-context-menu-label>
+      <button emr-context-menu-radio-item value="pedro">Pedro Duarte</button>
+      <button emr-context-menu-radio-item value="colm">Colm Tuite</button>
+    </emr-context-menu-group>
+  </emr-context-menu>
+</ng-template>
+
+<ng-template #moreTools>
+  <emr-context-menu class="w-48">
+    <emr-context-menu-group>
+      <button emr-context-menu-item (triggered)="lastAction.set('save page')">Save page...</button>
+      <button emr-context-menu-item (triggered)="lastAction.set('create shortcut')">Create shortcut...</button>
+      <button emr-context-menu-item (triggered)="lastAction.set('name window')">Name window...</button>
+      <emr-context-menu-separator />
+      <button emr-context-menu-item (triggered)="lastAction.set('developer tools')">Developer tools</button>
+    </emr-context-menu-group>
+    <emr-context-menu-group>
+      <button emr-context-menu-item (triggered)="lastAction.set('delete')">Delete</button>
+    </emr-context-menu-group>
+  </emr-context-menu>
+</ng-template>
