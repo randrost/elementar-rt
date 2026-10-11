@@ -1,0 +1,14 @@
+<emr-navigation-bar #bar="emrNavigationBar" wide activeKey="home">
+  <button emr-navigation-bar-item key="home">
+    <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('home')">home</mat-icon>
+    Home
+  </button>
+  <button emr-navigation-bar-item key="explore">
+    <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('explore')">explore</mat-icon>
+    Explore
+  </button>
+  <button emr-navigation-bar-item key="library">
+    <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('library')">video_library</mat-icon>
+    Library
+  </button>
+</emr-navigation-bar>

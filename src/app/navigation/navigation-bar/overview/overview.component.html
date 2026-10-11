@@ -1,0 +1,163 @@
+<app-page>
+  <h1 appPageTitle>Navigation Bar</h1>
+  <div appPageContent>
+    <main class="mb-10">
+      <p>Navigation bars let people switch between three to five primary destinations in an app. They sit at the bottom of compact windows, show an icon with a label for each destination, and highlight the active destination with a pill-shaped indicator. On medium windows use the <code>wide</code> layout, which places the label next to the icon.</p>
+    </main>
+
+    <h3 class="mat-title-large">Basic</h3>
+    <emr-playground exampleUrl="_docs/navigation/navigation-bar/_examples" exampleName="basic-navigation-bar-example">
+      <app-basic-navigation-bar-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">With badges</h3>
+    <emr-playground exampleUrl="_docs/navigation/navigation-bar/_examples" exampleName="navigation-bar-badges-example">
+      <app-navigation-bar-badges-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Wide (medium windows)</h3>
+    <emr-playground exampleUrl="_docs/navigation/navigation-bar/_examples" exampleName="wide-navigation-bar-example">
+      <app-wide-navigation-bar-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Two-way binding</h3>
+    <emr-playground exampleUrl="_docs/navigation/navigation-bar/_examples" exampleName="navigation-bar-two-way-binding-example">
+      <app-navigation-bar-two-way-binding-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">API</h3>
+
+    <h4 class="mat-title-medium mt-6">emr-navigation-bar</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>activeKey</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Key of the active item; supports two-way binding with <code>[(activeKey)]</code></div>
+              </td>
+              <td>unknown</td>
+              <td>undefined</td>
+            </tr>
+            <tr>
+              <td>
+                <div>wide</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Places labels next to icons for medium and larger windows</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-navigation-bar-bg</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: container color</div>
+              </td>
+              <td>color</td>
+              <td>var(--color-surface-container)</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-navigation-bar-indicator-bg</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: active indicator color</div>
+              </td>
+              <td>color</td>
+              <td>var(--color-secondary-container)</td>
+            </tr>
+            <tr>
+              <td>
+                <div>--emr-navigation-bar-height</div>
+                <div class="text-xs text-neutral-600 mt-0.5">CSS variable: bar height</div>
+              </td>
+              <td>length</td>
+              <td>64px</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">emr-navigation-bar-item, [emr-navigation-bar-item]</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>key</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Identifies the item within the bar</div>
+              </td>
+              <td>unknown</td>
+              <td>undefined</td>
+            </tr>
+            <tr>
+              <td>
+                <div>active</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Explicitly marks the item active, e.g. bound to <code>routerLinkActive</code></div>
+              </td>
+              <td>boolean | undefined</td>
+              <td>undefined</td>
+            </tr>
+            <tr>
+              <td>
+                <div>(activated)</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Emits when the item is clicked</div>
+              </td>
+              <td>void</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">Content slots</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>[emrNavigationBarItemIcon]</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Icon of the item</div>
+              </td>
+              <td>directive</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>[emrNavigationBarItemBadge]</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Badge on the icon; leave empty for a small dot</div>
+              </td>
+              <td>directive</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-page>

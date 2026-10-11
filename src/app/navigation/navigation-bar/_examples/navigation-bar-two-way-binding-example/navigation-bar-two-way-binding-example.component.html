@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center gap-4">
+  <div class="flex gap-2">
+    <button mat-stroked-button (click)="activeKey.set('photos')">Photos</button>
+    <button mat-stroked-button (click)="activeKey.set('albums')">Albums</button>
+    <button mat-stroked-button (click)="activeKey.set('sharing')">Sharing</button>
+  </div>
+  <div class="w-full max-w-sm">
+    <emr-navigation-bar [(activeKey)]="activeKey">
+      <button emr-navigation-bar-item key="photos">
+        <mat-icon emrNavigationBarItemIcon [class.filled]="activeKey() === 'photos'">photo</mat-icon>
+        Photos
+      </button>
+      <button emr-navigation-bar-item key="albums">
+        <mat-icon emrNavigationBarItemIcon [class.filled]="activeKey() === 'albums'">photo_library</mat-icon>
+        Albums
+      </button>
+      <button emr-navigation-bar-item key="sharing">
+        <mat-icon emrNavigationBarItemIcon [class.filled]="activeKey() === 'sharing'">group</mat-icon>
+        Sharing
+      </button>
+    </emr-navigation-bar>
+  </div>
+  <p class="text-sm text-on-surface-variant">Selected: {{ activeKey() }}</p>
+</div>
