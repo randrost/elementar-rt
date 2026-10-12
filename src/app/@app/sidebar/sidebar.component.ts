@@ -550,6 +550,12 @@ export class SidebarComponent implements OnInit {
         {
           key: uuid(),
           type: 'link',
+          name: 'Loading Indicator',
+          link: '/components/loading-indicator'
+        },
+        {
+          key: uuid(),
+          type: 'link',
           name: 'Stepper',
           link: '/components/stepper'
         },

@@ -115,6 +115,10 @@ const routes: Routes = [
     loadChildren: () => import('./progress-spinner/progress-spinner.module').then(m => m.ProgressSpinnerModule)
   },
   {
+    path: 'loading-indicator',
+    loadChildren: () => import('./loading-indicator/loading-indicator.module').then(m => m.LoadingIndicatorModule)
+  },
+  {
     path: 'slider',
     loadChildren: () => import('./slider/slider.module').then(m => m.SliderModule)
   },

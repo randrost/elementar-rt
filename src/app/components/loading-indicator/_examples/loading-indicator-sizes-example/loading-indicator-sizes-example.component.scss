@@ -1,0 +1,18 @@
+:host {
+  .small {
+    --emr-loading-indicator-size: 32px;
+  }
+
+  .large {
+    --emr-loading-indicator-size: 80px;
+  }
+
+  .tertiary {
+    --emr-loading-indicator-contained-bg: var(--color-tertiary-container);
+    --emr-loading-indicator-contained-color: var(--color-on-tertiary-container);
+  }
+
+  .slow {
+    --emr-loading-indicator-color: var(--color-secondary);
+  }
+}

@@ -1,0 +1,33 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-loading-indicator-size: --spacing(12);
+  --emr-loading-indicator-color: var(--color-primary);
+  --emr-loading-indicator-contained-color: var(--color-on-primary-container);
+  --emr-loading-indicator-contained-bg: var(--color-primary-container);
+
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--emr-loading-indicator-size);
+  height: var(--emr-loading-indicator-size);
+  padding: calc(var(--emr-loading-indicator-size) * 0.2);
+  border-radius: calc(infinity * 1px);
+  color: var(--emr-loading-indicator-color);
+
+  &.is-contained {
+    background: var(--emr-loading-indicator-contained-bg);
+    color: var(--emr-loading-indicator-contained-color);
+  }
+
+  .indicator {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    transform-box: fill-box;
+    transform-origin: center;
+    will-change: transform;
+  }
+}
