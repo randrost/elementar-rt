@@ -69,4 +69,30 @@ describe('VideoViewerComponent', () => {
     (component as any)._onTimeUpdate({ target: { currentTime: 30, duration: 60 } } as unknown as Event);
     expect((component as any)._progress()).toBe(50);
   });
+
+  it('should render a thumbnail trigger that opens the viewer', () => {
+    fixture.componentRef.setInput('src', 'https://www.youtube.com/watch?v=abc123');
+    fixture.detectChanges();
+    const trigger = fixture.nativeElement.querySelector('.vv-trigger') as HTMLButtonElement;
+    expect(trigger).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('.vv-thumb')?.getAttribute('src'))
+      .toBe('https://i.ytimg.com/vi/abc123/hqdefault.jpg');
+    trigger.click();
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.vv-backdrop')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('iframe.vv-embed')).not.toBeNull();
+  });
+
+  it('should open when the open input is set', () => {
+    fixture.componentRef.setInput('open', true);
+    fixture.detectChanges();
+    expect((component as any)._open()).toBe(true);
+  });
+
+  it('should prefer the poster input over the YouTube thumbnail', () => {
+    fixture.componentRef.setInput('src', 'https://youtu.be/abc123');
+    fixture.componentRef.setInput('poster', 'poster.jpg');
+    fixture.detectChanges();
+    expect((component as any)._thumbnail()).toBe('poster.jpg');
+  });
 });
