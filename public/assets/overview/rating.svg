@@ -1,5 +1,8 @@
 <svg width="296" height="141" viewBox="0 0 296 141" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="83" y="51" width="130" height="39" rx="6" fill="white" stroke="#D3D4D5"/>
-<text x="95" y="75" font-size="22" fill="#F59E0B">★★★</text>
-<text x="185" y="75" font-size="22" fill="#D3D4D5">★★</text>
+<path d="M100.0 60.5 L102.6 66.9 L109.5 67.4 L104.3 71.9 L105.9 78.6 L100.0 75.0 L94.1 78.6 L95.7 71.9 L90.5 67.4 L97.4 66.9Z" fill="#F59E0B" stroke-linejoin="round"/>
+<path d="M124.0 60.5 L126.6 66.9 L133.5 67.4 L128.3 71.9 L129.9 78.6 L124.0 75.0 L118.1 78.6 L119.7 71.9 L114.5 67.4 L121.4 66.9Z" fill="#F59E0B" stroke-linejoin="round"/>
+<path d="M148.0 60.5 L150.6 66.9 L157.5 67.4 L152.3 71.9 L153.9 78.6 L148.0 75.0 L142.1 78.6 L143.7 71.9 L138.5 67.4 L145.4 66.9Z" fill="#F59E0B" stroke-linejoin="round"/>
+<path d="M172.0 60.5 L174.6 66.9 L181.5 67.4 L176.3 71.9 L177.9 78.6 L172.0 75.0 L166.1 78.6 L167.7 71.9 L162.5 67.4 L169.4 66.9Z" fill="#D3D4D5" stroke-linejoin="round"/>
+<path d="M196.0 60.5 L198.6 66.9 L205.5 67.4 L200.3 71.9 L201.9 78.6 L196.0 75.0 L190.1 78.6 L191.7 71.9 L186.5 67.4 L193.4 66.9Z" fill="#D3D4D5" stroke-linejoin="round"/>
 </svg>
