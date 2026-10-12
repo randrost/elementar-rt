@@ -19,6 +19,61 @@
   display: block;
 }
 
+.vp-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: --spacing(2);
+  color: #fff;
+  pointer-events: none;
+
+  svg { width: --spacing(8); height: --spacing(8); }
+}
+
+.vp-error {
+  background: rgba(0,0,0,0.75);
+  font-size: theme(--text-sm);
+  pointer-events: auto;
+}
+
+.vp-spinner {
+  width: --spacing(10);
+  height: --spacing(10);
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 9999px;
+  animation: vp-spin 800ms linear infinite;
+}
+
+@keyframes vp-spin { to { transform: rotate(360deg); } }
+
+.vp-big-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: --spacing(16);
+  height: --spacing(16);
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: background 150ms ease, transform 150ms ease;
+
+  svg { width: --spacing(8); height: --spacing(8); margin-left: 3px; }
+
+  &:hover { background: var(--color-primary); transform: translate(-50%, -50%) scale(1.06); }
+  &:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+}
+
 .vp-chapter-badge {
   position: absolute;
   top: --spacing(3);
