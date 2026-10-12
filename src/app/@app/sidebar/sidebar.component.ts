@@ -418,6 +418,12 @@ export class SidebarComponent implements OnInit {
         {
           key: uuid(),
           type: 'link',
+          name: 'Context Menu',
+          link: '/components/context-menu'
+        },
+        {
+          key: uuid(),
+          type: 'link',
           name: 'Paginator',
           link: '/components/paginator'
         },

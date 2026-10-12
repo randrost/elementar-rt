@@ -1,0 +1,7 @@
+@reference 'tailwindcss';
+
+:host.is-checked {
+  border-radius: --spacing(2);
+  background: var(--emr-context-menu-selected-bg);
+  color: var(--emr-context-menu-selected-color);
+}

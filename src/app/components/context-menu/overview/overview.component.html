@@ -1,0 +1,265 @@
+<app-page>
+  <h1 appPageTitle>Context Menu</h1>
+  <div appPageContent>
+    <main class="mb-10">
+      <p>Context menus show actions for an element when it is right-clicked, long-pressed on touch devices, or receives the context menu key. The menu opens at the pointer position and supports icons, keyboard shortcuts, nested submenus, checkbox and radio items, and Material 3 Expressive grouped segments. Keyboard navigation, typeahead and focus management come from the Angular CDK menu.</p>
+    </main>
+
+    <h3 class="mat-title-large">Basic</h3>
+    <emr-playground exampleUrl="_docs/components/context-menu/_examples" exampleName="basic-context-menu-example">
+      <app-basic-context-menu-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Compact</h3>
+    <emr-playground exampleUrl="_docs/components/context-menu/_examples" exampleName="compact-context-menu-example">
+      <app-compact-context-menu-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Passing data to the menu</h3>
+    <emr-playground exampleUrl="_docs/components/context-menu/_examples" exampleName="context-menu-data-example">
+      <app-context-menu-data-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">API</h3>
+
+    <h4 class="mat-title-medium mt-6">[emrContextMenuTriggerFor]</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>emrContextMenuTriggerFor</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Template containing the <code>emr-context-menu</code> to open</div>
+              </td>
+              <td>TemplateRef</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>emrContextMenuTriggerData</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Context passed to the menu template</div>
+              </td>
+              <td>unknown</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>emrContextMenuDisabled</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Prevents the menu from opening</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>(emrContextMenuOpened) / (emrContextMenuClosed)</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Emit when the menu opens or closes</div>
+              </td>
+              <td>void</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">emr-context-menu</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>compact</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Denser item height and spacing</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>(closed)</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Emits when the menu closes</div>
+              </td>
+              <td>void</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">[emr-context-menu-item], [emrContextMenuSubTriggerFor]</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>disabled</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Disables the item</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>inset</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Indents the label to align with icons and check marks</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>(triggered)</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Emits when the item is activated (not on sub triggers)</div>
+              </td>
+              <td>void</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>emrContextMenuSubTriggerFor</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Template of the nested menu opened by the item</div>
+              </td>
+              <td>TemplateRef</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">[emr-context-menu-checkbox-item], [emr-context-menu-radio-item]</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>checked</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Checked state; two-way bindable on checkbox items</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>value</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Radio value written to the parent group's <code>value</code></div>
+              </td>
+              <td>unknown</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>disabled</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Disables the item</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">emr-context-menu-group</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>value</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Selected radio value; supports <code>[(value)]</code></div>
+              </td>
+              <td>unknown</td>
+              <td>undefined</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 class="mat-title-medium mt-6">Other building blocks</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>emr-context-menu-label</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Section heading, supports <code>inset</code></div>
+              </td>
+              <td>component</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>emr-context-menu-separator</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Divider between items</div>
+              </td>
+              <td>component</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>[emrContextMenuItemIcon]</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Leading icon of an item</div>
+              </td>
+              <td>directive</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>
+                <div>[emrContextMenuShortcut]</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Shortcut hint at the end of an item</div>
+              </td>
+              <td>directive</td>
+              <td>-</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-page>
