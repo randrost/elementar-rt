@@ -1,0 +1,12 @@
+<div class="flex flex-col items-center gap-4">
+  <emr-search placeholder="Type and press Enter" (search)="onSearch($event)" class="max-w-md">
+    <mat-icon emrSearchLeading>search</mat-icon>
+  </emr-search>
+  <ul class="text-sm text-on-surface-variant">
+    @for (query of submitted(); track $index) {
+      <li>Searched for “{{ query }}”</li>
+    } @empty {
+      <li>No searches yet</li>
+    }
+  </ul>
+</div>

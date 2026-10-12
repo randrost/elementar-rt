@@ -199,6 +199,10 @@ const routes: Routes = [
     loadChildren: () => import('./command-bar/command-bar.module').then(m => m.CommandBarModule)
   },
   {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then(m => m.SearchModule)
+  },
+  {
     path: 'filter-builder',
     loadChildren: () => import('./filter-builder/filter-builder.module').then(m => m.FilterBuilderModule)
   },

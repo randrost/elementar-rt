@@ -1,0 +1,85 @@
+@reference 'tailwindcss';
+
+:host {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: --spacing(4);
+  width: 100%;
+  min-height: --spacing(14);
+  padding: --spacing(2) --spacing(6) --spacing(2) --spacing(4);
+  border: 0;
+  background: none;
+  color: var(--color-on-surface);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  user-select: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-on-surface);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 150ms ease;
+  }
+
+  &:hover::before {
+    opacity: 0.08;
+  }
+
+  &.is-active::before,
+  &:active::before {
+    opacity: 0.1;
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+    opacity: 0.38;
+  }
+
+  .content {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+  }
+
+  .headline {
+    overflow: hidden;
+    font-size: var(--text-base);
+    line-height: --spacing(6);
+    letter-spacing: 0.5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  ::ng-deep .emr-search-item-supporting {
+    overflow: hidden;
+    font-size: var(--text-sm);
+    line-height: --spacing(5);
+    letter-spacing: 0.25px;
+    color: var(--color-on-surface-variant);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  ::ng-deep .emr-search-item-leading {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-on-surface-variant);
+  }
+
+  ::ng-deep .emr-search-item-trailing {
+    display: flex;
+    flex: none;
+    align-items: center;
+    margin-inline-start: auto;
+    font-size: var(--text-xs);
+    color: var(--color-on-surface-variant);
+  }
+}

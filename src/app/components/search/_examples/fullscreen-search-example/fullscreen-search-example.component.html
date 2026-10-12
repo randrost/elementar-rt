@@ -1,0 +1,21 @@
+<div class="flex flex-col items-center gap-4">
+  <p class="max-w-md text-center text-sm text-on-surface-variant">
+    Click the bar to expand the search view to the whole window. Press Escape or the back arrow to close it.
+  </p>
+  <emr-search variant="fullscreen" placeholder="Search files" [(open)]="open" class="max-w-md">
+    <mat-icon emrSearchLeading>search</mat-icon>
+    <span emrSearchTrailing>
+      <span class="flex size-8 items-center justify-center rounded-full bg-primary text-sm font-medium text-on-primary">A</span>
+    </span>
+
+    @for (result of results; track result.title) {
+      <emr-search-item [value]="result.title">
+        <span emrSearchItemLeading class="flex size-10 items-center justify-center rounded-full bg-surface-container-high">
+          <mat-icon>{{ result.icon }}</mat-icon>
+        </span>
+        {{ result.title }}
+        <span emrSearchItemSupporting>{{ result.supporting }}</span>
+      </emr-search-item>
+    }
+  </emr-search>
+</div>

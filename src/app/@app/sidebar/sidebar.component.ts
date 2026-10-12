@@ -508,6 +508,12 @@ export class SidebarComponent implements OnInit {
         {
           key: uuid(),
           type: 'link',
+          name: 'Search',
+          link: '/components/search'
+        },
+        {
+          key: uuid(),
+          type: 'link',
           name: 'Color Picker',
           link: '/components/color-picker'
         },
