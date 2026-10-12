@@ -127,6 +127,12 @@ export class SidebarComponent implements OnInit {
         {
           key: uuid(),
           type: 'link',
+          name: 'Navigation Bar',
+          link: '/navigation/navigation-bar'
+        },
+        {
+          key: uuid(),
+          type: 'link',
           name: 'Side Panel',
           link: '/navigation/side-panel'
         }

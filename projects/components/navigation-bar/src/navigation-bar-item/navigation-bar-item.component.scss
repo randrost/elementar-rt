@@ -1,0 +1,169 @@
+@reference 'tailwindcss';
+
+:host {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: --spacing(1);
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  line-height: --spacing(4);
+  letter-spacing: 0.5px;
+  color: var(--emr-navigation-bar-item-color);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: --spacing(14);
+    height: --spacing(8);
+    border-radius: calc(infinity * 1px);
+
+    // state layer
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: var(--emr-navigation-bar-state-layer);
+      opacity: 0;
+      transition: opacity 150ms ease;
+    }
+  }
+
+  .indicator {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--emr-navigation-bar-indicator-bg);
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 250ms cubic-bezier(0.2, 0, 0, 1), opacity 150ms ease;
+  }
+
+  .icon {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 150ms ease;
+  }
+
+  .label {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  ::ng-deep .emr-navigation-bar-item-badge {
+    position: absolute;
+    z-index: 2;
+    top: --spacing(0.5);
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: --spacing(4);
+    height: --spacing(4);
+    padding-inline: --spacing(1);
+    margin-left: --spacing(1);
+    border-radius: calc(infinity * 1px);
+    background: var(--emr-navigation-bar-badge-bg);
+    color: var(--emr-navigation-bar-badge-color);
+    font-size: 11px;
+    line-height: 1;
+
+    &:empty {
+      top: --spacing(1);
+      min-width: --spacing(1.5);
+      width: --spacing(1.5);
+      height: --spacing(1.5);
+      padding: 0;
+      margin-left: --spacing(2.5);
+    }
+  }
+
+  &:hover .icon-container::after {
+    opacity: 0.08;
+  }
+
+  &:active .icon-container::after,
+  &:focus-visible .icon-container::after {
+    opacity: 0.1;
+  }
+
+  &:focus-visible .icon-container {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  &.is-active {
+    color: var(--emr-navigation-bar-item-active-color);
+
+    .indicator {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .icon {
+      color: var(--emr-navigation-bar-item-active-icon-color);
+    }
+  }
+}
+
+// Horizontal items for medium and larger windows.
+:host-context(.emr-navigation-bar.is-wide) {
+  flex: none;
+  flex-direction: row;
+  gap: --spacing(1);
+  height: --spacing(10);
+  padding-inline: --spacing(4);
+  border-radius: calc(infinity * 1px);
+  font-size: var(--text-sm);
+  line-height: --spacing(5);
+  letter-spacing: 0.1px;
+
+  .icon-container {
+    position: static;
+    width: auto;
+    height: auto;
+
+    &::after {
+      border-radius: calc(infinity * 1px);
+    }
+  }
+
+  .indicator {
+    border-radius: calc(infinity * 1px);
+  }
+
+  ::ng-deep .emr-navigation-bar-item-badge {
+    top: --spacing(0.5);
+    left: --spacing(7);
+    margin-left: 0;
+  }
+}

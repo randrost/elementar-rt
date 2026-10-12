@@ -1,0 +1,26 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-navigation-bar-height: --spacing(16);
+  --emr-navigation-bar-bg: var(--color-surface-container);
+  --emr-navigation-bar-item-color: var(--color-on-surface-variant);
+  --emr-navigation-bar-item-active-color: var(--color-secondary);
+  --emr-navigation-bar-item-active-icon-color: var(--color-on-secondary-container);
+  --emr-navigation-bar-indicator-bg: var(--color-secondary-container);
+  --emr-navigation-bar-state-layer: var(--color-on-surface);
+  --emr-navigation-bar-badge-bg: var(--color-error);
+  --emr-navigation-bar-badge-color: var(--color-on-error);
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: var(--emr-navigation-bar-height);
+  padding-block: --spacing(1.5);
+  background: var(--emr-navigation-bar-bg);
+
+  &.is-wide {
+    align-items: center;
+    gap: --spacing(2);
+  }
+}

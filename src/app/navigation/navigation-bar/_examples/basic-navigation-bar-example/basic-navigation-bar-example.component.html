@@ -1,0 +1,23 @@
+<div class="mx-auto w-full max-w-sm overflow-hidden rounded-3xl border border-outline-variant">
+  <div class="flex h-48 items-center justify-center text-on-surface-variant">
+    Active: {{ bar.activeKey() }}
+  </div>
+  <emr-navigation-bar #bar="emrNavigationBar" activeKey="home">
+    <button emr-navigation-bar-item key="home">
+      <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('home')">home</mat-icon>
+      Home
+    </button>
+    <button emr-navigation-bar-item key="explore">
+      <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('explore')">explore</mat-icon>
+      Explore
+    </button>
+    <button emr-navigation-bar-item key="library">
+      <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('library')">video_library</mat-icon>
+      Library
+    </button>
+    <button emr-navigation-bar-item key="profile">
+      <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('profile')">person</mat-icon>
+      Profile
+    </button>
+  </emr-navigation-bar>
+</div>

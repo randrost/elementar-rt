@@ -1,0 +1,23 @@
+<div class="mx-auto w-full max-w-sm">
+  <emr-navigation-bar #bar="emrNavigationBar" activeKey="mail">
+    <button emr-navigation-bar-item key="mail">
+      <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('mail')">mail</mat-icon>
+      <span emrNavigationBarItemBadge>3</span>
+      Mail
+    </button>
+    <button emr-navigation-bar-item key="chat">
+      <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('chat')">chat_bubble</mat-icon>
+      <span emrNavigationBarItemBadge></span>
+      Chat
+    </button>
+    <button emr-navigation-bar-item key="rooms">
+      <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('rooms')">groups</mat-icon>
+      <span emrNavigationBarItemBadge>999+</span>
+      Rooms
+    </button>
+    <button emr-navigation-bar-item key="meet">
+      <mat-icon emrNavigationBarItemIcon [class.filled]="bar.isActive('meet')">videocam</mat-icon>
+      Meet
+    </button>
+  </emr-navigation-bar>
+</div>

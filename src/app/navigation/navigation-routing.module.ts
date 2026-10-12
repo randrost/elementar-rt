@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./rail-nav/rail-nav.module').then(m => m.RailNavModule)
   },
   {
+    path: 'navigation-bar',
+    loadChildren: () => import('./navigation-bar/navigation-bar.module').then(m => m.NavigationBarModule)
+  },
+  {
     path: 'side-panel',
     loadChildren: () => import('./side-panel/side-panel.module').then(m => m.SidePanelModule)
   },
