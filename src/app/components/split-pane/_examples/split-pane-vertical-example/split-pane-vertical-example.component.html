@@ -4,9 +4,9 @@
     [initialSize]="35"
     [minSize]="20"
     [maxSize]="75"
-    style="height: 320px; display: block;"
+    style="height: 320px;"
   >
-    <div class="h-full p-4 bg-surface-container rounded-t-xl overflow-auto">
+    <div emrSplitFirst class="h-full p-4 bg-surface-container rounded-t-xl overflow-auto">
       <h4 class="font-semibold mb-2 text-sm">Query</h4>
       <pre class="text-xs font-mono text-primary">SELECT users.name, orders.total
 FROM users
@@ -15,7 +15,7 @@ WHERE orders.created_at > '2025-01-01'
 ORDER BY orders.total DESC
 LIMIT 10;</pre>
     </div>
-    <div class="h-full p-4 bg-surface-container-low rounded-b-xl overflow-auto">
+    <div emrSplitSecond class="h-full p-4 bg-surface-container-low rounded-b-xl overflow-auto">
       <h4 class="font-semibold mb-2 text-sm">Results</h4>
       <table class="w-full text-xs">
         <thead>
