@@ -11,6 +11,11 @@ pipeline {
         githubPush()
     }
 
+    options {
+        // A newer push supersedes older builds: abort them instead of queueing.
+        disableConcurrentBuilds(abortPrevious: true)
+    }
+
     stages {
         stage('Build Docker Image') {
             steps {
