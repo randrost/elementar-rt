@@ -51,6 +51,14 @@ const routes: Routes = [
     loadChildren: () => import('./button-toggle/button-toggle.module').then(m => m.ButtonToggleModule)
   },
   {
+    path: 'toggle',
+    loadChildren: () => import('./toggle/toggle.module').then(m => m.ToggleModule)
+  },
+  {
+    path: 'button-group',
+    loadChildren: () => import('./button-group/button-group.module').then(m => m.ButtonGroupModule)
+  },
+  {
     path: 'number-input',
     loadChildren: () => import('./number-input/number-input.module').then(m => m.NumberInputModule)
   },

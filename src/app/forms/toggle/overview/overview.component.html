@@ -1,0 +1,102 @@
+<app-page>
+  <h1 appPageTitle>Toggle</h1>
+  <div appPageContent>
+    <main class="mb-10">
+      <p>Toggle buttons switch between a selected and an unselected state, for example to bookmark an item or turn on a setting. Following Material 3 Expressive, a selected toggle changes color and morphs its shape: round toggles become square and square toggles become round. Toggles come in filled, tonal, outlined and elevated variants and five sizes, and can be combined in a button group.</p>
+    </main>
+
+    <h3 class="mat-title-large">Variants</h3>
+    <emr-playground exampleUrl="_docs/forms/toggle/_examples" exampleName="basic-toggle-example">
+      <app-basic-toggle-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Sizes and shapes</h3>
+    <emr-playground exampleUrl="_docs/forms/toggle/_examples" exampleName="toggle-sizes-example">
+      <app-toggle-sizes-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Two-way binding</h3>
+    <emr-playground exampleUrl="_docs/forms/toggle/_examples" exampleName="toggle-binding-example">
+      <app-toggle-binding-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">API</h3>
+
+    <h4 class="mat-title-medium mt-6">button[emrToggle], a[emrToggle]</h4>
+    <div class="border border-default rounded-xl shadow-sm overflow-hidden my-4">
+      <table class="emr-table not-mat-typography">
+        <thead>
+        <tr class="bg-neutral-200 dark:bg-neutral-700">
+          <th class="w-1/2">Property</th>
+          <th>Type</th>
+          <th>Default</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>
+                <div>pressed</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Selected state; supports <code>[(pressed)]</code></div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>variant</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Color style</div>
+              </td>
+              <td>'filled' | 'tonal' | 'outlined' | 'elevated'</td>
+              <td>'filled'</td>
+            </tr>
+            <tr>
+              <td>
+                <div>size</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Height, padding, icon and label size</div>
+              </td>
+              <td>'xs' | 'sm' | 'md' | 'lg' | 'xl'</td>
+              <td>'sm'</td>
+            </tr>
+            <tr>
+              <td>
+                <div>shape</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Resting shape; selection morphs to the other shape</div>
+              </td>
+              <td>'round' | 'square'</td>
+              <td>'round'</td>
+            </tr>
+            <tr>
+              <td>
+                <div>iconOnly</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Square icon-only layout</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>
+                <div>value</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Identifies the toggle inside an <code>emr-button-group</code></div>
+              </td>
+              <td>unknown</td>
+              <td>undefined</td>
+            </tr>
+            <tr>
+              <td>
+                <div>disabled</div>
+                <div class="text-xs text-neutral-600 mt-0.5">Disables the toggle</div>
+              </td>
+              <td>boolean</td>
+              <td>false</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-page>

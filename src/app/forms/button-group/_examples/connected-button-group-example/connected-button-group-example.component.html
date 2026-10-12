@@ -1,0 +1,16 @@
+<div class="flex flex-col items-start gap-6">
+  <emr-button-group variant="connected" required [(value)]="view" aria-label="Calendar view">
+    <button emrToggle variant="tonal" value="day">Day</button>
+    <button emrToggle variant="tonal" value="week">Week</button>
+    <button emrToggle variant="tonal" value="month">Month</button>
+    <button emrToggle variant="tonal" value="year">Year</button>
+  </emr-button-group>
+
+  <emr-button-group variant="connected" multiple [(value)]="formats" aria-label="Text formatting">
+    <button emrToggle size="md" iconOnly value="bold" aria-label="Bold"><mat-icon>format_bold</mat-icon></button>
+    <button emrToggle size="md" iconOnly value="italic" aria-label="Italic"><mat-icon>format_italic</mat-icon></button>
+    <button emrToggle size="md" iconOnly value="underline" aria-label="Underline"><mat-icon>format_underlined</mat-icon></button>
+  </emr-button-group>
+
+  <span class="text-sm text-on-surface-variant">View: {{ view() }} · Formats: {{ formats() }}</span>
+</div>

@@ -1,0 +1,39 @@
+@reference 'tailwindcss';
+
+:host {
+  --emr-button-group-gap: 8px;
+  --emr-button-group-connected-gap: 2px;
+
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--emr-button-group-gap);
+
+  &.is-connected {
+    gap: var(--emr-button-group-connected-gap);
+
+    ::ng-deep > .emr-toggle {
+      flex: 1 1 auto;
+      border-radius: var(--emr-toggle-connected-inner-radius);
+
+      &:first-child {
+        border-start-start-radius: 9999px;
+        border-end-start-radius: 9999px;
+      }
+
+      &:last-child {
+        border-start-end-radius: 9999px;
+        border-end-end-radius: 9999px;
+      }
+
+      &:active {
+        padding-inline: var(--emr-toggle-padding);
+        border-radius: var(--emr-toggle-pressed-radius);
+      }
+
+      &.is-pressed {
+        border-radius: 9999px;
+      }
+    }
+  }
+}
