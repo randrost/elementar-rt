@@ -2,17 +2,26 @@
   <h1 appPageTitle>Video Viewer</h1>
   <div appPageContent>
     <main class="mb-10">
-      <p>Embed YouTube, Vimeo, or native MP4 videos. Keyboard shortcuts: Space to play/pause, F for fullscreen, Escape to exit.</p>
+      <p>Shows a video thumbnail that opens the video in a lightbox. Supports YouTube and Vimeo links (embedded players) and native MP4 files (custom controls). YouTube thumbnails are loaded automatically; for other sources pass a <code>poster</code>. Keyboard shortcuts while open: Space to play/pause and F for fullscreen (MP4), Escape to close.</p>
     </main>
 
-    <h3 class="mat-title-large">Basic</h3>
+    <h3 class="mat-title-large">YouTube</h3>
     <emr-playground exampleUrl="_docs/components/video-viewer/_examples" exampleName="basic-video-viewer-example">
       <app-basic-video-viewer-example />
     </emr-playground>
 
-    <h3 class="mat-title-large">Vimeo embed</h3>
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">Vimeo</h3>
     <emr-playground exampleUrl="_docs/components/video-viewer/_examples" exampleName="video-viewer-vimeo-example">
       <app-video-viewer-vimeo-example />
+    </emr-playground>
+
+    <mat-divider class="my-8" />
+
+    <h3 class="mat-title-large">MP4 with poster</h3>
+    <emr-playground exampleUrl="_docs/components/video-viewer/_examples" exampleName="video-viewer-mp4-example">
+      <app-video-viewer-mp4-example />
     </emr-playground>
   </div>
 </app-page>

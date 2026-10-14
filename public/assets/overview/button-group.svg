@@ -1,0 +1,22 @@
+<svg width="296" height="141" viewBox="0 0 296 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- standard group -->
+<rect x="89" y="32" width="26" height="26" rx="8" fill="#8952E0"/>
+<path d="M96 43C99.9 39.5 104.1 39.5 108 43M98.5 46C100.8 44 103.2 44 105.5 46" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="102" cy="49" r="1.3" fill="white"/>
+<rect x="121" y="32" width="26" height="26" rx="13" fill="#EEEDF1"/>
+<path d="M130 40.5L138 49.5L134 53V37L138 40.5L130 49.5" stroke="#46484A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="153" y="32" width="26" height="26" rx="13" fill="#EEEDF1"/>
+<circle cx="166" cy="46" r="6" stroke="#46484A" stroke-width="1.3"/>
+<path d="M166 42.5V46L168.5 47.5" stroke="#46484A" stroke-width="1.3" stroke-linecap="round"/>
+<rect x="185" y="32" width="26" height="26" rx="13" fill="#EEEDF1"/>
+<path d="M194 45H202M195 42H193C191.343 42 190 43.343 190 45C190 46.657 191.343 48 193 48H195M201 42H203C204.657 42 206 43.343 206 45C206 46.657 204.657 48 203 48H201" stroke="#46484A" stroke-width="1.3" stroke-linecap="round"/>
+<!-- connected group -->
+<path d="M70 92C70 85.373 75.373 80 82 80H107C108.105 80 109 80.895 109 82V102C109 103.105 108.105 104 107 104H82C75.373 104 70 98.627 70 92Z" fill="#E8DEF8"/>
+<rect x="80" y="90" width="20" height="4" rx="2" fill="#4A4458"/>
+<rect x="111" y="80" width="37" height="24" rx="12" fill="#625B71"/>
+<rect x="119" y="90" width="21" height="4" rx="2" fill="white"/>
+<rect x="150" y="80" width="37" height="24" rx="2" fill="#E8DEF8"/>
+<rect x="158" y="90" width="21" height="4" rx="2" fill="#4A4458"/>
+<path d="M189 82C189 80.895 189.895 80 191 80H214C220.627 80 226 85.373 226 92C226 98.627 220.627 104 214 104H191C189.895 104 189 103.105 189 102V82Z" fill="#E8DEF8"/>
+<rect x="197" y="90" width="20" height="4" rx="2" fill="#4A4458"/>
+</svg>

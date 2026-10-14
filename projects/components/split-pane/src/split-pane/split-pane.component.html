@@ -1,14 +1,22 @@
-<div class="pane pane--first" [style.flex-basis.%]="_firstSize()">
-  <ng-content select="[emrSplitFirst]" />
-</div>
-<div
-  class="split-divider"
-  role="separator"
-  [attr.aria-orientation]="orientation()"
-  (mousedown)="_onDividerMouseDown($event)"
->
-  <div class="divider-handle"></div>
-</div>
-<div class="pane pane--second" [style.flex-basis.%]="100 - _firstSize()">
-  <ng-content select="[emrSplitSecond]" />
+<div class="split">
+  <div class="pane pane--first" [style.flex-basis]="'calc(' + _firstSize() + '% - var(--emr-split-pane-divider-size) / 2)'">
+    <ng-content select="[emrSplitFirst]" />
+  </div>
+  <div
+    class="split-divider"
+    role="separator"
+    tabindex="0"
+    aria-label="Resize panels"
+    [attr.aria-orientation]="orientation() === 'horizontal' ? 'vertical' : 'horizontal'"
+    [attr.aria-valuenow]="_roundedSize()"
+    [attr.aria-valuemin]="minSize()"
+    [attr.aria-valuemax]="maxSize()"
+    (pointerdown)="_onDividerPointerDown($event)"
+    (keydown)="_onDividerKeydown($event)"
+  >
+    <div class="divider-handle"></div>
+  </div>
+  <div class="pane pane--second">
+    <ng-content select="[emrSplitSecond]" />
+  </div>
 </div>

@@ -1,7 +1,9 @@
 import {
   Component, input, signal, computed, ChangeDetectionStrategy,
-  booleanAttribute, viewChild, ElementRef, AfterViewInit, OnDestroy
+  booleanAttribute, viewChild, ElementRef, AfterViewInit, OnDestroy, effect,
+  inject, PLATFORM_ID
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 export interface VideoChapter {
   time: number;
@@ -23,6 +25,7 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   chapters = input<VideoChapter[]>([]);
 
   protected _videoEl = viewChild<ElementRef<HTMLVideoElement>>('videoEl');
+  private _containerEl = viewChild<ElementRef<HTMLElement>>('containerEl');
 
   protected _playing = signal(false);
   protected _muted = signal(false);
@@ -33,6 +36,8 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   protected _speed = signal(1);
   protected _showSpeedMenu = signal(false);
   protected _fullscreen = signal(false);
+  protected _error = signal(false);
+  protected _loading = signal(false);
 
   protected _progress = computed(() =>
     this._duration() > 0 ? (this._currentTime() / this._duration()) * 100 : 0
@@ -50,17 +55,44 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
 
   protected readonly _speeds = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
 
+  private _isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+
+  private _onFullscreenChange = () =>
+    this._fullscreen.set(document.fullscreenElement === this._containerEl()?.nativeElement);
+
+  constructor() {
+    // A new source starts from a clean state.
+    effect(() => {
+      this.src();
+      this._error.set(false);
+      this._playing.set(false);
+      this._currentTime.set(0);
+      this._duration.set(0);
+      this._buffered.set(0);
+    });
+  }
+
   ngAfterViewInit(): void {
+    if (!this._isBrowser) return;
+    document.addEventListener('fullscreenchange', this._onFullscreenChange);
     const v = this._videoEl()?.nativeElement;
     if (v && this.autoplay()) { v.play().catch(() => {}); }
   }
 
-  ngOnDestroy(): void {}
+  ngOnDestroy(): void {
+    if (!this._isBrowser) return;
+    document.removeEventListener('fullscreenchange', this._onFullscreenChange);
+  }
 
   protected _togglePlay(): void {
     const v = this._video();
-    if (!v) return;
-    if (this._playing()) { v.pause(); } else { v.play().catch(() => {}); }
+    if (!v || this._error()) return;
+    if (this._playing()) {
+      v.pause();
+    } else {
+      this._loading.set(v.readyState < HTMLMediaElement.HAVE_FUTURE_DATA);
+      v.play().catch(() => this._loading.set(false));
+    }
   }
 
   protected _toggleMute(): void {
@@ -106,12 +138,12 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   }
 
   protected _toggleFullscreen(): void {
-    const el = document.querySelector('.vp-container') as HTMLElement;
+    const el = this._containerEl()?.nativeElement;
     if (!el) return;
     if (document.fullscreenElement) {
-      document.exitFullscreen().then(() => this._fullscreen.set(false)).catch(() => {});
+      document.exitFullscreen().catch(() => {});
     } else {
-      el.requestFullscreen().then(() => this._fullscreen.set(true)).catch(() => {});
+      el.requestFullscreen?.().catch(() => {});
     }
   }
 
@@ -123,10 +155,18 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   }
 
   protected _onPlay(): void { this._playing.set(true); }
+  protected _onPlaying(): void { this._loading.set(false); }
+  protected _onWaiting(): void { this._loading.set(true); }
+  protected _onError(): void {
+    if (!this.src()) return;
+    this._error.set(true);
+    this._loading.set(false);
+    this._playing.set(false);
+  }
   protected _onPause(): void { this._playing.set(false); }
   protected _onLoadedMetadata(): void {
     const v = this._video();
-    if (v) this._duration.set(v.duration);
+    if (v && isFinite(v.duration)) this._duration.set(v.duration);
   }
 
   protected _formatTime(s: number): string {

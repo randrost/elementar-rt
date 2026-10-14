@@ -1,0 +1,23 @@
+<svg width="296" height="141" viewBox="0 0 296 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- right-click area -->
+<rect x="70" y="22" width="110" height="60" rx="6" fill="#F9FAFA" stroke="#D3D4D5" stroke-dasharray="4 3"/>
+<!-- cursor -->
+<path d="M118 44L118 60L122 56L125 62L127.5 61L124.5 55L130 55L118 44Z" fill="white" stroke="#46484A" stroke-linejoin="round"/>
+<!-- menu: first group -->
+<path d="M128 56C128 52.6863 130.686 50 134 50H220C223.314 50 226 52.6863 226 56V94H128V56Z" fill="white" stroke="#D3D4D5"/>
+<rect x="132" y="55" width="90" height="12" rx="3" fill="#F3F0F7"/>
+<rect x="137" y="59" width="5" height="5" rx="1" fill="#ABADAF"/>
+<rect x="147" y="60" width="34" height="3" rx="1.5" fill="#46484A"/>
+<rect x="206" y="60" width="11" height="3" rx="1.5" fill="#D3D4D5"/>
+<rect x="137" y="73" width="5" height="5" rx="1" fill="#ABADAF"/>
+<rect x="147" y="74" width="28" height="3" rx="1.5" fill="#D3D4D5"/>
+<rect x="206" y="74" width="11" height="3" rx="1.5" fill="#D3D4D5"/>
+<rect x="147" y="85" width="38" height="3" rx="1.5" fill="#D3D4D5"/>
+<path d="M213 83.5L216 86.5L213 89.5" stroke="#ABADAF" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- menu: second group -->
+<path d="M128 97H226V117C226 120.314 223.314 123 220 123H134C130.686 123 128 120.314 128 117V97Z" fill="white" stroke="#D3D4D5"/>
+<rect x="132" y="101" width="90" height="11" rx="4" fill="#EADDFF"/>
+<path d="M136 106.5L138 108.5L141.5 104.5" stroke="#8952E0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="147" y="105" width="40" height="3" rx="1.5" fill="#8952E0"/>
+<rect x="147" y="115" width="32" height="3" rx="1.5" fill="#D3D4D5"/>
+</svg>

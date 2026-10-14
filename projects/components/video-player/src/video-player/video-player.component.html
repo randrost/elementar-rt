@@ -1,4 +1,4 @@
-<div class="vp-container">
+<div #containerEl class="vp-container">
   <video
     #videoEl
     class="vp-video"
@@ -6,12 +6,33 @@
     [poster]="poster()"
     [loop]="loop()"
     [muted]="_muted()"
+    preload="metadata"
+    playsinline
     (timeupdate)="_onTimeUpdate()"
     (play)="_onPlay()"
     (pause)="_onPause()"
     (loadedmetadata)="_onLoadedMetadata()"
+    (durationchange)="_onLoadedMetadata()"
+    (playing)="_onPlaying()"
+    (waiting)="_onWaiting()"
+    (error)="_onError()"
     (click)="_togglePlay()"
   ></video>
+
+  @if (_error()) {
+    <div class="vp-overlay vp-error" role="alert">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>This video could not be loaded.</span>
+    </div>
+  } @else if (_loading()) {
+    <div class="vp-overlay" aria-hidden="true">
+      <span class="vp-spinner"></span>
+    </div>
+  } @else if (!_playing()) {
+    <button type="button" class="vp-big-play" (click)="_togglePlay()" aria-label="Play">
+      <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg>
+    </button>
+  }
 
   @if (_currentChapter()) {
     <div class="vp-chapter-badge">{{ _currentChapter() }}</div>

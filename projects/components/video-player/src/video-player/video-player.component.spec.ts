@@ -79,4 +79,31 @@ describe('VideoPlayerComponent', () => {
     (component as any)._onPause();
     expect((component as any)._playing()).toBe(false);
   });
+
+  it('should show an error message when the source fails to load', () => {
+    fixture.componentRef.setInput('src', 'https://example.invalid/missing.mp4');
+    fixture.detectChanges();
+    (component as any)._onError();
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.vp-error')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('.vp-big-play')).toBeNull();
+  });
+
+  it('should ignore load errors while no source is set', () => {
+    (component as any)._onError();
+    expect((component as any)._error()).toBeFalse();
+  });
+
+  it('should show a big play button while paused', () => {
+    fixture.componentRef.setInput('src', 'https://example.com/video.mp4');
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.vp-big-play')).not.toBeNull();
+  });
+
+  it('should request fullscreen on its own container', () => {
+    const container = fixture.nativeElement.querySelector('.vp-container') as HTMLElement;
+    const spy = spyOn(container, 'requestFullscreen').and.returnValue(Promise.resolve());
+    (component as any)._toggleFullscreen();
+    expect(spy).toHaveBeenCalled();
+  });
 });
