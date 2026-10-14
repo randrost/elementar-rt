@@ -89,7 +89,7 @@
     "echarts": "^6.1.0",
     "emojibase-data": "^17.0.0",
     "express": "^4.22.2",
-    "iconify-icon": "^3.0.2",
+    "iconify-icon": "^3.0.3",
     "libphonenumber-js": "^1.13.6",
     "lightningcss": "^1.32.0",
     "marked": "^18.0.13",
