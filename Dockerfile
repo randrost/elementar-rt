@@ -1,4 +1,4 @@
-FROM node:20 AS build
+FROM node:22.23.4 AS build
 
 WORKDIR /usr/src/app
 
@@ -13,7 +13,7 @@ ENV NODE_OPTIONS=--max-old-space-size=8192
 RUN npm run build:prod
 
 # Stage 2: Serve the application with Angular SSR
-FROM node:20-alpine AS serve
+FROM node:22.23.4-alpine AS serve
 
 WORKDIR /usr/src/app
 
