@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.schematics.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "../../out-tsc/schematics-spec",
+    "declaration": false,
+    "sourceMap": false,
+    "types": [
+      "jasmine",
+      "node"
+    ]
+  },
+  "include": [
+    "schematics/**/*"
+  ],
+  "exclude": [
+    "schematics/*/files/**/*"
+  ]
+}

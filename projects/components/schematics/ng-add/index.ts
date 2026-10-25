@@ -1,6 +1,6 @@
 import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 // import { readWorkspace } from '@schematics/angular/utility';
-import { addPackageToPackageJson } from '../utils/package-config';
+import { addPackageToPackageJson, resolveAngularMajor } from '../utils/package-config';
 import { NodePackageInstallTask, RunSchematicTask } from '@angular-devkit/schematics/tasks';
 import { Schema } from './schema';
 
@@ -10,8 +10,6 @@ const DEPENDENCIES = {
   "@dicebear/core": "^9.2.2",
   "@iconify-json/circle-flags": "^1.2.10",
   "@iconify-json/ph": "^1.2.2",
-  "@ngrx/signals": "^20.1.0",
-  "@ngrx/store": "^20.1.0",
   "@tiptap/core": "2.10.2",
   "@tiptap/extension-bubble-menu": "2.10.2",
   "@tiptap/extension-code-block": "2.10.2",
@@ -47,6 +45,17 @@ const DEV_DEPENDENCIES = {
   '@tailwindcss/typography': '^0.5.16',
 };
 
+/** The library's own @angular/core peer range (used when the project has no @angular/core). */
+function libraryAngularPeerRange(): string | null {
+  try {
+    // dist/components/schematics/ng-add -> dist/components/package.json (src: projects/components/package.json)
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require('../../package.json').peerDependencies?.['@angular/core'] ?? null;
+  } catch {
+    return null;
+  }
+}
+
 export function ngAdd(options: Schema): Rule {
   return (tree: Tree, context: SchematicContext) => {
     context.logger.log('info', `✅️ Running Schematics`);
@@ -69,9 +78,15 @@ export function ngAdd(options: Schema): Rule {
     // const angularCdkVersion = getPackageVersionFromPackageJson(tree, '@angular/cdk')!;
     // const angularMaterialVersion = getPackageVersionFromPackageJson(tree, '@angular/material')!;
 
-    addPackageToPackageJson(tree, '@angular/localize', '^20.3.4', true);
-    addPackageToPackageJson(tree, '@angular/cdk', '^20.2.8');
-    addPackageToPackageJson(tree, '@angular/material', '^20.2.8');
+    const major = resolveAngularMajor(tree, libraryAngularPeerRange());
+    const angularRange = `^${major}.0.0`;
+
+    addPackageToPackageJson(tree, '@angular/localize', angularRange, true);
+    addPackageToPackageJson(tree, '@angular/cdk', angularRange);
+    addPackageToPackageJson(tree, '@angular/material', angularRange);
+    // @ngrx majors follow the Angular major
+    addPackageToPackageJson(tree, '@ngrx/signals', angularRange);
+    addPackageToPackageJson(tree, '@ngrx/store', angularRange);
 
     for (const name in DEPENDENCIES) {
       // @ts-ignore
