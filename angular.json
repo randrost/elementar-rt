@@ -154,6 +154,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/components/tsconfig.spec.json",
+            "exclude": ["projects/components/schematics/**"],
             "polyfills": [
               "zone.js",
               "zone.js/testing",
