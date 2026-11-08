@@ -88,7 +88,7 @@
     "d3": "^7.9.0",
     "echarts": "^6.1.0",
     "emojibase-data": "^17.0.0",
-    "express": "^4.22.2",
+    "express": "^4.22.3",
     "iconify-icon": "^3.0.3",
     "libphonenumber-js": "^1.13.6",
     "lightningcss": "^1.32.0",
@@ -133,6 +133,6 @@
     "pre-push": "npm run changelog"
   },
   "overrides": {
-    "qs": "^6.16.0"
+    "qs": "^6.17.1"
   }
 }
