@@ -31,6 +31,6 @@
   ],
   "exclude": [
     "schematics/*/files/**/*",
-    "schematics/**/*.spec.ts"
+    "schematics/**/*.test.ts"
   ]
 }

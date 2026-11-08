@@ -19,5 +19,5 @@ env.addReporter({
   specDone: (r) => { console.log(`${r.status === 'passed' ? 'ok  ' : 'FAIL'} ${r.fullName}`); if (r.status === 'failed') { failed++; r.failedExpectations.forEach((e) => console.log('   ' + e.message)); } },
   jasmineDone: () => { process.exitCode = failed ? 1 : 0; },
 });
-require(path.join(out, 'ng-add/index.spec.js'));
+require(path.join(out, 'ng-add/index.test.js'));
 env.execute();
